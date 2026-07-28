@@ -1,0 +1,105 @@
+import Link from "next/link";
+
+import {
+  COPYRIGHT,
+  FOOTER_COLUMNS,
+  FOOTER_TAGLINE,
+  LEGAL_LINKS,
+  SOCIAL_LINKS,
+} from "@/config/footer";
+
+import { FooterLogo } from "@/components/common/logo";
+import NewsletterForm from "@/components/layout/newsletter-form";
+
+const COLUMN_HEADING =
+  "text-[16px]/[26px] font-medium tracking-[3.04px] text-gold-300 uppercase";
+
+const COLUMN_LINK =
+  "text-center text-[16px]/[26px] font-medium text-white transition-colors duration-200 hover:text-gold-300";
+
+const SiteFooter = () => (
+  <footer className="bg-navy-800">
+    <div className="mx-auto max-w-xl px-16 pt-48 pb-40 lg:px-24 lg:pt-60 lg:pb-60">
+      <div className="flex flex-col gap-32 lg:flex-row lg:justify-between">
+        {/* ── Brand + newsletter ─────────────────────────────── */}
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <Link href="/" aria-label="Kapuria Developers — home">
+            <FooterLogo />
+          </Link>
+
+          <p className="text-muted-foreground mt-16 max-w-400 text-[16px]/[22px] font-medium">
+            {FOOTER_TAGLINE}
+          </p>
+
+          <div className="mt-32 w-full lg:mt-40">
+            <NewsletterForm />
+          </div>
+        </div>
+
+        {/* ── Link columns ───────────────────────────────────── */}
+        <div className="grid grid-cols-2 gap-x-36 gap-y-32 lg:flex lg:shrink-0">
+          {FOOTER_COLUMNS.map((column) => (
+            <nav key={column.title} aria-label={column.title}>
+              <h2 className={COLUMN_HEADING}>{column.title}</h2>
+
+              <ul className="mt-16 flex flex-col gap-16 lg:mt-24 lg:gap-20">
+                {column.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className={COLUMN_LINK}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+
+          {/* Full width under the two link columns on mobile. */}
+          <div className="col-span-2 lg:col-span-1">
+            <h2 className={COLUMN_HEADING}>Social Handles</h2>
+
+            <ul className="mt-16 flex items-center gap-24 lg:mt-24">
+              {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={label}
+                    className="hover:text-gold-300 block text-white transition-colors duration-200"
+                  >
+                    <Icon className="size-24" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr className="mt-32 border-white/20 lg:mt-40" />
+
+      {/* ── Legal row ────────────────────────────────────────── */}
+      <div className="mt-32 flex flex-col gap-8 sm:gap-24 lg:flex-row lg:items-center lg:justify-between lg:gap-32">
+        <p className="text-[12px]/[26px] text-[#99A4AB] sm:text-[14px]/[26px] md:text-[16px]/[26px]">
+          {COPYRIGHT}
+        </p>
+
+        <ul className="flex items-center justify-between gap-24 lg:justify-end lg:gap-40">
+          {LEGAL_LINKS.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="hover:text-gold-300 text-[12px]/[18px] whitespace-nowrap text-[#99A4AB] transition-colors duration-200 sm:text-[14px]/[22px] md:text-[16px]/[26px]"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </footer>
+);
+
+export default SiteFooter;
