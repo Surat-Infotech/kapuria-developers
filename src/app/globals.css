@@ -72,6 +72,7 @@
   --gradient-gold-glow: radial-gradient(circle, #f3d6aa 0%, #d7a86b 100%);
 
   --font-sans: var(--font-montserrat);
+  --font-playfair: var(--font-playfair-display);
 }
 
 @theme inline {
@@ -130,6 +131,7 @@
   --color-destructive-foreground: var(--destructive-foreground);
 
   --font-sans: var(--font-sans);
+  --font-playfair: var(--font-playfair);
 
   /* Typography scale */
   --text-display: 64px;
