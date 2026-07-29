@@ -12,7 +12,7 @@ import { FooterLogo } from "@/components/common/logo";
 import NewsletterForm from "@/components/layout/newsletter-form";
 
 const COLUMN_HEADING =
-  "text-[14px]/[26px] font-medium tracking-[2.66px] text-gold-300 uppercase sm:tracking-[3.04px] sm:text-[16px]/[26px]";
+  "text-[14px]/[26px] font-medium tracking-[2.66px] text-gold-300 uppercase sm:tracking-[2.8px] xl:tracking-[3.04px] sm:text-[16px]/[26px]";
 
 const COLUMN_LINK =
   "text-center text-[16px]/[26px] font-medium text-white transition-colors duration-200 hover:text-gold-300";
@@ -20,9 +20,9 @@ const COLUMN_LINK =
 const SiteFooter = () => (
   <footer className="bg-navy-800">
     <div className="mx-auto max-w-xl px-16 pt-48 pb-40 lg:px-24 lg:pt-60 lg:pb-60">
-      <div className="flex flex-col gap-32 lg:flex-row lg:justify-between">
+      <div className="flex flex-col gap-24 lg:flex-row lg:justify-between xl:gap-32">
         {/* ── Brand + newsletter ─────────────────────────────── */}
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="flex w-full flex-col items-center text-center lg:max-w-550 lg:items-start lg:text-left">
           <Link href="/" aria-label="Kapuria Developers — home">
             <FooterLogo />
           </Link>
@@ -37,7 +37,7 @@ const SiteFooter = () => (
         </div>
 
         {/* ── Link columns ───────────────────────────────────── */}
-        <div className="grid grid-cols-2 gap-x-36 gap-y-32 lg:flex lg:shrink-0">
+        <div className="grid grid-cols-2 gap-x-24 gap-y-32 md:grid-cols-3 lg:flex lg:shrink-0 xl:gap-x-36">
           {FOOTER_COLUMNS.map((column) => (
             <nav key={column.title} aria-label={column.title}>
               <h2 className={COLUMN_HEADING}>{column.title}</h2>
@@ -55,7 +55,7 @@ const SiteFooter = () => (
           ))}
 
           {/* Full width under the two link columns on mobile. */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <h2 className={COLUMN_HEADING}>Social Handles</h2>
 
             <ul className="mt-16 flex items-center gap-24 lg:mt-24">
