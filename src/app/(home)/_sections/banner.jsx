@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
 
-import banner from "@/assets/images/home/home-banner.webp";
-import bannerMobile from "@/assets/images/home/home-banner-mobile.webp";
 import circluarMotion from "@/assets/images/home/circluar-motion.webp";
-import { Button } from "@/components/ui/button";
+import bannerMobile from "@/assets/images/home/home-banner-mobile.webp";
+import banner from "@/assets/images/home/home-banner.webp";
 
 export default function BannerSection() {
   return (

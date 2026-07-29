@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-
 import { cva } from "class-variance-authority";
+
+import { useCallback, useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
