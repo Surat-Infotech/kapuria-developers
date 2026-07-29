@@ -135,7 +135,7 @@ export default function ApartSection() {
               alt=""
               width={70}
               height={70}
-              className="h-56 w-56 shrink-0 object-contain sm:h-full sm:w-full"
+              className="h-56 w-56 shrink-0 object-contain sm:h-70 sm:w-70"
             />
 
             <div className="flex flex-col items-center gap-8 text-center">
