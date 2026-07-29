@@ -12,7 +12,7 @@ import { FooterLogo } from "@/components/common/logo";
 import NewsletterForm from "@/components/layout/newsletter-form";
 
 const COLUMN_HEADING =
-  "text-[16px]/[26px] font-medium tracking-[3.04px] text-gold-300 uppercase";
+  "text-[14px]/[26px] font-medium tracking-[2.66px] text-gold-300 uppercase sm:tracking-[3.04px] sm:text-[16px]/[26px]";
 
 const COLUMN_LINK =
   "text-center text-[16px]/[26px] font-medium text-white transition-colors duration-200 hover:text-gold-300";
@@ -77,10 +77,10 @@ const SiteFooter = () => (
         </div>
       </div>
 
-      <hr className="mt-32 border-white/20 lg:mt-40" />
+      <hr className="my-32 border-white/20" />
 
       {/* ── Legal row ────────────────────────────────────────── */}
-      <div className="mt-32 flex flex-col gap-8 sm:gap-24 lg:flex-row lg:items-center lg:justify-between lg:gap-32">
+      <div className="flex flex-col gap-8 sm:gap-24 lg:flex-row lg:items-center lg:justify-between lg:gap-32">
         <p className="text-[12px]/[26px] text-[#99A4AB] sm:text-[14px]/[26px] md:text-[16px]/[26px]">
           {COPYRIGHT}
         </p>

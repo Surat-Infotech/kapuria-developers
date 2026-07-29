@@ -2,8 +2,8 @@ export const NAV_ITEMS = [
   { label: "Projects", href: "/projects" },
   { label: "Construction", href: "/construction" },
   {
+    // No `href` — this item only opens its dropdown, it never navigates.
     label: "About",
-    href: "/about",
     children: [
       { label: "Our Team", href: "/about/team" },
       { label: "Architects", href: "/about/architects" },
