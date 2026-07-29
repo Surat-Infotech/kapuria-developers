@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
 
-import banner from "@/assets/images/team/team-banner.webp";
 import bannerMobile from "@/assets/images/team/team-banner-mobile.webp";
-import { Button } from "@/components/ui/button";
+import banner from "@/assets/images/team/team-banner.webp";
 
 export default function BannerSection() {
   return (

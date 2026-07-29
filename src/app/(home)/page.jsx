@@ -1,4 +1,8 @@
+import ApartSection from "./_sections/apart";
 import BannerSection from "./_sections/banner";
+import Beautiful from "./_sections/beautiful";
+import QualityPromise from "./_sections/quality-promise";
+import SoundsGood from "./_sections/sounds-good";
 import StandStrong from "./_sections/stand-strong";
 
 export const metadata = {
@@ -11,6 +15,10 @@ export default function Home() {
     <>
       <BannerSection />
       <StandStrong />
+      <Beautiful />
+      <ApartSection />
+      <SoundsGood />
+      <QualityPromise />
     </>
   );
 }

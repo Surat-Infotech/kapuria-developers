@@ -8,5 +8,15 @@
   },
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Resolve eslint.config.mjs relative to this folder. Without it, a
+  // multi-root window looks for the config at the workspace root and
+  // silently reports no problems.
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "eslint.useFlatConfig": true
 }

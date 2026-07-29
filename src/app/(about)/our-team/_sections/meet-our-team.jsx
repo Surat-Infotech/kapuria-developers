@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
-
 import useEmblaCarousel from "embla-carousel-react";
+import { rules } from "eslint-config-prettier";
+
+import Image from "next/image";
 
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
@@ -12,7 +13,6 @@ import Amaan from "@/assets/images/team/amaan.webp";
 import ErPradip from "@/assets/images/team/er-pradip.webp";
 import NiteshSingh from "@/assets/images/team/nitish-singh.webp";
 import SomeshKapuria from "@/assets/images/team/somesh.webp";
-import { rules } from "eslint-config-prettier";
 
 const DESCRIPTION =
   "Meet the talented team behind everything we do here at Kapuria Developers.";
