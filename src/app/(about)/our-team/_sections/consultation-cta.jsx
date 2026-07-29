@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
 
-import ConsultationBg from "@/assets/images/team/consultation-bg.webp";
 import ConsultationBgMobile from "@/assets/images/team/consultation-bg-mobile.webp";
-import ConsultationBadge from "@/assets/images/team/consultion-badge.webp";
+import ConsultationBg from "@/assets/images/team/consultation-bg.webp";
 import ConsultationBadgeMobile from "@/assets/images/team/consultion-badge-mobile.webp";
+import ConsultationBadge from "@/assets/images/team/consultion-badge.webp";
 
 const KICKER = "You're not buying for the next ten years.";
 
