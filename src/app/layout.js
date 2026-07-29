@@ -10,12 +10,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-// Used for the italic accent clause in display headings.
+// Italic is loaded because the display accents ("Managing Director", etc.)
+// are set in Playfair italic.
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
   subsets: ["latin"],
-  style: ["italic"],
-  weight: ["500"],
+  style: ["normal", "italic"],
 });
 
 export const metadata = {

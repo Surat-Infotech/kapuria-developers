@@ -73,6 +73,7 @@
 
   --font-sans: var(--font-montserrat);
   --font-playfair: var(--font-playfair-display);
+  --font-serif: var(--font-playfair-display);
 }
 
 @theme inline {
@@ -132,6 +133,7 @@
 
   --font-sans: var(--font-sans);
   --font-playfair: var(--font-playfair);
+  --font-serif: var(--font-serif);
 
   /* Typography scale */
   --text-display: 64px;

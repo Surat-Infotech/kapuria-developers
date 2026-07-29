@@ -16,6 +16,7 @@ export const SectionHeader = ({
   className = "",
   classNames = {
     heading: "",
+    rule: "",
     description: "",
   },
 }) => {
@@ -38,7 +39,11 @@ export const SectionHeader = ({
       {rule && (
         <span
           aria-hidden
-          className={cn("bg-gold-300 mt-16 block h-1 w-34", styles.rule)}
+          className={cn(
+            "bg-gold-300 mt-16 block h-1 w-34",
+            styles.rule,
+            classNames.rule
+          )}
         />
       )}
 
