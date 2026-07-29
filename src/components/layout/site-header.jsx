@@ -27,10 +27,14 @@ const MOBILE_LINK =
 const DROPDOWN_LINK =
   "block text-center text-[16px]/[26px] font-medium whitespace-nowrap transition-colors duration-200";
 
+// Items without an `href` are dropdown triggers only, so their active state
+// comes purely from whether a child route is current.
 const isBranchActive = (pathname, item) =>
-  pathname === item.href ||
-  pathname.startsWith(`${item.href}/`) ||
-  Boolean(item.children?.some((child) => pathname.startsWith(child.href)));
+  Boolean(
+    (item.href &&
+      (pathname === item.href || pathname.startsWith(`${item.href}/`))) ||
+    item.children?.some((child) => pathname.startsWith(child.href))
+  );
 
 const SiteHeader = ({ mobileTitle = "Welcome" }) => {
   const pathname = usePathname();
@@ -67,7 +71,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-16 pt-16 lg:px-24 lg:pt-64">
       {/* ── Desktop: single floating pill ─────────────────────── */}
-      <div className="pointer-events-auto mx-auto hidden max-w-1210 items-center gap-16 rounded-[60px] bg-[#082235] px-16 py-10 backdrop-blur-[12.5px] backdrop-filter lg:flex xl:gap-32 xl:px-32">
+      <div className="pointer-events-auto mx-auto hidden max-w-1210 items-center gap-16 rounded-[60px] bg-[#082235] px-16 py-10 backdrop-blur-[12.5px] backdrop-filter lg:flex xl:gap-32 xl:px-30">
         <Link
           href="/"
           aria-label="Kapuria Developers — home"
@@ -107,25 +111,42 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
                 );
               }
 
+              const triggerClassName = cn(
+                "flex items-center gap-6",
+                DESKTOP_LINK,
+                active ? "text-gold-300" : "hover:text-gold-300 text-white"
+              );
+
+              const chevron = (
+                <ChevronDownIcon className="size-14 transition-transform duration-200 group-focus-within:-rotate-180 group-hover:-rotate-180" />
+              );
+
               return (
                 <li
-                  key={item.href}
+                  key={item.label}
                   className="group relative flex items-center"
                 >
-                  <Link
-                    href={item.href}
-                    aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "flex items-center gap-6",
-                      DESKTOP_LINK,
-                      active
-                        ? "text-gold-300"
-                        : "hover:text-gold-300 text-white"
-                    )}
-                  >
-                    {item.label}
-                    <ChevronDownIcon className="size-14 transition-transform duration-200 group-focus-within:-rotate-180 group-hover:-rotate-180" />
-                  </Link>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      aria-current={active ? "page" : undefined}
+                      className={triggerClassName}
+                    >
+                      {item.label}
+                      {chevron}
+                    </Link>
+                  ) : (
+                    // The panel opens on hover/focus-within, so the trigger
+                    // still has to be focusable for keyboard users — hence a
+                    // real button rather than a plain span.
+                    <button
+                      type="button"
+                      className={cn(triggerClassName, "cursor-pointer")}
+                    >
+                      {item.label}
+                      {chevron}
+                    </button>
+                  )}
 
                   {/* mt-10 == the bar's py-10, so the panel's gold top border
                       sits flush on the bar's bottom edge with no hover gap. */}
@@ -219,50 +240,79 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
             aria-label="Close menu"
             className="flex size-40 cursor-pointer items-center justify-center rounded-[14px] border border-white/10 bg-white/8 text-white transition-colors duration-200 hover:bg-white/12"
           >
-            <CloseIcon className="size-20" />
+            <CloseIcon className="size-18" />
           </button>
         </div>
 
-        <nav aria-label="Primary" className="mt-40 flex-1 overflow-y-auto">
-          <ul className="flex flex-col gap-2">
+        <nav aria-label="Primary" className="mt-32 flex-1 overflow-y-auto">
+          <ul className="flex flex-col gap-4">
             {NAV_ITEMS.map((item) => {
               const active = isBranchActive(pathname, item);
-              const expanded = openSection === item.href;
+              const sectionKey = item.href ?? item.label;
+              const expanded = openSection === sectionKey;
+
+              const rowClassName = cn(
+                "flex flex-1 items-center justify-between rounded-xl px-12 py-10",
+                MOBILE_LINK,
+                active ? "bg-white/8 text-white" : "text-[#B9C4CE]"
+              );
+
+              const chevron = (
+                <ChevronDownIcon
+                  className={cn(
+                    "size-18 transition-transform duration-200",
+                    expanded && "-rotate-180"
+                  )}
+                />
+              );
 
               return (
-                <li key={item.href}>
+                <li key={sectionKey}>
                   <div className="flex items-center">
-                    <Link
-                      href={item.href}
-                      aria-current={active ? "page" : undefined}
-                      onClick={closeMenu}
-                      className={cn(
-                        "flex-1 rounded-full px-16 py-14",
-                        MOBILE_LINK,
-                        active ? "bg-white/8 text-white" : "text-navy-100"
-                      )}
-                    >
-                      {item.label}
-                    </Link>
-
-                    {item.children ? (
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        aria-current={active ? "page" : undefined}
+                        onClick={closeMenu}
+                        className={rowClassName}
+                      >
+                        {item.label}
+                        {item.children ? (
+                          <button
+                            type="button"
+                            // The toggle sits inside the <Link>, so a bare
+                            // click would bubble to the anchor and navigate +
+                            // close the drawer. preventDefault kills the
+                            // anchor's default activation; stopPropagation
+                            // keeps it out of the Link's onClick={closeMenu}.
+                            onClick={(event) => {
+                              event.preventDefault();
+                              event.stopPropagation();
+                              setOpenSection(expanded ? null : sectionKey);
+                            }}
+                            aria-label={`${expanded ? "Collapse" : "Expand"} ${item.label} menu`}
+                            aria-expanded={expanded}
+                            className="text-navy-100 hover:text-gold-300 cursor-pointer transition-colors duration-200"
+                          >
+                            {chevron}
+                          </button>
+                        ) : null}
+                      </Link>
+                    ) : (
+                      // No href, so the whole row is the toggle — no nested
+                      // button inside an anchor, nothing to preventDefault.
                       <button
                         type="button"
                         onClick={() =>
-                          setOpenSection(expanded ? null : item.href)
+                          setOpenSection(expanded ? null : sectionKey)
                         }
-                        aria-label={`${expanded ? "Collapse" : "Expand"} ${item.label} menu`}
                         aria-expanded={expanded}
-                        className="text-navy-100 hover:text-gold-300 cursor-pointer p-12 transition-colors duration-200"
+                        className={cn(rowClassName, "cursor-pointer text-left")}
                       >
-                        <ChevronDownIcon
-                          className={cn(
-                            "size-18 transition-transform duration-200",
-                            expanded && "-rotate-180"
-                          )}
-                        />
+                        {item.label}
+                        {chevron}
                       </button>
-                    ) : null}
+                    )}
                   </div>
 
                   {item.children ? (
@@ -283,16 +333,16 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
                                 pathname === child.href ? "page" : undefined
                               }
                               className={cn(
-                                "flex items-center gap-14 rounded-full py-14 pr-16 pl-28",
+                                "flex items-center gap-8 rounded-xl px-12 py-10",
                                 MOBILE_LINK,
                                 pathname === child.href
                                   ? "bg-white/8 text-white"
-                                  : "text-navy-100"
+                                  : "text-[#B9C4CE]"
                               )}
                             >
                               <span
                                 aria-hidden="true"
-                                className="bg-gold-300 size-5 shrink-0 rounded-full"
+                                className="size-5 shrink-0 rounded-full bg-[#EBC37F]"
                               />
                               {child.label}
                             </Link>
