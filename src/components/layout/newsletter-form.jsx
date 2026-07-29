@@ -15,7 +15,7 @@ const NewsletterForm = () => {
     // align-self: stretch to pick up the button's 62px height.
     <form
       onSubmit={handleSubmit}
-      className="flex w-full flex-col gap-16 sm:flex-row xl:w-550"
+      className="flex w-full flex-col gap-16 sm:flex-row xl:max-w-550"
     >
       <label htmlFor="newsletter-email" className="sr-only">
         Email address
@@ -27,13 +27,13 @@ const NewsletterForm = () => {
         name="email"
         required
         placeholder="Subscribe to our newsletter..."
-        className="text-navy-800 placeholder:text-navy-800/70 focus-visible:ring-gold-300 focus-visible:ring-offset-navy-800 w-full self-stretch rounded-[60px] bg-white px-16 py-8 text-[16px]/[30px] font-normal outline-none focus-visible:ring-2 focus-visible:ring-offset-2 md:px-24 md:py-16 lg:w-auto lg:flex-[1_0_0]"
+        className="text-navy-800 placeholder:text-navy-800/70 focus-visible:ring-gold-300 focus-visible:ring-offset-navy-800 w-full self-stretch rounded-[60px] bg-white px-16 py-8 text-[16px]/[30px] font-normal outline-none focus-visible:ring-2 focus-visible:ring-offset-2 md:py-16 lg:w-auto lg:flex-[1_0_0] xl:px-24"
       />
 
       <Button
         type="submit"
         variant="secondary"
-        className="w-full gap-10 rounded-[60px] px-16 py-8 text-[18px]/[30px] font-medium tracking-[3.42px] sm:w-auto md:px-24 md:py-16"
+        className="w-full gap-10 rounded-[60px] px-16 py-8 text-[18px]/[30px] font-medium tracking-[3.42px] sm:w-auto md:py-16 lg:px-16 lg:text-[16px]/[24px] lg:tracking-[2.66px] xl:px-24 xl:text-[18px]/[30px] xl:tracking-[3.42px]"
       >
         {/* The icon only appears in the mobile comp. */}
         <QuadrantIcon className="size-20 shrink-0 lg:hidden" />
