@@ -9,10 +9,27 @@ import { Button } from "@/components/ui/button";
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
 
-import canopyVeil from "@/assets/images/our-projects/cabopy-veil-1.webp";
-import magesticVilla from "@/assets/images/our-projects/magestic-project-1.webp";
-import palatialArc from "@/assets/images/our-projects/palatial-arc-1.webp";
-import vantage from "@/assets/images/our-projects/vantage-1.webp";
+import canopyVeil1 from "@/assets/images/our-projects/canopy-veil-1.webp";
+import canopyVeil2 from "@/assets/images/our-projects/canopy-veil-2.webp";
+import canopyVeil3 from "@/assets/images/our-projects/canopy-veil-3.webp";
+import canopyVeil4 from "@/assets/images/our-projects/canopy-veil-4.webp";
+import canopyVeil5 from "@/assets/images/our-projects/canopy-veil-5.webp";
+import magesticVilla1 from "@/assets/images/our-projects/magestic-project-1.webp";
+import magesticVilla2 from "@/assets/images/our-projects/magestic-project-2.webp";
+import magesticVilla3 from "@/assets/images/our-projects/magestic-project-3.webp";
+import magesticVilla4 from "@/assets/images/our-projects/magestic-project-4.webp";
+import magesticVilla5 from "@/assets/images/our-projects/magestic-project-5.webp";
+import palatialArc1 from "@/assets/images/our-projects/palatial-arc-1.webp";
+import palatialArc2 from "@/assets/images/our-projects/palatial-arc-2.webp";
+import palatialArc3 from "@/assets/images/our-projects/palatial-arc-3.webp";
+import palatialArc4 from "@/assets/images/our-projects/palatial-arc-4.webp";
+import palatialArc5 from "@/assets/images/our-projects/palatial-arc-5.webp";
+import vantage1 from "@/assets/images/our-projects/vantage-1.webp";
+import vantage2 from "@/assets/images/our-projects/vantage-2.webp";
+import vantage3 from "@/assets/images/our-projects/vantage-3.webp";
+import vantage4 from "@/assets/images/our-projects/vantage-4.webp";
+import vantage5 from "@/assets/images/our-projects/vantage-5.webp";
+import vantage6 from "@/assets/images/our-projects/vantage-6.webp";
 import QuadrantIcon from "@/assets/svgs/common/quadrant";
 
 // Every project in the design carries this same paragraph, so it is hoisted
@@ -27,10 +44,13 @@ const PALATIAL_ARC = {
   // keeps the letter itself.
   lockup: ["The P", "o", "latial Arc"],
   location: "Sector 88, Mohali, Punjab, India",
-  // Only the first interior shot has been delivered; it is repeated so the
-  // gallery arrows have somewhere to go. Add the rest of the photography as it
-  // lands.
-  images: [palatialArc, palatialArc],
+  images: [
+    palatialArc1,
+    palatialArc2,
+    palatialArc3,
+    palatialArc4,
+    palatialArc5,
+  ],
   type: "Villa",
   plotSize: "2,852 sq.ft.",
   builtArea: "2,753 sq.ft.",
@@ -46,7 +66,13 @@ const MAJESTIC_VILLA = {
   name: "The Majestic Villa",
   lockup: ["The M", "a", "gestic Villa"],
   location: "Sector 89, Mohali, Punjab, India",
-  images: [magesticVilla, magesticVilla],
+  images: [
+    magesticVilla1,
+    magesticVilla2,
+    magesticVilla3,
+    magesticVilla4,
+    magesticVilla5,
+  ],
   type: "Villa",
   plotSize: "1,835.19 sq.ft.",
   builtArea: "1,830 sq.ft",
@@ -62,7 +88,7 @@ const VANTAGE = {
   name: "The Vantage",
   lockup: ["The V", "a", "ntage"],
   location: "Sector 79, Mohali, Punjab, India",
-  images: [vantage, vantage],
+  images: [vantage1, vantage2, vantage3, vantage4, vantage5, vantage6],
   type: "Villa",
   plotSize: "2,756.25 sq.ft.",
   builtArea: "1,835.28 sq.ft.",
@@ -78,7 +104,7 @@ const CANOPY_VEIL = {
   name: "The Canopy Veil",
   lockup: ["The C", "a", "nopy Veil"],
   location: "Sector 60, Mohali, Punjab, India",
-  images: [canopyVeil, canopyVeil],
+  images: [canopyVeil1, canopyVeil2, canopyVeil3, canopyVeil4, canopyVeil5],
   type: "Villa",
   plotSize: "3,750 sq.ft.",
   builtArea: "8,041 sq.ft.",
@@ -123,7 +149,7 @@ function ProjectGallery({ project, className = "" }) {
               alt={`${project.name} — photo ${index + 1}`}
               width={photo.width}
               height={photo.height}
-              className="aspect-4/3 w-full min-w-0 shrink-0 grow-0 basis-full object-cover lg:aspect-481/492 lg:basis-auto"
+              className="aspect-343/241 w-full min-w-0 shrink-0 grow-0 basis-full object-cover lg:aspect-481/492 lg:basis-auto"
             />
           ))}
         </div>
