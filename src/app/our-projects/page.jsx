@@ -1,6 +1,8 @@
-import ArchitectProfilesSection from "./_sections/architect-profiles";
 import BannerSection from "./_sections/banner";
 import ConsultationCtaSection from "./_sections/consultation-cta";
+import FeaturedProjectsSection from "./_sections/featured-projects";
+import GlobalPresenceSection from "./_sections/global-presence";
+import OurLocationSection from "./_sections/our-location";
 
 export const metadata = {
   title: "Kapuria Developers",
@@ -11,7 +13,9 @@ export default function Architects() {
   return (
     <>
       <BannerSection />
-      <ArchitectProfilesSection />
+      <FeaturedProjectsSection />
+      <GlobalPresenceSection />
+      <OurLocationSection />
       <ConsultationCtaSection />
     </>
   );
