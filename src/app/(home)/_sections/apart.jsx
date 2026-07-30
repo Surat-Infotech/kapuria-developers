@@ -96,7 +96,7 @@ export default function ApartSection() {
           className="absolute inset-0 bg-[linear-gradient(106.31deg,rgba(0,0,0,0.5)_17.9%,rgba(0,0,0,0.315)_39.9%,rgba(0,0,0,0.24)_44.9%,rgba(0,0,0,0.195)_57.6%,rgba(0,0,0,0)_64.6%)]"
         />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 lg:gap-96 lg:pt-114">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 md:justify-start lg:gap-96 lg:pt-114">
           <h2 className="lg:text-display-sm hidden text-center text-[24px]/[32px] text-white sm:text-[40px]/[48px] md:block">
             What{" "}
             <span className="font-playfair text-gold-400 italic">sets</span> us
