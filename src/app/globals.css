@@ -232,3 +232,45 @@ html {
     animation: none;
   }
 }
+
+/* Brand marquee — each row holds the logo list twice, so shifting by exactly
+   half the track puts the copy where the original started and the loop is
+   seamless. The two rows travel opposite ways. */
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 45s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 45s linear infinite;
+}
+
+/* Pausing on hover lets someone read a logo they spotted. */
+.marquee:hover .animate-marquee-left,
+.marquee:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
+}
