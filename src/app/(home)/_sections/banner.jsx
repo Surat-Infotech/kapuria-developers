@@ -7,6 +7,7 @@ import Section from "@/components/ui/section";
 import circluarMotion from "@/assets/images/home/circluar-motion.webp";
 import bannerMobile from "@/assets/images/home/home-banner-mobile.webp";
 import banner from "@/assets/images/home/home-banner.webp";
+import mouseScroll from "@/assets/images/home/svg/mouse-scroll.svg";
 
 export default function BannerSection() {
   return (
@@ -60,6 +61,22 @@ export default function BannerSection() {
             />
           </div>
         </div>
+
+        {/* Scroll cue — mouse body plus the chevron below it, one asset.
+            Anchors to the next section so it works without client JS. */}
+        <a
+          href="#stand-strong"
+          aria-label="Scroll to next section"
+          className="mx-auto mt-24 hidden w-fit rounded-full transition-opacity duration-200 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none sm:block"
+        >
+          <Image
+            src={mouseScroll}
+            alt=""
+            width={29}
+            height={56}
+            className="animate-scroll-bob h-56 w-29"
+          />
+        </a>
       </Section>
     </div>
   );

@@ -6,7 +6,11 @@ import strongConstruction from "@/assets/images/home/strong-construction.webp";
 
 export default function StandStrong() {
   return (
-    <Section bg="raised" className="relative overflow-hidden py-32 md:py-0">
+    <Section
+      id="stand-strong"
+      bg="raised"
+      className="relative overflow-hidden py-32 md:py-0 lg:py-0"
+    >
       <div className="relative flex flex-col items-center gap-36 md:flex-row xl:gap-64">
         <Image
           src={strongConstruction}
