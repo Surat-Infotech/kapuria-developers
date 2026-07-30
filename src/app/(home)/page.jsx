@@ -1,6 +1,7 @@
 import ApartSection from "./_sections/apart";
 import BannerSection from "./_sections/banner";
 import Beautiful from "./_sections/beautiful";
+import GlobalPresence from "./_sections/global-presence";
 import QualityPromise from "./_sections/quality-promise";
 import SoundsGood from "./_sections/sounds-good";
 import StandStrong from "./_sections/stand-strong";
@@ -19,6 +20,7 @@ export default function Home() {
       <ApartSection />
       <SoundsGood />
       <QualityPromise />
+      <GlobalPresence />
     </>
   );
 }
