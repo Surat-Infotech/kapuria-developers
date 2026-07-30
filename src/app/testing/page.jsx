@@ -7,8 +7,10 @@ import QuadrantIcon from "@/assets/svgs/common/quadrant";
 export default function testing() {
   return (
     <main className="flex min-h-dvh flex-col items-start gap-8 p-16">
-      <h1 className="text-h3 text-foreground">Welcome to Kapuria Developers</h1>
-      <p className="text-link">
+      <h1 className="text-h3 text-foreground font-bold">
+        Welcome to Kapuria Developers
+      </h1>
+      <p className="text-link font-semibold">
         Before a Kapuria property is beautiful, it is tested. Soil studies, load
         calculations, seismic-resistant framing, and a 115-point inspection
         process happen long before the first finish goes on - because the parts

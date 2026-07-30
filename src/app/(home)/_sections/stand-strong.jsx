@@ -17,7 +17,7 @@ export default function StandStrong() {
         />
 
         <div className="flex w-full flex-col items-start gap-16 lg:w-647">
-          <h2 className="lg:text-display text-[32px]/[40px] sm:text-[48px]/[56px] md:text-[40px]/[50px]">
+          <h2 className="lg:text-display text-[32px]/[40px] font-medium sm:text-[48px]/[56px] md:text-[40px]/[50px]">
             Built to stand strong{" "}
             <span className="font-playfair text-gold-400 italic">
               for generations
@@ -26,7 +26,7 @@ export default function StandStrong() {
 
           <hr className="text-gold-400 w-34" />
 
-          <p className="lg:text-body sm:text-body-sm text-navy-800/60 text-[12px]/[18px]">
+          <p className="lg:text-body sm:text-body-sm text-navy-800/60 text-body-xs font-medium">
             We develop residential and commercial properties that combine
             structural excellence, meticulous craftsmanship, and enduring
             quality. Every project is built to perform, endure, and inspire

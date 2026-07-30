@@ -55,7 +55,7 @@ export default function OurMissionSection() {
             className="bg-gold-400 mt-16 mb-11 block h-1 w-34 md:my-16"
           />
 
-          <p className="mb-24 text-[12px]/[18px] font-medium text-[rgba(255,255,255,0.60)] md:text-[16px]/[24px]">
+          <p className="text-body-xs mb-24 font-medium text-[rgba(255,255,255,0.60)] md:text-[16px]/[24px]">
             {MISSION}
           </p>
           <div className="grid grid-cols-1 gap-24 md:grid-cols-3">
@@ -69,14 +69,14 @@ export default function OurMissionSection() {
                   {label}
                 </h3>
 
-                <p className="mt-8 text-[14px]/[22px] font-normal text-[#B8C4D4] md:text-[12px]/[18px]">
+                <p className="md:text-body-xs mt-8 text-[14px]/[22px] font-normal text-[#B8C4D4]">
                   {detail}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="mt-24 text-[12px]/[18px] font-medium text-[rgba(255,255,255,0.60)] md:text-[16px]/[24px]">
+          <p className="text-body-xs mt-24 font-medium text-[rgba(255,255,255,0.60)] md:text-[16px]/[24px]">
             We don&rsquo;t ask families to take our word for it.{" "}
             <span className="text-white">We hand them the proof.</span>
           </p>

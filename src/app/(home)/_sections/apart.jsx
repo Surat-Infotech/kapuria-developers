@@ -78,7 +78,7 @@ const FEATURES = [
 export default function ApartSection() {
   return (
     <Section spacing="default">
-      <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] sm:text-[40px]/[48px] md:hidden">
+      <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:hidden">
         What <span className="font-playfair text-gold-400 italic">sets</span> us
         apart?
       </h2>
@@ -97,7 +97,7 @@ export default function ApartSection() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 md:justify-start lg:gap-96 lg:pt-114">
-          <h2 className="lg:text-display-sm hidden text-center text-[24px]/[32px] text-white sm:text-[40px]/[48px] md:block">
+          <h2 className="lg:text-display-sm hidden text-center text-[24px]/[32px] font-medium text-white sm:text-[40px]/[48px] md:block">
             What{" "}
             <span className="font-playfair text-gold-400 italic">sets</span> us
             apart?
@@ -139,10 +139,10 @@ export default function ApartSection() {
             />
 
             <div className="flex flex-col items-center gap-8 text-center">
-              <h3 className="text-body sm:text-h5 text-navy-800 max-w-242">
+              <h3 className="text-body sm:text-h5 text-navy-800 max-w-242 font-medium">
                 {title}
               </h3>
-              <p className="xs:text-body-sm text-navy-800/60 text-[12px]/[18px] font-medium">
+              <p className="xs:text-body-sm text-navy-800/60 text-body-xs font-medium">
                 {description}
               </p>
             </div>

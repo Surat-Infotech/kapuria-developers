@@ -60,7 +60,7 @@ export default function QualityPromise() {
   return (
     <Section spacing="default">
       <div className="flex flex-col items-center gap-16 text-center">
-        <h2 className="lg:text-display text-[32px]/[40px] sm:text-[48px]/[56px]">
+        <h2 className="lg:text-display text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
           Our 115-point{" "}
           <span className="font-playfair text-gold-400 italic">
             quality promise.
@@ -69,7 +69,7 @@ export default function QualityPromise() {
 
         <hr className="text-gold-400 w-34" />
 
-        <p className="md:text-body sm:text-body-sm text-navy-800/60 text-[12px]/[18px]">
+        <p className="md:text-body sm:text-body-sm text-navy-800/60 text-body-xs font-medium">
           Most residential and commercial properties are sold on a feeling. Ours
           passes a 115-point inspection - soil to slab to seal. Every stage of
           construction is checked and signed off on across nine categories.
@@ -90,8 +90,12 @@ export default function QualityPromise() {
             />
 
             <div className="flex flex-col items-center gap-8 text-center">
-              <h3 className="text-h5 text-navy-800 max-w-242">{title}</h3>
-              <p className="text-body-sm text-navy-800/60">{description}</p>
+              <h3 className="text-h5 text-navy-800 max-w-242 font-medium">
+                {title}
+              </h3>
+              <p className="text-body-sm text-navy-800/60 font-medium">
+                {description}
+              </p>
             </div>
           </div>
         ))}
