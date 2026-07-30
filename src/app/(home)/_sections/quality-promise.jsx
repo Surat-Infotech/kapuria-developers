@@ -78,7 +78,7 @@ export default function QualityPromise() {
         </p>
       </div>
 
-      <div className="mt-64 grid grid-cols-2 gap-x-36 gap-y-40 lg:grid-cols-4 lg:gap-y-64">
+      <div className="mt-64 grid grid-cols-2 gap-x-16 gap-y-24 sm:gap-x-36 sm:gap-y-40 md:grid-cols-3 lg:grid-cols-4 lg:gap-y-64">
         {CATEGORIES.map(({ icon, title, description }) => (
           <div key={title} className="flex flex-col items-center gap-20">
             <Image
@@ -90,10 +90,10 @@ export default function QualityPromise() {
             />
 
             <div className="flex flex-col items-center gap-8 text-center">
-              <h3 className="text-h5 text-navy-800 max-w-242 font-medium">
+              <h3 className="text-body lg:text-h5 text-navy-800 max-w-242 font-medium sm:text-[20px]/[26px]">
                 {title}
               </h3>
-              <p className="text-body-sm text-navy-800/60 font-medium">
+              <p className="text-body-xs sm:text-body-sm text-navy-800/60 font-medium">
                 {description}
               </p>
             </div>

@@ -11,34 +11,34 @@ export default function SoundsGood() {
     <Section bg="dark" spacing="default">
       <div className="flex flex-col items-center gap-64">
         <div className="flex w-full items-end gap-24">
-          <div className="flex flex-1 flex-wrap items-end gap-40 lg:gap-120">
+          <div className="flex flex-1 flex-wrap-reverse items-start justify-center gap-24 md:justify-between">
             <Image
               src={helloWordmark}
               alt="hello."
               width={617}
               height={209}
-              className="h-auto w-full max-w-xs lg:max-w-617"
+              className="h-auto w-full max-w-400 lg:max-w-500 xl:max-w-617"
             />
+            <div className="flex items-center gap-4 md:items-end lg:gap-24">
+              <Image
+                src={violinist}
+                alt="An animated violinist playing in an arched window"
+                width={300}
+                height={300}
+                unoptimized
+                className="shrink-0 object-cover md:max-lg:w-270"
+              />
 
-            <Image
-              src={violinist}
-              alt="An animated violinist playing in an arched window"
-              width={300}
-              height={300}
-              unoptimized
-              className="shrink-0 object-cover"
-            />
+              <Image
+                src={muteIcon}
+                alt="Mute icon"
+                width={64}
+                height={64}
+                className="size-36 shrink-0 lg:block lg:size-64"
+              />
+            </div>
           </div>
-
-          <Image
-            src={muteIcon}
-            alt=""
-            width={60}
-            height={64}
-            className="hidden shrink-0 lg:block lg:h-64 lg:w-60"
-          />
         </div>
-
         <div className="flex w-full flex-col items-start gap-16">
           <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
             A Home That Sounds{" "}
