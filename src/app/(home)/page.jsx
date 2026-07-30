@@ -1,7 +1,12 @@
 import ApartSection from "./_sections/apart";
 import BannerSection from "./_sections/banner";
 import Beautiful from "./_sections/beautiful";
+import Brands from "./_sections/brands";
+import Contact from "./_sections/contact";
 import GlobalPresence from "./_sections/global-presence";
+import LatestContent from "./_sections/latest-content";
+import Materials from "./_sections/materials";
+import ProjectsSection from "./_sections/projects";
 import QualityPromise from "./_sections/quality-promise";
 import SoundsGood from "./_sections/sounds-good";
 import StandStrong from "./_sections/stand-strong";
@@ -20,7 +25,12 @@ export default function Home() {
       <ApartSection />
       <SoundsGood />
       <QualityPromise />
+      <ProjectsSection />
       <GlobalPresence />
+      <LatestContent />
+      <Materials />
+      <Brands />
+      <Contact />
     </>
   );
 }

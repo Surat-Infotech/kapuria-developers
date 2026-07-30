@@ -11,6 +11,7 @@ const widthStyles = {
 // Section Wrapper
 const bgStyles = {
   muted: "bg-muted text-foreground",
+  cream: "bg-background text-foreground",
   raised: "bg-surface-raised text-foreground",
   surface: "bg-surface text-foreground",
   dark: "bg-navy-950 text-surface-inverse-foreground",

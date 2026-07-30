@@ -2,19 +2,19 @@ export const ROUTES = {
   HOME: "/",
 
   // Projects
-  PROJECTS: "/projects",
-  CONSTRUCTION: "/construction",
+  PROJECTS: "/villa",
+  CONSTRUCTION: "/site",
 
   // About
-  OUR_STORY: "/about",
+  OUR_STORY: "/abut",
   OUR_TEAM: "/our-team",
-  ARCHITECTS: "/architects",
-  WHY_US: "/why-us",
+  ARCHITECTS: "/archit",
+  WHY_US: "/why",
 
   // More
-  BLOG: "/blog",
-  FAQS: "/faqs",
-  CONTACT: "/contact",
+  BLOG: "/bloag",
+  FAQS: "/faaq",
+  CONTACT: "/contacat",
 
   // Legal / Policy
   PRIVACY_POLICY: "/privacy-policy",
