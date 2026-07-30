@@ -80,13 +80,13 @@
   /* EXISTING TOKENS */
   --spacing: 1px;
 
-  --breakpoint-xs: 400px;
+  --breakpoint-xs: 425px;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1172px;
 
-  --container-xs: 400px;
+  --container-xs: 425px;
   --container-sm: 576px;
   --container-md: 768px;
   --container-lg: 992px;
@@ -139,68 +139,56 @@
   --text-display: 64px;
   --text-display--line-height: 72px;
   --text-display--letter-spacing: -1.92px;
-  --text-display--font-weight: 500;
 
   --text-display-accent: 64px;
   --text-display-accent--line-height: 72px;
   --text-display-accent--letter-spacing: 0px;
-  --text-display-accent--font-weight: 500;
 
   --text-display-sm: 60px;
   --text-display-sm--line-height: 68px;
   --text-display-sm--letter-spacing: -1.8px;
-  --text-display-sm--font-weight: 500;
 
   --text-display-sm-accent: 60px;
   --text-display-sm-accent--line-height: 68px;
   --text-display-sm-accent--letter-spacing: 0px;
-  --text-display-sm-accent--font-weight: 500;
 
   --text-h3: 26px;
   --text-h3--line-height: 34px;
-  --text-h3--font-weight: 700;
 
   --text-h3-accent: 26px;
   --text-h3-accent--line-height: 34px;
-  --text-h3-accent--font-weight: 400;
 
   --text-h4: 24px;
   --text-h4--line-height: 34px;
-  --text-h4--font-weight: 700;
 
   --text-h5: 24px;
   --text-h5--line-height: 32px;
-  --text-h5--font-weight: 500;
 
   --text-body-lg: 18px;
   --text-body-lg--line-height: 30px;
-  --text-body-lg--font-weight: 400;
 
   --text-body: 16px;
   --text-body--line-height: 24px;
-  --text-body--font-weight: 500;
 
   --text-body-relaxed: 16px;
   --text-body-relaxed--line-height: 26px;
-  --text-body-relaxed--font-weight: 500;
 
   --text-body-sm: 14px;
   --text-body-sm--line-height: 22px;
-  --text-body-sm--font-weight: 500;
+
+  --text-body-xs: 12px;
+  --text-body-xs--line-height: 18px;
 
   --text-btn: 18px;
   --text-btn--line-height: 30px;
   --text-btn--letter-spacing: 3.42px;
-  --text-btn--font-weight: 500;
 
   --text-eyebrow: 14px;
   --text-eyebrow--line-height: 22px;
   --text-eyebrow--letter-spacing: 2.88px;
-  --text-eyebrow--font-weight: 500;
 
   --text-link: 14px;
   --text-link--line-height: 22px;
-  --text-link--font-weight: 600;
 }
 
 body {

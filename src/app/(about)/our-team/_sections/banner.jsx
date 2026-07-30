@@ -31,7 +31,7 @@ export default function BannerSection() {
       >
         <div className="flex w-full items-end justify-between">
           <div>
-            <h1 className="lg:text-display text-[32px]/[40px] text-white min-[426px]:text-[40px]/[48px] md:text-[48px]/[56px]">
+            <h1 className="lg:text-display text-[32px]/[40px] font-medium text-white min-[426px]:text-[40px]/[48px] md:text-[48px]/[56px]">
               We don't build structures.
               <br />
               <span className="font-playfair text-gold-300 italic">
@@ -39,7 +39,7 @@ export default function BannerSection() {
               </span>
             </h1>
             <hr className="text-gold-300 my-14 w-34" />
-            <p className="md:text-body sm:text-body-sm mb-0 text-[12px]/[18px] text-white">
+            <p className="md:text-body sm:text-body-sm text-body-xs mb-0 font-medium text-white">
               Walk through any building we've made, and you'll find it holding
               more than walls - first steps near a doorway, a deal closed in a
               corner office, the quiet routines of an ordinary day. The spaces

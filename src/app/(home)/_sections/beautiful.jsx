@@ -21,7 +21,7 @@ export default function Beautiful() {
       <div className="relative flex flex-col-reverse items-center gap-40 md:flex-col lg:flex-row lg:gap-64">
         <div className="flex w-full flex-col items-start gap-24 lg:w-618">
           <div className="flex w-full flex-col items-start gap-16">
-            <h2 className="lg:text-display text-[32px]/[40px] text-white sm:text-[48px]/[56px]">
+            <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
               Before its beautiful{" "}
               <span className="font-playfair text-gold-300 italic">
                 it&rsquo;s tested.
@@ -30,7 +30,7 @@ export default function Beautiful() {
 
             <hr className="text-gold-300 w-34" />
 
-            <p className="md:text-body sm:text-body-sm text-[12px]/[18px] text-white/60">
+            <p className="md:text-body sm:text-body-sm text-body-xs font-medium text-white/60">
               Before a Kapuria property is beautiful, it is tested. Soil
               studies, load calculations, seismic-resistant framing, and a
               115-point inspection process happen long before the first finish

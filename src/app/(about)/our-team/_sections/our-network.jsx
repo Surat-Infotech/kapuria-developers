@@ -92,7 +92,7 @@ function PartnerTable({ heading, count, rows }) {
   return (
     <div>
       <div className="mb-12 flex items-baseline justify-between gap-16">
-        <h3 className="text-[12px]/[18px] font-medium tracking-[1.8px] text-white uppercase lg:text-[14px]/[16px] lg:tracking-[2px]">
+        <h3 className="text-body-xs font-medium tracking-[1.8px] text-white uppercase lg:text-[14px]/[16px] lg:tracking-[2px]">
           {heading}
         </h3>
         <span className="text-gold-300 font-serif text-[20px]/[22px] italic lg:text-[22px]/[24px]">
@@ -112,10 +112,10 @@ function PartnerTable({ heading, count, rows }) {
               key={trade}
               className="flex items-start justify-between gap-16 border-b border-white/8 py-12 last:border-b-0 lg:justify-start"
             >
-              <dt className="shrink-0 text-[12px]/[18px] font-semibold text-[#F0EBE0] lg:w-150 lg:text-[14px]/[22px]">
+              <dt className="text-body-xs shrink-0 font-semibold text-[#F0EBE0] lg:w-150 lg:text-[14px]/[22px]">
                 {trade}
               </dt>
-              <dd className="text-right text-[12px]/[18px] font-normal text-[rgba(255,255,255,0.62)] lg:flex-1 lg:text-left lg:text-[14px]/[22px]">
+              <dd className="text-body-xs text-right font-normal text-[rgba(255,255,255,0.62)] lg:flex-1 lg:text-left lg:text-[14px]/[22px]">
                 {names.map((name, index) => (
                   <span key={name}>
                     {/* Separator carries the gold; the names stay muted. */}
@@ -159,7 +159,7 @@ export default function OurNetworkSection() {
           {/* Gold rule is a desktop-only beat — mobile runs heading into copy. */}
           <hr className="my-8 h-1 w-34 border-0 bg-[#EBC37F] sm:my-16" />
 
-          <p className="max-w-596 text-[12px]/[18px] font-medium text-[rgba(255,255,255,0.60)] lg:text-[16px]/[24px]">
+          <p className="text-body-xs max-w-596 font-medium text-[rgba(255,255,255,0.60)] lg:text-[16px]/[24px]">
             {DESCRIPTION}
           </p>
         </div>
@@ -199,14 +199,14 @@ export default function OurNetworkSection() {
           >
             <span aria-hidden className={CAP} />
 
-            <p className="text-[12px]/[18px] font-normal text-[rgba(255,255,255,0.50)]">
+            <p className="text-body-xs font-normal text-[rgba(255,255,255,0.50)]">
               {VETTING_NOTE}
             </p>
 
             <Button
               variant="outline"
               size="sm"
-              className="hover:bg-gold-400/10 w-full shrink-0 px-16 py-11 text-[16px]/[24px] font-semibold tracking-[1.8px] text-[#EBC37F] sm:py-12 sm:text-[12px]/[18px] lg:w-auto"
+              className="hover:bg-gold-400/10 sm:text-body-xs w-full shrink-0 px-16 py-11 text-[16px]/[24px] font-semibold tracking-[1.8px] text-[#EBC37F] sm:py-12 lg:w-auto"
             >
               Become a Partner
             </Button>

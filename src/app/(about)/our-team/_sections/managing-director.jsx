@@ -31,11 +31,11 @@ export default function ManagingDirectorSection() {
             className="bg-gold-400 mx-auto my-11 block h-1 w-34 lg:mx-0 lg:my-16"
           />
 
-          <blockquote className="text-[12px]/[18px] font-medium text-[rgba(8,34,53,0.60)] md:text-[14px]/[28px]">
+          <blockquote className="text-body-xs font-medium text-[rgba(8,34,53,0.60)] md:text-[14px]/[28px]">
             &ldquo;{QUOTE}&rdquo;
           </blockquote>
 
-          <p className="text-foreground mt-8 text-[12px]/[18px] font-medium sm:text-[16px]/[24px] md:text-[18px]/[36px] lg:mt-16">
+          <p className="text-foreground text-body-xs mt-8 font-medium sm:text-[16px]/[24px] md:text-[18px]/[36px] lg:mt-16">
             – {NAME}
             <span className="text-foreground/60">, {ROLE}</span>
           </p>
