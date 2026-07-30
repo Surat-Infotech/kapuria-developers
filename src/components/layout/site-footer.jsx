@@ -90,7 +90,7 @@ const SiteFooter = () => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="hover:text-gold-300 text-[12px]/[18px] whitespace-nowrap text-[#99A4AB] transition-colors duration-200 sm:text-[14px]/[22px] md:text-[16px]/[26px]"
+                className="hover:text-gold-300 text-body-xs whitespace-nowrap text-[#99A4AB] transition-colors duration-200 sm:text-[14px]/[22px] md:text-[16px]/[26px]"
               >
                 {link.label}
               </Link>

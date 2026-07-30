@@ -48,7 +48,7 @@ export default function MeetOurTeamSection() {
             "text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:text-[52px]/[60px] lg:text-[64px]/[72px]",
           rule: "mt-8 sm:mt-16",
           description:
-            "mt-8 text-[12px]/[18px] text-[rgba(8,34,53,0.60)] font-medium sm:mt-16 sm:text-[16px]/[24px]",
+            "mt-8 text-body-xs text-[rgba(8,34,53,0.60)] font-medium sm:mt-16 sm:text-[16px]/[24px]",
         }}
         description={DESCRIPTION}
       />
@@ -72,7 +72,7 @@ export default function MeetOurTeamSection() {
                 <h3 className="md:text-h3 text-[18px]/[20px] font-bold text-white uppercase">
                   {name}
                 </h3>
-                <p className="text-gold-300 md:text-h3-accent font-serif text-[16px]/[24px] italic">
+                <p className="text-gold-300 md:text-h3-accent font-serif text-[16px]/[24px] font-normal italic">
                   {role}
                 </p>
               </div>

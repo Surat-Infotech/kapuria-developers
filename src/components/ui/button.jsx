@@ -16,9 +16,9 @@ const buttonVariants = cva(
         ghost: "bg-transparent text-navy-800 hover:bg-navy-800/5",
       },
       size: {
-        sm: "gap-12 px-16 py-8 text-body tracking-[3px]",
+        sm: "gap-12 px-16 py-8 text-body font-medium tracking-[3px]",
         default:
-          "gap-16 sm:px-24 sm:py-16 py-8 px-16 text-[16px]/[30px] sm:text-btn",
+          "gap-16 sm:px-24 sm:py-16 py-8 px-16 font-medium text-[16px]/[30px] sm:text-btn",
       },
       width: {
         auto: "",

@@ -27,7 +27,7 @@ export const SectionHeader = ({
       {heading && (
         <h2
           className={cn(
-            "text-display-sm sm:text-display max-w-xl",
+            "text-display-sm sm:text-display max-w-xl font-medium",
             classNames.heading
           )}
         >
@@ -48,7 +48,9 @@ export const SectionHeader = ({
       )}
 
       {description && (
-        <p className={cn("text-body mt-16", classNames.description)}>
+        <p
+          className={cn("text-body mt-16 font-medium", classNames.description)}
+        >
           {description}
         </p>
       )}

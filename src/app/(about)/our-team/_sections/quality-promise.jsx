@@ -116,7 +116,7 @@ export default function QualityPromiseSection() {
           />
 
           <div className="w-full lg:max-w-712">
-            <p className="text-gold-300 flex items-center justify-center gap-16 text-center text-[12px]/[18px] font-medium tracking-[2.2px] uppercase lg:justify-start lg:text-left lg:text-[14px]/[16px] lg:font-semibold lg:tracking-[2.4px] lg:text-[#C9A452]">
+            <p className="text-gold-300 text-body-xs flex items-center justify-center gap-16 text-center font-medium tracking-[2.2px] uppercase lg:justify-start lg:text-left lg:text-[14px]/[16px] lg:font-semibold lg:tracking-[2.4px] lg:text-[#C9A452]">
               <span
                 aria-hidden
                 className="hidden h-px w-44 bg-[#C9A452] lg:block"
@@ -185,11 +185,11 @@ export default function QualityPromiseSection() {
               key={mobileTitle}
               className="border-gold-400/80 border-t pt-8 pb-16 last:pb-0"
             >
-              <h3 className="flex items-center gap-10 text-[12px]/[18px] font-medium tracking-[1.8px] text-[#F2F5FA] uppercase">
+              <h3 className="text-body-xs flex items-center gap-10 font-medium tracking-[1.8px] text-[#F2F5FA] uppercase">
                 <BadgeCheckIcon className="text-gold-400 shrink-0" />
                 {mobileTitle}
               </h3>
-              <p className="mt-4 pl-28 text-[12px]/[18px] font-normal text-[rgba(255,255,255,0.60)]">
+              <p className="text-body-xs mt-4 pl-28 font-normal text-[rgba(255,255,255,0.60)]">
                 {mobileDetail}
               </p>
             </li>
