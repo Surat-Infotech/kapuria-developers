@@ -1,12 +1,14 @@
+import ContactFormSection from "./_sections/contact-form";
+
 export const metadata = {
   title: "Kapuria Developers",
   description: "The best minds in villa, farmhouse architecture & design.",
 };
 
-export default function Home() {
+export default function Contact() {
   return (
     <>
-      <h1>Contact</h1>
+      <ContactFormSection />
     </>
   );
 }
