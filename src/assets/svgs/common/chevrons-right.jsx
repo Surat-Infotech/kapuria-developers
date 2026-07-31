@@ -1,0 +1,23 @@
+import React from "react";
+
+export default function ChevronsRightIcon({ className = "", ...other }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      {...other}
+    >
+      <path
+        d="M6 17L11 12L6 7M13 17L18 12L13 7"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
