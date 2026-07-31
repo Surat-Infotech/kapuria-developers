@@ -56,7 +56,7 @@ export default function GlobalPresence() {
   return (
     <Section
       bg="dark"
-      className="bg-(image:--bg-global-presence) bg-cover bg-center bg-no-repeat py-64 lg:py-120"
+      className="bg-(image:--bg-global-presence) bg-cover bg-center bg-no-repeat py-32 sm:py-64 lg:py-120"
       style={{
         "--bg-global-presence": `url(${globalPresenceBg.src})`,
       }}
@@ -82,7 +82,7 @@ export default function GlobalPresence() {
       </div>
 
       {/* Horizontal rail — the next card peeks in past the gutter, as designed. */}
-      <div ref={emblaRef} className="mt-64 overflow-hidden">
+      <div ref={emblaRef} className="mt-24 overflow-hidden sm:mt-36 md:mt-64">
         <div className="flex gap-24">
           {LOCATIONS.map(({ image, city, country, description }) => (
             <div

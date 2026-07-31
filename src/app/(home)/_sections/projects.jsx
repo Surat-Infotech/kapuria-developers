@@ -82,7 +82,7 @@ const PROJECTS = [
 ];
 
 const Pill = ({ children }) => (
-  <span className="border-navy-800/40 text-navy-800 flex items-center justify-center rounded-[145px] border px-16 py-11 text-[12px]/[18px] font-normal whitespace-nowrap lg:text-[14px]/[18px]">
+  <span className="border-navy-800/40 text-navy-800 flex items-center justify-center rounded-[145px] border px-16 py-8 text-[12px]/[18px] font-normal whitespace-nowrap sm:py-11 lg:text-[14px]/[18px]">
     {children}
   </span>
 );
@@ -90,7 +90,7 @@ const Pill = ({ children }) => (
 // Desktop stacks a smaller "THE" above the name; mobile runs the whole thing
 // on one line. The arched window always replaces the name's first vowel.
 const Wordmark = ({ prefix, suffix }) => (
-  <h3 className="text-navy-800 mb-16 font-bold uppercase">
+  <h3 className="text-navy-800 font-bold uppercase sm:mb-16">
     <span className="flex flex-wrap items-center gap-2 text-[22px]/[30px] lg:flex-col lg:items-start lg:gap-4 lg:text-[60px]/[44px]">
       <span className="lg:text-[36px]/[44px]">THE</span>
 

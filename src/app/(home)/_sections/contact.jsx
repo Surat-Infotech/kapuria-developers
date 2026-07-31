@@ -26,14 +26,13 @@ export default function Contact() {
   return (
     <Section
       bg="cream"
-      spacing="lg"
-      className="relative overflow-hidden bg-(image:--bg-contact) bg-cover bg-center bg-no-repeat"
+      className="relative overflow-hidden bg-(image:--bg-contact) bg-cover bg-center bg-no-repeat py-32 sm:py-64 lg:py-120"
       style={{
         "--bg-contact": `url(${contactBg.src})`,
       }}
     >
       <div className="relative flex flex-col items-center gap-36 lg:flex-row">
-        <div className="flex w-full flex-col items-start gap-29 lg:flex-1">
+        <div className="flex w-full flex-col items-start gap-24 sm:gap-29 lg:flex-1">
           <div className="flex w-full flex-col items-start gap-16">
             <h2 className="lg:text-display text-navy-800 text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
               Lets discuss{" "}
@@ -114,7 +113,7 @@ export default function Contact() {
           alt="Families at home in a Kapuria residence"
           width={416}
           height={565}
-          className="w-full max-w-320 shrink-0 drop-shadow-[0_13px_23.5px_rgba(0,0,0,0.25)] lg:max-w-416"
+          className="hidden w-full max-w-320 shrink-0 drop-shadow-[0_13px_23.5px_rgba(0,0,0,0.25)] lg:block lg:max-w-416"
         />
       </div>
     </Section>

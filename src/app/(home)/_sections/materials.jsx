@@ -87,15 +87,15 @@ export default function Materials() {
         </p>
       </div>
 
-      <div ref={emblaRef} className="mt-64 overflow-hidden">
+      <div ref={emblaRef} className="mt-24 overflow-hidden sm:mt-36 md:mt-64">
         <div className="flex gap-24">
           {MATERIALS.map(({ image, title, description }) => (
             <div
               key={title}
               tabIndex={0}
-              className="rounded-[18px] bg-[linear-gradient(180deg,#00000000_0%,#EBC37F33_100%)] p-1"
+              className="rounded-md bg-[linear-gradient(180deg,#00000000_0%,#EBC37F33_100%)] p-1 sm:rounded-[18px]"
             >
-              <article className="group focus-visible:ring-gold-300 relative h-500 w-280 shrink-0 overflow-hidden rounded-[18px] focus-visible:ring-2 focus-visible:outline-none sm:h-600 sm:w-360 lg:h-689 lg:w-480">
+              <article className="group focus-visible:ring-gold-300 relative h-500 w-280 shrink-0 overflow-hidden rounded-md focus-visible:ring-2 focus-visible:outline-none sm:h-600 sm:w-360 sm:rounded-[18px] lg:h-689 lg:w-480">
                 <Image
                   src={image}
                   alt={title}
@@ -111,13 +111,13 @@ export default function Materials() {
                   className="absolute inset-0 transition-transform duration-500 ease-out [background:linear-gradient(0deg,rgba(8,34,53,0)_48.84%,rgba(8,34,53,0.5)_100%),linear-gradient(180deg,rgba(8,34,53,0)_51.16%,#001B2E_100%)] motion-reduce:transition-none lg:group-hover:translate-y-full lg:group-focus-visible:translate-y-full"
                 />
 
-                <div className="relative flex h-full flex-col justify-end p-24 lg:p-36">
-                  <div className="flex flex-col gap-16 transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none lg:group-hover:translate-y-24 lg:group-hover:opacity-0 lg:group-focus-visible:translate-y-24 lg:group-focus-visible:opacity-0">
-                    <h3 className="text-h5 lg:text-h4 font-bold text-white">
+                <div className="relative flex h-full flex-col justify-end p-16 sm:p-24 lg:p-36">
+                  <div className="flex flex-col gap-8 transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none sm:gap-16 lg:group-hover:translate-y-24 lg:group-hover:opacity-0 lg:group-focus-visible:translate-y-24 lg:group-focus-visible:opacity-0">
+                    <h3 className="text-body sm:text-h5 lg:text-h4 font-bold text-white">
                       {title}
                     </h3>
 
-                    <p className="lg:text-body-lg text-[14px]/[24px] font-normal text-white/90">
+                    <p className="lg:text-body-lg text-[10px]/[18px] font-normal text-white/90 sm:text-[14px]/[24px]">
                       {description.map((part, index) =>
                         typeof part === "string" ? (
                           part

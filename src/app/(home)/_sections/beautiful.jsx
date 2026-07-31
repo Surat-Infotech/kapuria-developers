@@ -31,13 +31,10 @@ export default function Beautiful() {
             <hr className="text-gold-300 w-34" />
 
             <p className="md:text-body sm:text-body-sm text-body-xs font-medium text-white/60">
-              Before a Kapuria property is beautiful, it is tested. Soil
-              studies, load calculations, seismic-resistant framing, and a
-              115-point inspection process happen long before the first finish
-              goes on - because the parts of a home that matter most are the
-              ones you&rsquo;ll never see. What you will see is a property
-              designed for light, air, and calm, on land that&rsquo;s
-              appreciating as fast as the city around it.
+              We develop residential and commercial properties that combine
+              structural excellence, meticulous craftsmanship, and enduring
+              quality. Every project is built to perform, endure, and inspire
+              confidence for generations to come.
             </p>
           </div>
 

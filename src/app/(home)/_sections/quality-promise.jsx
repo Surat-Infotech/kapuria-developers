@@ -44,7 +44,7 @@ const CATEGORIES = [
     title: (
       <>
         {" "}
-        Structural <br className="hidden lg:block" /> Frame
+        Structural <br /> Frame
       </>
     ),
     description: "Columns, beams, slab, and joint inspections",
@@ -63,8 +63,8 @@ const CATEGORIES = [
 
 export default function QualityPromise() {
   return (
-    <Section spacing="lg">
-      <div className="flex flex-col items-center gap-16 text-center">
+    <Section className="py-56 sm:py-64 lg:py-120">
+      <div className="flex flex-col gap-16 sm:items-center sm:text-center">
         <h2 className="lg:text-display text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
           Our 115-point{" "}
           <span className="font-playfair text-gold-400 italic">
@@ -83,12 +83,12 @@ export default function QualityPromise() {
         </p>
       </div>
 
-      <div className="mt-64 grid grid-cols-2 gap-x-16 gap-y-24 sm:gap-x-36 sm:gap-y-40 md:grid-cols-3 lg:grid-cols-4 lg:gap-y-64">
+      <div className="mt-36 grid grid-cols-2 gap-x-16 gap-y-24 sm:mt-64 sm:gap-x-36 sm:gap-y-40 md:grid-cols-3 lg:grid-cols-4 lg:gap-y-64">
         {CATEGORIES.map(({ icon, title, description }) => (
           <div key={title} className="flex flex-col items-center gap-20">
             <Image
               src={icon}
-              alt=""
+              alt="Icon"
               width={70}
               height={70}
               className="size-56 shrink-0 object-contain lg:size-70"
