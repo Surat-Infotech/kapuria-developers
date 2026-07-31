@@ -209,7 +209,7 @@ export default function ContactFormSection() {
                 {CONTACT_INTRO}
               </p>
 
-              <ul className="mt-16 flex flex-col gap-16 lg:mt-24 lg:gap-24">
+              <ul className="mt-16 flex max-w-290 flex-col gap-16 sm:max-w-full lg:mt-24 lg:gap-24">
                 {CONTACT_DETAILS.map(({ label, value, href, Icon }) => (
                   <li key={label} className="flex items-start gap-14">
                     <span className={TILE}>
