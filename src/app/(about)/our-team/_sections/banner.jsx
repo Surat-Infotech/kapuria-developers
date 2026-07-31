@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
 
+import mouseScroll from "@/assets/images/home/svg/mouse-scroll.svg";
 import bannerMobile from "@/assets/images/team/team-banner-mobile.webp";
 import banner from "@/assets/images/team/team-banner.webp";
 
@@ -48,6 +49,22 @@ export default function BannerSection() {
               strongest thing you own, too. <br /> That belief is where Kapuria
               Developers begins.
             </p>
+
+            {/* Scroll cue — mouse body plus the chevron below it, one asset.
+            Anchors to the next section so it works without client JS. */}
+            <a
+              href="#stand-strong"
+              aria-label="Scroll to next section"
+              className="mx-auto mt-24 hidden w-fit rounded-full transition-opacity duration-200 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none sm:block"
+            >
+              <Image
+                src={mouseScroll}
+                alt=""
+                width={29}
+                height={56}
+                className="animate-scroll-bob h-56 w-29"
+              />
+            </a>
           </div>
         </div>
       </Section>

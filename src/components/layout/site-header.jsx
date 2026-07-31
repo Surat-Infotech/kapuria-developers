@@ -180,7 +180,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
           asChild
           variant="secondary"
           size="sm"
-          className="shrink-0 px-24 py-10 text-[12px]/[20px] tracking-[1.6px]"
+          className="shrink-0 px-16 py-9 text-[14px]/[22px] tracking-[0.56px]"
         >
           <Link href={HEADER_CTA.href}>{HEADER_CTA.label}</Link>
         </Button>
@@ -362,7 +362,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
           variant="secondary"
           size="sm"
           width="full"
-          className="mt-32 py-14 text-[14px]/[22px] tracking-[2px]"
+          className="mt-32 py-9 text-[14px]/[22px] font-medium tracking-[2px]"
           tabIndex={menuOpen ? undefined : -1}
         >
           <Link href={HEADER_CTA.href} onClick={closeMenu}>
