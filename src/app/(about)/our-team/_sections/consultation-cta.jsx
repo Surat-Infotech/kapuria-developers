@@ -31,7 +31,7 @@ export default function ConsultationCtaSection() {
       <div className="flex flex-col gap-24 md:flex-row md:items-center lg:justify-between lg:gap-32 xl:gap-64">
         <div className="w-full lg:max-w-638">
           {/* Italic is a mobile-only nuance — desktop sets this line upright. */}
-          <p className="text-[16px]/[24px] font-medium text-[#B8C4D4] italic lg:not-italic">
+          <p className="text-[16px]/[24px] font-medium text-[rgba(255,255,255,0.60)] italic sm:text-[18px]/[26px] md:text-[22px]/[30px] lg:not-italic">
             {KICKER}
           </p>
 

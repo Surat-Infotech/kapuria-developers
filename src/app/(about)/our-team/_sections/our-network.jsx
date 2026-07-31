@@ -31,7 +31,7 @@ const CONTRACTORS = [
   { trade: "Tile Elevation", names: ["Mohd Zeeshan"] },
   { trade: "Waterproofing", names: ["Omparkash", "Gagan"] },
   { trade: "Structural Engineer", names: ["Mr. Nanda", "Mr. Rakhra"] },
-  { trade: "GMADA Sanction", names: ["Virender"] },
+  // { trade: "GMADA Sanction", names: ["Virender"] },
 ];
 
 const SUPPLIERS = [
