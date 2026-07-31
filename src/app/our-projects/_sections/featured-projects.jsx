@@ -5,117 +5,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { PROJECTS, projectHref } from "@/config/projects";
+
 import { Button } from "@/components/ui/button";
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
 
-import canopyVeil1 from "@/assets/images/our-projects/canopy-veil-1.webp";
-import canopyVeil2 from "@/assets/images/our-projects/canopy-veil-2.webp";
-import canopyVeil3 from "@/assets/images/our-projects/canopy-veil-3.webp";
-import canopyVeil4 from "@/assets/images/our-projects/canopy-veil-4.webp";
-import canopyVeil5 from "@/assets/images/our-projects/canopy-veil-5.webp";
-import magesticVilla1 from "@/assets/images/our-projects/magestic-project-1.webp";
-import magesticVilla2 from "@/assets/images/our-projects/magestic-project-2.webp";
-import magesticVilla3 from "@/assets/images/our-projects/magestic-project-3.webp";
-import magesticVilla4 from "@/assets/images/our-projects/magestic-project-4.webp";
-import magesticVilla5 from "@/assets/images/our-projects/magestic-project-5.webp";
-import palatialArc1 from "@/assets/images/our-projects/palatial-arc-1.webp";
-import palatialArc2 from "@/assets/images/our-projects/palatial-arc-2.webp";
-import palatialArc3 from "@/assets/images/our-projects/palatial-arc-3.webp";
-import palatialArc4 from "@/assets/images/our-projects/palatial-arc-4.webp";
-import palatialArc5 from "@/assets/images/our-projects/palatial-arc-5.webp";
-import vantage1 from "@/assets/images/our-projects/vantage-1.webp";
-import vantage2 from "@/assets/images/our-projects/vantage-2.webp";
-import vantage3 from "@/assets/images/our-projects/vantage-3.webp";
-import vantage4 from "@/assets/images/our-projects/vantage-4.webp";
-import vantage5 from "@/assets/images/our-projects/vantage-5.webp";
-import vantage6 from "@/assets/images/our-projects/vantage-6.webp";
 import QuadrantIcon from "@/assets/svgs/common/quadrant";
-
-// Every project in the design carries this same paragraph, so it is hoisted
-// until each one gets copy of its own.
-const DESCRIPTION =
-  "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation, reducing the need for artificial lighting and climate control.";
-
-const PALATIAL_ARC = {
-  id: "the-palatial-arc",
-  name: "The Palatial Arc",
-  // Split around the letter the brand mark stands in for on desktop; mobile
-  // keeps the letter itself.
-  lockup: ["The P", "o", "latial Arc"],
-  location: "Sector 88, Mohali, Punjab, India",
-  images: [
-    palatialArc1,
-    palatialArc2,
-    palatialArc3,
-    palatialArc4,
-    palatialArc5,
-  ],
-  type: "Villa",
-  plotSize: "2,852 sq.ft.",
-  builtArea: "2,753 sq.ft.",
-  floors: "2",
-  bedrooms: "5",
-  amenities: ["Private Pool", "2 Indoor Parking"],
-  description: DESCRIPTION,
-  href: "",
-};
-
-const MAJESTIC_VILLA = {
-  id: "the-majestic-villa",
-  name: "The Majestic Villa",
-  lockup: ["The M", "a", "gestic Villa"],
-  location: "Sector 89, Mohali, Punjab, India",
-  images: [
-    magesticVilla1,
-    magesticVilla2,
-    magesticVilla3,
-    magesticVilla4,
-    magesticVilla5,
-  ],
-  type: "Villa",
-  plotSize: "1,835.19 sq.ft.",
-  builtArea: "1,830 sq.ft",
-  floors: "2",
-  bedrooms: "5",
-  amenities: ["Private Pool", "1 Indoor Parking"],
-  description: DESCRIPTION,
-  href: "",
-};
-
-const VANTAGE = {
-  id: "the-vantage",
-  name: "The Vantage",
-  lockup: ["The V", "a", "ntage"],
-  location: "Sector 79, Mohali, Punjab, India",
-  images: [vantage1, vantage2, vantage3, vantage4, vantage5, vantage6],
-  type: "Villa",
-  plotSize: "2,756.25 sq.ft.",
-  builtArea: "1,835.28 sq.ft.",
-  floors: "3",
-  bedrooms: "5",
-  amenities: ["Private Pool", "1 Indoor Parking"],
-  description: DESCRIPTION,
-  href: "",
-};
-
-const CANOPY_VEIL = {
-  id: "the-canopy-veil",
-  name: "The Canopy Veil",
-  lockup: ["The C", "a", "nopy Veil"],
-  location: "Sector 60, Mohali, Punjab, India",
-  images: [canopyVeil1, canopyVeil2, canopyVeil3, canopyVeil4, canopyVeil5],
-  type: "Villa",
-  plotSize: "3,750 sq.ft.",
-  builtArea: "8,041 sq.ft.",
-  floors: "3",
-  bedrooms: "5",
-  amenities: ["Private Pool", "1 Indoor Parking"],
-  description: DESCRIPTION,
-  href: "",
-};
-
-const PROJECTS = [PALATIAL_ARC, MAJESTIC_VILLA, VANTAGE, CANOPY_VEIL];
 
 // Mobile lists every spec as its own row; desktop condenses the same values
 // onto two lines, so the labels live here rather than in the data.
@@ -261,12 +157,12 @@ function ProjectCard({ project }) {
         <ProjectSpecLines project={project} className="mt-24 hidden lg:block" />
 
         <ul className="mt-16 flex flex-wrap gap-12 sm:gap-16">
-          {project.amenities.map((amenity) => (
+          {project.highlights.map((highlight) => (
             <li
-              key={amenity}
+              key={highlight}
               className="rounded-full border border-[rgba(255,255,255,0.40)] bg-[rgba(255,255,255,0.00)] px-16 py-8 text-[12px]/[18px] font-medium text-white backdrop-blur-[107px] backdrop-filter sm:text-[16px]/[24x] md:text-[18px]/[26px] lg:px-20 lg:py-10"
             >
-              {amenity}
+              {highlight}
             </li>
           ))}
         </ul>
@@ -281,7 +177,7 @@ function ProjectCard({ project }) {
           width="full"
           className="mt-16 px-16 py-8 font-medium tracking-[3.04px] text-[#082235] md:px-24 md:py-16 md:tracking-[3.42px] lg:mt-36 lg:w-auto"
         >
-          <Link href={project.href}>
+          <Link href={projectHref(project)}>
             {/* Mobile leads with the action, desktop with the invitation. */}
             <span className="lg:hidden">View Property</span>
             <span className="hidden lg:inline">Know More</span>
@@ -296,7 +192,7 @@ export default function FeaturedProjectsSection() {
   return (
     <Section bg="dark" spacing="none" className="py-0">
       {PROJECTS.map((project) => (
-        <ProjectCard key={project.id} project={project} />
+        <ProjectCard key={project.slug} project={project} />
       ))}
     </Section>
   );
