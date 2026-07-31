@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
 
+import contactBg from "@/assets/images/home/bg-contact.webp";
 import contactUs from "@/assets/images/home/contact-us.webp";
 import QuadrantIcon from "@/assets/svgs/common/quadrant";
 
@@ -18,8 +19,19 @@ export default function Contact() {
     // TODO: wire up to the enquiry endpoint / server action.
   };
 
+  // The artwork rides as a CSS background rather than an <Image> child — the
+  // section's container is width-capped, so a child could not bleed across —
+  // and the URL comes in as a custom property because its hashed path isn't
+  // known at build time.
   return (
-    <Section bg="cream" spacing="lg" className="relative overflow-hidden">
+    <Section
+      bg="cream"
+      spacing="lg"
+      className="relative overflow-hidden bg-(image:--bg-contact) bg-cover bg-center bg-no-repeat"
+      style={{
+        "--bg-contact": `url(${contactBg.src})`,
+      }}
+    >
       <div className="relative flex flex-col items-center gap-36 lg:flex-row">
         <div className="flex w-full flex-col items-start gap-29 lg:flex-1">
           <div className="flex w-full flex-col items-start gap-16">
@@ -92,7 +104,7 @@ export default function Contact() {
 
             <Button type="submit" className="w-full gap-10 sm:w-auto">
               <QuadrantIcon className="text-gold-300 size-18 shrink-0" />
-              Book Free Consultation
+              Book <span className="hidden sm:block">Free</span> Consultation
             </Button>
           </form>
         </div>

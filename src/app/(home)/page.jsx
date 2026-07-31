@@ -6,6 +6,7 @@ import Contact from "./_sections/contact";
 import GlobalPresence from "./_sections/global-presence";
 import LatestContent from "./_sections/latest-content";
 import Materials from "./_sections/materials";
+import OurMission from "./_sections/our-mission";
 import ProjectsSection from "./_sections/projects";
 import QualityPromise from "./_sections/quality-promise";
 import SoundsGood from "./_sections/sounds-good";
@@ -24,12 +25,13 @@ export default function Home() {
       <Beautiful />
       <ApartSection />
       <SoundsGood />
-      <QualityPromise />
       <ProjectsSection />
+      <QualityPromise />
       <GlobalPresence />
       <LatestContent />
       <Materials />
       <Brands />
+      <OurMission />
       <Contact />
     </>
   );
