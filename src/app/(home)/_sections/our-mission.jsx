@@ -24,7 +24,7 @@ export default function OurMission() {
         "--bg-desktop": `url(${ConsultationBg.src})`,
       }}
     >
-      <div className="flex flex-col gap-24 md:flex-row md:items-center lg:justify-between lg:gap-32 xl:gap-64">
+      <div className="flex flex-col gap-24 md:flex-row md:items-center lg:justify-between lg:gap-32 xl:gap-62">
         <div className="w-full lg:max-w-675">
           <p className="text-gold-300 text-body-sm font-medium tracking-[2.52px]">
             {KICKER}

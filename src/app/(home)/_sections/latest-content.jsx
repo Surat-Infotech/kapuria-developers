@@ -68,7 +68,7 @@ export default function LatestContent() {
   });
 
   return (
-    <Section spacing="lg">
+    <Section className="py-32 sm:py-64 lg:py-120">
       <div className="flex max-w-742 flex-col items-start gap-16">
         <h2 className="lg:text-display text-navy-800 text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
           Watch our{" "}
@@ -85,7 +85,7 @@ export default function LatestContent() {
         </p>
       </div>
 
-      <div ref={emblaRef} className="mt-64 overflow-hidden">
+      <div ref={emblaRef} className="overflow-hidden pt-24 sm:pt-36 md:mt-64">
         <div className="flex gap-24">
           {REELS.map(({ id, cover, video, views }) => {
             const isPlaying = playingId === id;
@@ -153,7 +153,7 @@ export default function LatestContent() {
         </div>
       </div>
 
-      <div className="mt-64 flex flex-col items-stretch gap-24 sm:flex-row sm:items-center sm:justify-between lg:gap-64">
+      <div className="mt-24 flex flex-col-reverse items-stretch gap-24 sm:mt-36 sm:flex-row sm:items-center sm:justify-between md:mt-64 lg:gap-64">
         <Button asChild className="gap-9 sm:w-auto">
           <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">
             <Image src={instagramIcon} alt="Instagram" width={21} height={21} />
