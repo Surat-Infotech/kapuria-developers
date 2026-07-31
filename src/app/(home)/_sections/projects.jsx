@@ -82,7 +82,7 @@ const PROJECTS = [
 ];
 
 const Pill = ({ children }) => (
-  <span className="border-navy-800/40 text-navy-800 flex items-center justify-center rounded-[145px] border px-16 py-8 text-[12px]/[18px] font-normal whitespace-nowrap lg:text-[14px]/[18px]">
+  <span className="border-navy-800/40 text-navy-800 flex items-center justify-center rounded-[145px] border px-16 py-11 text-[12px]/[18px] font-normal whitespace-nowrap lg:text-[14px]/[18px]">
     {children}
   </span>
 );
@@ -90,7 +90,7 @@ const Pill = ({ children }) => (
 // Desktop stacks a smaller "THE" above the name; mobile runs the whole thing
 // on one line. The arched window always replaces the name's first vowel.
 const Wordmark = ({ prefix, suffix }) => (
-  <h3 className="text-navy-800 font-bold uppercase">
+  <h3 className="text-navy-800 mb-16 font-bold uppercase">
     <span className="flex flex-wrap items-center gap-2 text-[22px]/[30px] lg:flex-col lg:items-start lg:gap-4 lg:text-[60px]/[44px]">
       <span className="lg:text-[36px]/[44px]">THE</span>
 
@@ -140,12 +140,12 @@ export default function ProjectsSection() {
                       <div className="flex flex-col gap-6 lg:gap-4">
                         <Wordmark prefix={prefix} suffix={suffix} />
 
-                        <p className="text-navy-800/60 text-[12px]/[18px] font-normal lg:text-[16px]/[24px]">
+                        <p className="text-navy-800 lg:text-body text-[12px]/[18px] font-normal">
                           {tagline}
                         </p>
                       </div>
 
-                      <hr className="text-gold-400 hidden w-34 lg:block" />
+                      <hr className="text-navy-800 hidden w-34 lg:block" />
                     </div>
 
                     <div className="flex flex-col gap-24">
@@ -159,7 +159,7 @@ export default function ProjectsSection() {
                         {specs.map(({ label, value }, index) => (
                           <div
                             key={label}
-                            className="border-navy-800/12 flex items-center justify-between border-b py-8 text-[12px]/[18px] lg:justify-start lg:gap-10 lg:border-0 lg:py-0 lg:text-[20px]/[34px]"
+                            className="border-navy-800/12 flex items-center justify-between border-b py-8 text-[12px]/[18px] sm:text-[16px]/[24px] lg:justify-start lg:gap-10 lg:border-0 lg:py-0 lg:text-[20px]/[34px]"
                           >
                             <dt className="text-navy-800/60 font-medium">
                               {label}

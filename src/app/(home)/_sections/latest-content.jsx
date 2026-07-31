@@ -15,9 +15,9 @@ import reel2 from "@/assets/images/home/reels/reel-2.webp";
 import reel3 from "@/assets/images/home/reels/reel-3.webp";
 import reel4 from "@/assets/images/home/reels/reel-4.webp";
 import reel5 from "@/assets/images/home/reels/reel-5.webp";
+import instagramIcon from "@/assets/images/home/svg/instagram.svg";
 import playIcon from "@/assets/images/home/svg/play.svg";
 import EyeIcon from "@/assets/svgs/common/eye";
-import InstagramIcon from "@/assets/svgs/social/instagram";
 
 const INSTAGRAM_URL = "https://www.instagram.com/kapuria_developers/reels/";
 
@@ -156,7 +156,7 @@ export default function LatestContent() {
       <div className="mt-64 flex flex-col items-stretch gap-24 sm:flex-row sm:items-center sm:justify-between lg:gap-64">
         <Button asChild className="gap-9 sm:w-auto">
           <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">
-            <InstagramIcon className="size-21 shrink-0" />
+            <Image src={instagramIcon} alt="Instagram" width={21} height={21} />
             Follow our journey
           </a>
         </Button>

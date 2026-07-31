@@ -41,7 +41,12 @@ const CATEGORIES = [
   },
   {
     icon: structuralFrameIcon,
-    title: "Structural Frame",
+    title: (
+      <>
+        {" "}
+        Structural <br className="hidden lg:block" /> Frame
+      </>
+    ),
     description: "Columns, beams, slab, and joint inspections",
   },
   {
@@ -58,7 +63,7 @@ const CATEGORIES = [
 
 export default function QualityPromise() {
   return (
-    <Section spacing="default">
+    <Section spacing="lg">
       <div className="flex flex-col items-center gap-16 text-center">
         <h2 className="lg:text-display text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
           Our 115-point{" "}
@@ -101,7 +106,7 @@ export default function QualityPromise() {
         ))}
       </div>
 
-      <div className="mt-64 flex justify-center">
+      <div className="mt-36 flex justify-center sm:mt-64">
         <Button asChild className="w-full sm:w-auto">
           <Link href="">Download Checklist</Link>
         </Button>

@@ -18,7 +18,7 @@ const buttonVariants = cva(
       size: {
         sm: "gap-12 px-16 py-8 text-body font-medium tracking-[3px]",
         default:
-          "gap-16 sm:px-24 sm:py-16 py-8 px-16 font-medium text-[16px]/[30px] sm:text-btn",
+          "gap-16 sm:px-24 sm:py-16 py-8 px-16 font-medium text-[16px]/[30px] tracking-[3.04px] sm:text-btn sm:tracking-[3.42px]",
       },
       width: {
         auto: "",
