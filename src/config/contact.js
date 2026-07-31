@@ -1,0 +1,55 @@
+import ClockBoldIcon from "@/assets/svgs/common/clock-bold";
+import MailIcon from "@/assets/svgs/common/mail";
+import MapPinIcon from "@/assets/svgs/common/map-pin";
+import PhoneIcon from "@/assets/svgs/common/phone";
+
+// TODO: swap in the real desk details.
+export const CONTACT_INTRO =
+  "Serenity Palms Mansions, Sector 120, Mohali — your dedicated project desk.";
+
+// `href` marks a detail as actionable — those render as emphasised links,
+// the rest as plain text.
+export const CONTACT_DETAILS = [
+  {
+    label: "Phone",
+    value: "+91 70552 21522",
+    href: "tel:+917055221522",
+    Icon: PhoneIcon,
+  },
+  {
+    label: "Email",
+    value: "contactus@kapuria.com",
+    href: "mailto:contactus@kapuria.com",
+    Icon: MailIcon,
+  },
+  {
+    label: "Office",
+    value: "Kapuria House, Sector 120, Mohali, Punjab 140301",
+    Icon: MapPinIcon,
+  },
+  {
+    label: "Hours",
+    value: "Mon–Fri · 10:00 – 18:00 IST",
+    Icon: ClockBoldIcon,
+  },
+];
+
+// Dial codes cover the regions on the global-presence map, plus the two
+// markets most enquiries arrive from.
+export const PHONE_COUNTRY_CODES = [
+  { code: "+91", label: "India", flag: "🇮🇳" },
+  { code: "+971", label: "United Arab Emirates", flag: "🇦🇪" },
+  { code: "+30", label: "Greece", flag: "🇬🇷" },
+  { code: "+44", label: "United Kingdom", flag: "🇬🇧" },
+  { code: "+1", label: "United States", flag: "🇺🇸" },
+];
+
+export const ENQUIRY_TOPICS = [
+  "General enquiry",
+  "Booking a new villa",
+  "My villa — existing project",
+  "Documents & paperwork",
+  "Handover & possession",
+  "Careers",
+  "Something else",
+];
