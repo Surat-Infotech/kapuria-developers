@@ -3,6 +3,7 @@ export const ROUTES = {
 
   // Projects
   PROJECTS: "/villa",
+  OUR_PROJECTS: "/our-projects",
   CONSTRUCTION: "/site",
 
   // About
