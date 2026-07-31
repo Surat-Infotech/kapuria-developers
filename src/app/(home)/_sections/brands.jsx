@@ -68,17 +68,15 @@ const Row = ({ items, direction }) => (
   >
     {/* Duplicated so the 50% shift lands on an identical frame. */}
     {[...items, ...items].map(({ logo, name }, index) => (
-      <div
-        key={`${name}-${index}`}
-        className="flex h-96 w-200 shrink-0 items-center justify-center lg:h-128 lg:w-244"
-      >
+      <div key={`${name}-${index}`}>
+        <hr className="text-gold-400" />
         <Image
           src={logo}
           alt={index < items.length ? name : ""}
           aria-hidden={index >= items.length}
-          width={211}
-          height={63}
-          className="h-auto w-full max-w-160 object-contain lg:max-w-211"
+          width={244}
+          height={128}
+          className="h-56 w-108 lg:h-128 lg:w-244"
         />
       </div>
     ))}
@@ -87,7 +85,7 @@ const Row = ({ items, direction }) => (
 
 export default function Brands() {
   return (
-    <Section bg="surface" spacing="lg" width="full">
+    <Section bg="surface" spacing="default" width="full">
       <div className="mx-auto flex max-w-740 flex-col items-center gap-16 px-16 text-center">
         <h2 className="lg:text-display text-navy-800 text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
           We use top brands for{" "}
@@ -105,7 +103,7 @@ export default function Brands() {
       </div>
 
       {/* Full-bleed: the rails run edge to edge, no container gutter. */}
-      <div className="marquee mt-64 flex flex-col gap-24 overflow-hidden lg:gap-64">
+      <div className="marquee mt-24 flex flex-col gap-24 overflow-hidden sm:mt-64 lg:gap-64">
         <Row items={TOP_ROW} direction="left" />
         <Row items={BOTTOM_ROW} direction="right" />
       </div>
