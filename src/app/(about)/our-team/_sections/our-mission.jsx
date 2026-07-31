@@ -28,7 +28,11 @@ const PILLARS = [
 
 export default function OurMissionSection() {
   return (
-    <Section bg="dark" spacing="default" classNames={{ container: "lg:px-24" }}>
+    <Section
+      spacing="default"
+      className="bg-[#0A1D38]"
+      classNames={{ container: "lg:px-24" }}
+    >
       <div className="flex flex-col items-center gap-24 lg:flex-row lg:items-center lg:gap-36">
         {/* The gold coin and ring are baked into the artwork. */}
         <Image
