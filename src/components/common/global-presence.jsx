@@ -7,11 +7,11 @@ import Image from "next/image";
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
 
-import abuDhabi from "@/assets/images/home/abu-dhabi.webp";
-import athens from "@/assets/images/home/athens.webp";
-import globalPresenceBg from "@/assets/images/home/bg-global-presence.webp";
-import dubai from "@/assets/images/home/dubai.webp";
-import india from "@/assets/images/home/india.webp";
+import abuDhabi from "@/assets/images/common/abu-dhabi.webp";
+import athens from "@/assets/images/common/athens.webp";
+import globalPresenceBg from "@/assets/images/common/bg-global-presence.webp";
+import dubai from "@/assets/images/common/dubai.webp";
+import india from "@/assets/images/common/india.webp";
 
 const LOCATIONS = [
   {
