@@ -9,24 +9,13 @@ import {
 import { SOCIAL_LINKS } from "@/config/footer";
 
 import { FooterLogo } from "@/components/common/logo";
-import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
-import SectionHeader from "@/components/ui/section-header";
 
 import ChevronDownIcon from "@/assets/svgs/common/chevron-down";
 import SendIcon from "@/assets/svgs/common/send";
 
-const EYEBROW = "Support";
-
-const DESCRIPTION =
-  "Questions about your villa, documents or handover? Your project team usually replies within one business day.";
-
 const LABEL = "mb-8 block text-body-xs font-semibold text-[#6A7680]";
 
-// Shared by the text inputs, the selects and the textarea. `block` matters:
-// form controls are inline-block by default, so the parent keeps a line box
-// and leaves a sliver of descender space under the control — most visible
-// under the textarea.
 const FIELD =
   "block w-full rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-body-xs font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-body-sm";
 
@@ -54,27 +43,24 @@ export default function ContactFormSection() {
         spacing="none"
         className="relative pt-32 pb-32 lg:pt-64 lg:pb-120"
       >
-        <p className="text-eyebrow text-gold-400 mb-8 uppercase">{EYEBROW}</p>
+        <p className="text-eyebrow text-gold-400 mb-8 font-semibold uppercase">
+          Support
+        </p>
 
-        <SectionHeader
-          className="mb-32"
-          heading={
-            <>
-              Get{" "}
-              <span className="font-playfair text-gold-400 italic">
-                in touch
-              </span>
-            </>
-          }
-          classNames={{
-            heading:
-              "text-[30px]/[40px] font-medium sm:text-[44px]/[452px] md:text-[56px]/[64px] lg:text-display",
-            rule: "my-8 lg:my-16",
-            description:
-              "mt-0 text-body-sm font-normal rgba(8,34,53,0.60) sm:text-body",
-          }}
-          description={DESCRIPTION}
-        />
+        <div className="mb-32 flex flex-col items-start text-left">
+          <h2 className="lg:text-display max-w-xl text-[30px]/[40px] font-medium sm:text-[44px]/[452px] md:text-[56px]/[64px]">
+            Get{" "}
+            <span className="font-playfair text-gold-400 italic">in touch</span>
+          </h2>
+
+          {/* Gold rule — the recurring 34px divider under every section heading */}
+          <hr className="text-gold-400 my-8 block w-34 sm:my-16" />
+
+          <p className="text-body-sm sm:text-body text-navy-800/60 font-medium">
+            Questions about your villa, documents or handover? Your project team
+            usually replies within one business day.
+          </p>
+        </div>
 
         <div className="grid overflow-hidden rounded-[20px] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
           {/* ── Enquiry form ─────────────────────────────────────── */}

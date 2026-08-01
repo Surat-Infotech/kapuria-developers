@@ -16,7 +16,7 @@ export default function BannerSection() {
         alt="Home Banner"
         width="100%"
         height="100%"
-        className="hidden w-full min-[700px]:block"
+        className="hidden w-full min-[700px]:block md:h-732 lg:h-auto"
       />
       <Image
         src={bannerMobile}
@@ -53,13 +53,13 @@ export default function BannerSection() {
             {/* Scroll cue — mouse body plus the chevron below it, one asset.
             Anchors to the next section so it works without client JS. */}
             <a
-              href="#stand-strong"
+              href="#managing-director"
               aria-label="Scroll to next section"
               className="mx-auto mt-24 hidden w-fit rounded-full transition-opacity duration-200 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none sm:block"
             >
               <Image
                 src={mouseScroll}
-                alt=""
+                alt="Mouse scroll"
                 width={29}
                 height={56}
                 className="animate-scroll-bob h-56 w-29"

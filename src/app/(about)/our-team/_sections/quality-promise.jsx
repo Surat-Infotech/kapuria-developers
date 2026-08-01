@@ -98,7 +98,9 @@ export default function QualityPromiseSection() {
         <Image
           src={PromiseBadgeMobile}
           alt="Kapuria Developers 115 point promise"
-          className="w-full"
+          className="mx-auto block"
+          width={343}
+          height={194}
         />
       </div>
 
