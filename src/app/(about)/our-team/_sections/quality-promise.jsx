@@ -152,7 +152,7 @@ export default function QualityPromiseSection() {
             <div className="lg:flex lg:items-center lg:gap-24">
               {/* Width and shrink belong on the flex child, not the copy. */}
               <div className="lg:border-r-gold-300/50 lg:w-354 lg:shrink-0 lg:border-r">
-                <p className="text-gold-300 text-center text-[14px]/[22px] font-medium tracking-[1.5px] uppercase lg:text-left lg:text-[20px]/[28px] lg:tracking-[3.6px]">
+                <p className="text-gold-300 text-body-sm text-center font-medium tracking-[1.5px] uppercase lg:text-left lg:text-[20px]/[28px] lg:tracking-[3.6px]">
                   Soil to slab to seal
                   {/* Italic is a desktop-only distinction — mobile runs both
                     lines in the one upright style. */}
@@ -162,7 +162,7 @@ export default function QualityPromiseSection() {
                 </p>
               </div>
 
-              <p className="mt-16 text-center text-[14px]/[22px] font-medium text-[rgba(255,255,255,0.60)] lg:mt-0 lg:text-left lg:text-[16px]/[24px]">
+              <p className="text-body-sm lg:text-body mt-16 text-center font-medium text-[rgba(255,255,255,0.60)] lg:mt-0 lg:text-left">
                 {CREDENTIALS}{" "}
                 <span className="text-white">
                   in every wall you&rsquo;ll never see.
@@ -174,7 +174,7 @@ export default function QualityPromiseSection() {
           </div>
         </div>
 
-        <p className="mt-16 text-[16px]/[24px] font-normal text-[#F2F5FA] sm:mt-24 md:mt-40 lg:mt-56 lg:text-center lg:text-[18px]/[26px] lg:font-medium">
+        <p className="text-body mt-16 font-normal text-[#F2F5FA] sm:mt-24 md:mt-40 lg:mt-56 lg:text-center lg:text-[18px]/[26px] lg:font-medium">
           {DOCUMENTATION}
         </p>
 

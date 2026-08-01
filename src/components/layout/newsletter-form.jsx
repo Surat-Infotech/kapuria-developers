@@ -33,7 +33,7 @@ const NewsletterForm = () => {
       <Button
         type="submit"
         variant="secondary"
-        className="w-full gap-10 rounded-[60px] px-16 py-8 text-[18px]/[30px] font-medium tracking-[3.42px] sm:w-auto md:py-16 lg:px-16 lg:text-[16px]/[24px] lg:tracking-[2.66px] xl:px-24 xl:text-[18px]/[30px] xl:tracking-[3.42px]"
+        className="text-body-lg lg:text-body xl:text-body-lg w-full gap-10 rounded-[60px] px-16 py-8 font-medium tracking-[3.42px] sm:w-auto md:py-16 lg:px-16 lg:tracking-[2.66px] xl:px-24 xl:tracking-[3.42px]"
       >
         {/* The icon only appears in the mobile comp. */}
         <QuadrantIcon className="size-20 shrink-0 lg:hidden" />
