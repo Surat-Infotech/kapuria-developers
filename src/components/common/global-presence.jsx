@@ -62,16 +62,18 @@ export default function GlobalPresence() {
       }}
     >
       <div className="flex flex-col items-start gap-16">
-        <p className="text-eyebrow text-gold-300 font-medium uppercase">
-          Our Reach
-        </p>
+        <div>
+          <p className="text-eyebrow text-gold-300 mb-8 font-medium uppercase">
+            Our Reach
+          </p>
 
-        <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
-          Our{" "}
-          <span className="font-playfair text-gold-300 italic">
-            Global Presence
-          </span>
-        </h2>
+          <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
+            Our{" "}
+            <span className="font-playfair text-gold-300 italic">
+              Global Presence
+            </span>
+          </h2>
+        </div>
 
         <hr className="text-gold-300 w-34" />
 
@@ -82,7 +84,7 @@ export default function GlobalPresence() {
       </div>
 
       {/* Horizontal rail — the next card peeks in past the gutter, as designed. */}
-      <div ref={emblaRef} className="mt-24 overflow-hidden sm:mt-36 md:mt-64">
+      <div ref={emblaRef} className="my-24 overflow-hidden sm:mt-36 md:my-64">
         <div className="flex gap-24">
           {LOCATIONS.map(({ image, city, country, description }) => (
             <div
@@ -138,7 +140,7 @@ export default function GlobalPresence() {
       <CarouselNav
         api={emblaApi}
         variant="light"
-        className="mt-40 justify-end"
+        className="justify-end"
         prevLabel="Previous locations"
         nextLabel="Next locations"
       />
