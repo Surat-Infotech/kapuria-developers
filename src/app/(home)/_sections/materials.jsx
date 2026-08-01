@@ -87,7 +87,7 @@ export default function Materials() {
         </p>
       </div>
 
-      <div ref={emblaRef} className="mt-24 overflow-hidden sm:mt-36 md:mt-64">
+      <div ref={emblaRef} className="my-24 overflow-hidden sm:my-36 md:my-64">
         <div className="flex gap-24">
           {MATERIALS.map(({ image, title, description }) => (
             <div
@@ -113,11 +113,11 @@ export default function Materials() {
 
                 <div className="relative flex h-full flex-col justify-end p-16 sm:p-24 lg:p-36">
                   <div className="flex flex-col gap-8 transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none sm:gap-16 lg:group-hover:translate-y-24 lg:group-hover:opacity-0 lg:group-focus-visible:translate-y-24 lg:group-focus-visible:opacity-0">
-                    <h3 className="text-body sm:text-h5 lg:text-h4 font-bold text-white">
+                    <h3 className="text-body xs:text-body-lg sm:text-h5 lg:text-h4 font-bold text-white">
                       {title}
                     </h3>
 
-                    <p className="lg:text-body-lg text-[10px]/[18px] font-normal text-white/90 sm:text-[14px]/[24px]">
+                    <p className="lg:text-body-lg xs:text-[12px]/[20px] sm:text-body-sm text-[10px]/[18px] font-normal text-white/90">
                       {description.map((part, index) =>
                         typeof part === "string" ? (
                           part
@@ -139,7 +139,7 @@ export default function Materials() {
       <CarouselNav
         api={emblaApi}
         variant="light"
-        className="mt-40 justify-end"
+        className="justify-end"
         prevLabel="Previous material"
         nextLabel="Next material"
       />

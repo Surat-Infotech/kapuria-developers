@@ -77,7 +77,7 @@ const FEATURES = [
 
 export default function ApartSection() {
   return (
-    <Section spacing="default">
+    <Section spacing="lg" className="py-32 sm:py-64 lg:py-120">
       <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:hidden">
         What <span className="font-playfair text-gold-400 italic">sets</span> us
         apart?
@@ -132,7 +132,7 @@ export default function ApartSection() {
           >
             <Image
               src={icon}
-              alt=""
+              alt="Icon"
               width={70}
               height={70}
               className="h-56 w-56 shrink-0 object-contain sm:h-70 sm:w-70"

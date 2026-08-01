@@ -11,7 +11,7 @@ import QuadrantIcon from "@/assets/svgs/common/quadrant";
 
 // Shared by both text inputs and the textarea.
 const FIELD =
-  "border-gold-400 bg-gold-400/10 text-navy-800 placeholder:text-navy-800/60 focus-visible:ring-gold-400 w-full rounded-[12px] border px-24 py-16 text-[16px]/[30px] font-medium outline-none focus-visible:ring-2 lg:text-body-lg";
+  "border-gold-400 bg-gold-400/10 text-navy-800 placeholder:text-navy-800/60 focus-visible:ring-gold-400 w-full rounded-[7px] sm:rounded-[12px] border px-16 sm:px-24 py-8 sm:py-16 text-[16px]/[30px] font-medium outline-none focus-visible:ring-2 lg:text-body-lg";
 
 export default function Contact() {
   const handleSubmit = (event) => {
@@ -29,7 +29,7 @@ export default function Contact() {
     >
       <div className="relative flex flex-col items-center gap-36 lg:flex-row">
         <div className="flex w-full flex-col items-start gap-24 sm:gap-29 lg:flex-1">
-          <div className="flex w-full flex-col items-start gap-16">
+          <div className="flex w-full flex-col items-start gap-8 sm:gap-16">
             <h2 className="lg:text-display text-navy-800 text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
               Lets discuss{" "}
               <span className="font-playfair text-gold-400 italic">
@@ -48,10 +48,10 @@ export default function Contact() {
 
           <form
             onSubmit={handleSubmit}
-            className="flex w-full flex-col items-start gap-35"
+            className="flex w-full flex-col items-start gap-24 sm:gap-35"
           >
-            <div className="flex w-full flex-col gap-20">
-              <div className="flex w-full flex-col gap-20 sm:flex-row">
+            <div className="xs:gap-12 flex w-full flex-col gap-8 md:gap-20">
+              <div className="xs:gap-12 flex w-full flex-col gap-8 sm:flex-row md:gap-20">
                 <div className="flex-1">
                   <label htmlFor="contact-name" className="sr-only">
                     Full name
