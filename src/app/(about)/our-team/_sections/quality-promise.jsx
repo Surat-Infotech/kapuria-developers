@@ -81,13 +81,16 @@ const PLATE =
 
 export default function QualityPromiseSection() {
   return (
-    // The panel straddles the seam between the cream page and the navy block
-    // below it, so the split lives on the section rather than its neighbours.
-    // Mobile has no seam — it is navy end to end.
+    // On desktop the panel straddles the seam between the cream page and the
+    // navy block below it, so the split lives on the section rather than its
+    // neighbours. Mobile has no seam — it is navy end to end.
+    //
+    // The `image:` hint keeps the flat colour and the gradient on separate
+    // properties — without it both classes fight over `background-color`.
     <Section
       bg="transparent"
       spacing="none"
-      className="bg-navy-950 lg:bg-[linear-gradient(to_bottom,var(--color-cream-200)_0,var(--color-cream-200)_50%,var(--color-navy-950)_50%)] lg:py-64"
+      className="bg-[#0B1E39] lg:bg-[#0A1D38] lg:bg-[image:linear-gradient(0deg,#0B1E39_48.89%,#FAF6F2_48.95%)] lg:py-64"
       classNames={{ container: "px-16 py-40 lg:py-0" }}
     >
       {/* ── Mobile: the coin gets its own plate above the promise card. The

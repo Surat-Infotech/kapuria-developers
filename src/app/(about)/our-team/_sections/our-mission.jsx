@@ -30,7 +30,7 @@ export default function OurMissionSection() {
   return (
     <Section
       spacing="default"
-      className="bg-navy-700"
+      className="bg-navy-700 py-32 lg:py-64"
       classNames={{ container: "lg:px-24" }}
     >
       <div className="flex flex-col items-center gap-24 lg:flex-row lg:items-center lg:gap-36">
@@ -48,16 +48,13 @@ export default function OurMissionSection() {
             {EYEBROW}
           </p>
 
-          <h2 className="text-[30px]/[38px] font-medium tracking-[-0.9px] text-white lg:mt-8 lg:text-[35px]/[44px] lg:tracking-normal">
+          <h2 className="mt-8 text-[30px]/[38px] font-medium tracking-[-0.9px] text-white lg:text-[35px]/[44px] lg:tracking-normal">
             We don&rsquo;t ask for trust &ndash; we hand you the{" "}
             <span className="text-gold-300 font-serif italic">proof.</span>
           </h2>
 
           {/* Rule sits under the eyebrow on mobile only. */}
-          <span
-            aria-hidden
-            className="bg-gold-400 mt-16 mb-11 block h-1 w-34 md:my-16"
-          />
+          <hr className="text-gold-400 my-10 w-34 md:my-16" />
 
           <p className="text-body-xs md:text-body mb-24 font-medium text-[rgba(255,255,255,0.60)]">
             {MISSION}

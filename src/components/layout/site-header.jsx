@@ -87,7 +87,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
           aria-label="Primary"
           className="flex flex-1 justify-center self-stretch"
         >
-          <ul className="flex items-stretch gap-32">
+          <ul className="flex items-stretch gap-48">
             {NAV_ITEMS.map((item) => {
               const active = isBranchActive(pathname, item);
 

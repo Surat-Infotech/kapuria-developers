@@ -69,7 +69,7 @@ export default function LatestContent() {
 
   return (
     <Section className="py-32 sm:py-64 lg:py-120">
-      <div className="flex max-w-742 flex-col items-start gap-16">
+      <div className="flex max-w-742 flex-col items-start gap-8 sm:gap-16">
         <h2 className="lg:text-display text-navy-800 text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
           Watch our{" "}
           <span className="font-playfair text-gold-400 italic">
@@ -85,15 +85,15 @@ export default function LatestContent() {
         </p>
       </div>
 
-      <div ref={emblaRef} className="overflow-hidden pt-24 sm:pt-36 md:mt-64">
-        <div className="flex gap-24">
+      <div ref={emblaRef} className="mt-24 overflow-hidden sm:mt-36 md:mt-64">
+        <div className="flex gap-16 sm:gap-24">
           {REELS.map(({ id, cover, video, views }) => {
             const isPlaying = playingId === id;
 
             return (
               <div
                 key={id}
-                className="relative h-500 w-280 shrink-0 overflow-hidden rounded-[18px] sm:h-600 sm:w-360 lg:h-689 lg:w-441"
+                className="relative h-305 w-195 shrink-0 overflow-hidden rounded-[9px] sm:h-500 sm:w-280 sm:rounded-[18px] md:h-600 md:w-360 lg:h-689 lg:w-441"
               >
                 {isPlaying ? (
                   <video
@@ -113,7 +113,7 @@ export default function LatestContent() {
                   >
                     <Image
                       src={cover}
-                      alt=""
+                      alt="Cover image for reel"
                       width={441}
                       height={689}
                       className="absolute inset-0 size-full object-cover"
@@ -126,14 +126,14 @@ export default function LatestContent() {
 
                     <span className="relative flex h-full flex-col justify-between p-24 lg:p-36">
                       {/* Same glass-morphism treatment as the video in `apart`. */}
-                      <span className="m-auto flex min-h-32 min-w-32 items-center justify-center rounded-[112px] border border-[#6B6B6B] bg-[rgba(54,54,54,0.1)] backdrop-blur-[13.964285850524902px] transition-transform duration-300 ease-out group-hover:scale-105 lg:h-112 lg:w-112">
+                      <span className="m-auto flex min-h-45 min-w-45 items-center justify-center rounded-[112px] border border-[#6B6B6B] bg-[rgba(54,54,54,0.1)] backdrop-blur-[13.964285850524902px] transition-transform duration-300 ease-out group-hover:scale-105 sm:h-80 sm:w-80 md:h-112 md:w-112">
                         <span className="flex items-center justify-center sm:h-52 sm:w-52">
                           <Image
                             src={playIcon}
-                            alt=""
+                            alt="Play Icon"
                             width={40}
                             height={40}
-                            className="ms-4 h-12 w-12 sm:ms-8 sm:h-20 sm:w-20 md:h-full md:w-full"
+                            className="ms-4 h-16 w-16 sm:ms-8 sm:h-24 sm:w-24 md:h-full md:w-full"
                           />
                         </span>
                       </span>
@@ -154,7 +154,7 @@ export default function LatestContent() {
       </div>
 
       <div className="mt-24 flex flex-col-reverse items-stretch gap-24 sm:mt-36 sm:flex-row sm:items-center sm:justify-between md:mt-64 lg:gap-64">
-        <Button asChild className="gap-9 sm:w-auto">
+        <Button asChild className="gap-9 py-12 sm:w-auto">
           <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">
             <Image src={instagramIcon} alt="Instagram" width={21} height={21} />
             Follow our journey
