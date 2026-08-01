@@ -43,10 +43,6 @@ export default function ConsultationCta({
   headingClassName = "",
 }) {
   return (
-    // The backdrop rides as a CSS background — the section's container is
-    // width-capped, so an <Image> child could not bleed across — and the URL
-    // comes in as a custom property because its hashed path isn't known at
-    // build time.
     <Section
       bg="dark"
       spacing="none"
@@ -80,16 +76,10 @@ export default function ConsultationCta({
           {button === false ? null : (
             <Button
               variant="secondary"
-              size="sm"
-              className="md:text-body-lg mt-24 w-full gap-0 rounded-full px-24 py-8 text-[16px]/[30px] font-medium tracking-[3.04px] sm:py-16 sm:tracking-[3.42px] md:w-auto lg:mt-36 lg:gap-8"
+              className="mt-24 w-full gap-8 sm:mt-36 sm:w-auto"
             >
-              {button ?? (
-                <>
-                  {/* Desktop has room for the article; mobile drops it. */}
-                  Schedule <span className="hidden lg:inline">a</span>
-                  Consultation
-                </>
-              )}
+              Schedule <span className="hidden lg:inline">a</span>
+              Consultation
             </Button>
           )}
         </div>

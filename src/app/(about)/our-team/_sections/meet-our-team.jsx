@@ -1,13 +1,11 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { rules } from "eslint-config-prettier";
 
 import Image from "next/image";
 
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
-import SectionHeader from "@/components/ui/section-header";
 
 import Amaan from "@/assets/images/team/amaan.webp";
 import ErPradip from "@/assets/images/team/er-pradip.webp";
@@ -35,23 +33,18 @@ export default function MeetOurTeamSection() {
   // Off-rhythm spacing on purpose — `cn` merges this over the `lg` preset.
   return (
     <Section className="py-32 lg:py-64">
-      <SectionHeader
-        className="mb-24 lg:mb-64"
-        heading={
-          <>
-            Meet our{" "}
-            <span className="text-gold-400 font-serif italic">team</span>
-          </>
-        }
-        classNames={{
-          heading:
-            "text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:text-[52px]/[60px] lg:text-display",
-          rule: "mt-8 sm:mt-16",
-          description:
-            "mt-8 text-body-xs text-[rgba(8,34,53,0.60)] font-medium sm:mt-16 sm:text-body",
-        }}
-        description={DESCRIPTION}
-      />
+      <div className="mb-24 flex flex-col items-start text-left lg:mb-64">
+        <h2 className="lg:text-display max-w-xl text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:text-[52px]/[60px]">
+          Meet our <span className="text-gold-400 font-serif italic">team</span>
+        </h2>
+
+        {/* Gold rule — the recurring 34px divider under every section heading */}
+        <hr className="text-gold-400 my-8 block w-34 sm:my-16" />
+
+        <p className="text-body-xs sm:text-body font-medium text-[rgba(8,34,53,0.60)]">
+          {DESCRIPTION}
+        </p>
+      </div>
 
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex gap-16 sm:gap-20">

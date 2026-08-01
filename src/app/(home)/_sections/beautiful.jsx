@@ -48,7 +48,7 @@ export default function Beautiful() {
           alt="Kapuria site team at work during construction"
           width={458}
           height={579}
-          className="w-full shrink-0 rounded-xl object-cover lg:w-458"
+          className="w-full max-w-458 shrink-0 rounded-xl object-cover lg:w-458"
         />
       </div>
     </Section>

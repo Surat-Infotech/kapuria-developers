@@ -12,7 +12,7 @@ const QUOTE =
 
 export default function ManagingDirectorSection() {
   return (
-    <Section spacing="lg">
+    <Section id="managing-director" spacing="lg">
       <div className="flex flex-col items-center gap-24 text-center lg:flex-row lg:gap-64 lg:text-left">
         {/* The gold circle and ring are baked into the artwork. */}
         <Image src={Portrait} alt={`${NAME}, ${ROLE}`} className="shrink-0" />

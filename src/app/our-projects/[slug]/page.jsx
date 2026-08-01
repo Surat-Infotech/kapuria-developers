@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 
 import { PROJECTS, getProjectBySlug, heroImages } from "@/config/projects";
 
-import GlobalPresenceSection from "../_sections/global-presence";
+import GlobalPresenceSection from "@/components/common/global-presence";
+
 import BreadcrumbSection from "./_sections/breadcrumb";
 import ConsultationCtaSection from "./_sections/consultation-cta";
 import HeroGallerySection from "./_sections/hero-gallery";

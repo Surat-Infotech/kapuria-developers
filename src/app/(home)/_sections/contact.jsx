@@ -19,10 +19,6 @@ export default function Contact() {
     // TODO: wire up to the enquiry endpoint / server action.
   };
 
-  // The artwork rides as a CSS background rather than an <Image> child — the
-  // section's container is width-capped, so a child could not bleed across —
-  // and the URL comes in as a custom property because its hashed path isn't
-  // known at build time.
   return (
     <Section
       bg="cream"

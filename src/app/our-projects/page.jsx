@@ -1,7 +1,8 @@
+import GlobalPresenceSection from "@/components/common/global-presence";
+
 import BannerSection from "./_sections/banner";
 import ConsultationCtaSection from "./_sections/consultation-cta";
 import FeaturedProjectsSection from "./_sections/featured-projects";
-import GlobalPresenceSection from "./_sections/global-presence";
 import OurLocationSection from "./_sections/our-location";
 
 export const metadata = {

@@ -187,7 +187,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
       </div>
 
       {/* ── Mobile: compact pill ──────────────────────────────── */}
-      <div className="bg-navy-800 pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center rounded-[60px] px-20 py-12 backdrop-blur-[12.5px] backdrop-filter lg:hidden">
+      <div className="bg-navy-800/60 pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center rounded-[60px] px-20 py-12 backdrop-blur-[12.5px] backdrop-filter lg:hidden">
         <Link
           href="/"
           aria-label="Kapuria Developers — home"
