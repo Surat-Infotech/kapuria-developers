@@ -79,7 +79,7 @@ export default function LatestContent() {
 
         <hr className="text-gold-400 w-34" />
 
-        <p className="md:text-body sm:text-body-sm text-navy-800/60 text-[12px]/[18px] font-medium">
+        <p className="md:text-body sm:text-body-sm text-navy-800/60 text-body-xs font-medium">
           A live rolling instagram feed, showing our latest and greatest
           content.
         </p>

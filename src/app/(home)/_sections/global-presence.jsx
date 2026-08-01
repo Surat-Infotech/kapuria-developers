@@ -75,7 +75,7 @@ export default function GlobalPresence() {
 
         <hr className="text-gold-300 w-34" />
 
-        <p className="md:text-body sm:text-body-sm text-[12px]/[18px] font-medium text-neutral-400">
+        <p className="md:text-body sm:text-body-sm text-body-xs font-medium text-neutral-400">
           Bringing thoughtful design, lasting quality, and timeless
           craftsmanship to every location we build in.
         </p>
@@ -118,7 +118,7 @@ export default function GlobalPresence() {
                     <h4 className="text-[26px]/[26px] font-bold text-white uppercase">
                       {city}
                     </h4>
-                    <h3 className="font-playfair text-[24px]/[34px] text-white/60 italic lg:text-[26px]/[26px]">
+                    <h3 className="font-playfair text-h4 text-white/60 italic lg:text-[26px]/[26px]">
                       {country}
                     </h3>
                   </div>

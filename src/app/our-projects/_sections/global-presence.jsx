@@ -72,15 +72,15 @@ function LocationCard({ location }) {
 
       <div className="absolute inset-0 flex flex-col justify-between p-16 md:p-24 lg:p-36">
         <div>
-          <h3 className="text-[16px]/[24px] font-bold text-white uppercase md:text-[20px]/[28px] lg:text-[24px]/[34px]">
+          <h3 className="text-body lg:text-h4 font-bold text-white uppercase md:text-[20px]/[28px]">
             {location.city}
           </h3>
-          <p className="font-playfair text-[18px]/[24px] text-white/80 italic md:text-[20px]/[28px] lg:text-[24px]/[34px]">
+          <p className="font-playfair lg:text-h4 text-[18px]/[24px] text-white/80 italic md:text-[20px]/[28px]">
             {location.country}
           </p>
         </div>
 
-        <p className="text-[12px]/[18px] font-medium text-white sm:text-[16px]/[24px] md:text-[18px]/[30px]">
+        <p className="text-body-xs sm:text-body md:text-body-lg font-medium text-white">
           {location.tagline}
         </p>
       </div>
@@ -123,7 +123,7 @@ export default function GlobalPresenceSection() {
             "text-[32px]/[40px] font-medium text-white min-[426px]:text-[40px]/[48px] md:text-[48px]/[56px] lg:text-display",
           rule: "mt-8 lg:mt-16",
           description:
-            "mt-8 text-[12px]/[18px] font-normal text-white/60 sm:text-[16px]/[24px] lg:mt-16",
+            "mt-8 text-body-xs font-normal text-white/60 sm:text-body lg:mt-16",
         }}
         description={DESCRIPTION}
       />

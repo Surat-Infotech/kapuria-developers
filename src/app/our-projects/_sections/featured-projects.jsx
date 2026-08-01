@@ -69,12 +69,8 @@ function ProjectSpecTable({ project, className = "" }) {
           key={label}
           className="flex items-center justify-between gap-16 border-b border-[rgba(255,255,255,0.12)] py-8"
         >
-          <dt className="text-[12px]/[18px] font-medium text-white/60">
-            {label}
-          </dt>
-          <dd className="text-[12px]/[18px] font-semibold text-white">
-            {value}
-          </dd>
+          <dt className="text-body-xs font-medium text-white/60">{label}</dt>
+          <dd className="text-body-xs font-semibold text-white">{value}</dd>
         </div>
       ))}
     </dl>
@@ -134,7 +130,7 @@ function ProjectCard({ project }) {
       />
 
       <div className="lg:min-w-0 lg:flex-1">
-        <h3 className="text-[18px]/[26px] font-medium text-white lg:text-[26px]/[34px]">
+        <h3 className="lg:text-h3 text-[18px]/[26px] font-medium text-white">
           {/* The mark replaces a letter on desktop, so the readable name is
               kept aside for assistive tech. */}
           <span className="sr-only">{project.name}</span>
@@ -149,7 +145,7 @@ function ProjectCard({ project }) {
 
         {/* The shadow only exists on desktop, where the line sits against the
             open navy field rather than the tight mobile stack. */}
-        <p className="mt-6 text-[12px]/[18px] font-normal text-white/60 sm:text-[16px]/[24px] md:text-[18px]/[26px] lg:text-shadow-[4px_6px_20px_rgba(0,0,0,0.50)]">
+        <p className="text-body-xs sm:text-body mt-6 font-normal text-white/60 md:text-[18px]/[26px] lg:text-shadow-[4px_6px_20px_rgba(0,0,0,0.50)]">
           {project.location}
         </p>
 
@@ -160,14 +156,14 @@ function ProjectCard({ project }) {
           {project.highlights.map((highlight) => (
             <li
               key={highlight}
-              className="rounded-full border border-[rgba(255,255,255,0.40)] bg-[rgba(255,255,255,0.00)] px-16 py-8 text-[12px]/[18px] font-medium text-white backdrop-blur-[107px] backdrop-filter sm:text-[16px]/[24x] md:text-[18px]/[26px] lg:px-20 lg:py-10"
+              className="text-body-xs rounded-full border border-[rgba(255,255,255,0.40)] bg-[rgba(255,255,255,0.00)] px-16 py-8 font-medium text-white backdrop-blur-[107px] backdrop-filter sm:text-[16px]/[24x] md:text-[18px]/[26px] lg:px-20 lg:py-10"
             >
               {highlight}
             </li>
           ))}
         </ul>
 
-        <p className="mt-24 line-clamp-3 text-[12px]/[18px] font-normal text-white/60 sm:text-[16px]/[24px] sm:font-medium lg:line-clamp-4 lg:max-w-590">
+        <p className="text-body-xs sm:text-body mt-24 line-clamp-3 font-normal text-white/60 sm:font-medium lg:line-clamp-4 lg:max-w-590">
           {project.description}
         </p>
 
@@ -175,7 +171,7 @@ function ProjectCard({ project }) {
           asChild
           variant="secondary"
           width="full"
-          className="mt-16 px-16 py-8 font-medium tracking-[3.04px] text-[#082235] md:px-24 md:py-16 md:tracking-[3.42px] lg:mt-36 lg:w-auto"
+          className="text-navy-800 mt-16 px-16 py-8 font-medium tracking-[3.04px] md:px-24 md:py-16 md:tracking-[3.42px] lg:mt-36 lg:w-auto"
         >
           <Link href={projectHref(project)}>
             {/* Mobile leads with the action, desktop with the invitation. */}

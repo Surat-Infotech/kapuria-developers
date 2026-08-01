@@ -32,7 +32,7 @@ export default function OurLocationSection() {
             "text-[32px]/[40px] font-medium min-[426px]:text-[40px]/[48px] md:text-[48px]/[56px] lg:text-display",
           rule: "mt-8 lg:mt-16",
           description:
-            "mt-8 text-[12px]/[18px] font-normal text-[rgba(8,34,53,0.60)] sm:text-[16px]/[24px] lg:mt-16",
+            "mt-8 text-body-xs font-normal text-[rgba(8,34,53,0.60)] sm:text-body lg:mt-16",
         }}
         description={DESCRIPTION}
       />
