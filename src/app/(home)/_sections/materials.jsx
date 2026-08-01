@@ -81,7 +81,7 @@ export default function Materials() {
 
         <hr className="text-gold-300 w-34" />
 
-        <p className="md:text-body sm:text-body-sm text-muted-foreground text-[12px]/[18px] font-medium">
+        <p className="md:text-body sm:text-body-sm text-muted-foreground text-body-xs font-medium">
           We select materials based on performance and durability - never on
           cost alone.
         </p>

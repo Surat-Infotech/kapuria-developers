@@ -71,7 +71,7 @@ export default function BannerSection() {
         >
           <Image
             src={mouseScroll}
-            alt=""
+            alt="Mouse Scroll"
             width={29}
             height={56}
             className="animate-scroll-bob h-56 w-29"

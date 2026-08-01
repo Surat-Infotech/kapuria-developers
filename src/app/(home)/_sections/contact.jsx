@@ -11,7 +11,7 @@ import QuadrantIcon from "@/assets/svgs/common/quadrant";
 
 // Shared by both text inputs and the textarea.
 const FIELD =
-  "border-gold-400 bg-gold-400/10 text-navy-800 placeholder:text-navy-800/60 focus-visible:ring-gold-400 w-full rounded-[12px] border px-24 py-16 text-[16px]/[30px] font-medium outline-none focus-visible:ring-2 lg:text-[18px]/[30px]";
+  "border-gold-400 bg-gold-400/10 text-navy-800 placeholder:text-navy-800/60 focus-visible:ring-gold-400 w-full rounded-[12px] border px-24 py-16 text-[16px]/[30px] font-medium outline-none focus-visible:ring-2 lg:text-body-lg";
 
 export default function Contact() {
   const handleSubmit = (event) => {
@@ -43,7 +43,7 @@ export default function Contact() {
 
             <hr className="text-gold-400 w-34" />
 
-            <p className="md:text-body sm:text-body-sm text-navy-800/60 text-[12px]/[18px] font-medium">
+            <p className="md:text-body sm:text-body-sm text-navy-800/60 text-body-xs font-medium">
               Whether it&rsquo;s your family&rsquo;s next home or your
               company&rsquo;s next premises, we&rsquo;ll walk you through
               exactly how we build - from the soil up.

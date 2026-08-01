@@ -21,14 +21,14 @@ const EYEBROW = "Support";
 const DESCRIPTION =
   "Questions about your villa, documents or handover? Your project team usually replies within one business day.";
 
-const LABEL = "mb-8 block text-[12px]/[18px] font-semibold text-[#6A7680]";
+const LABEL = "mb-8 block text-body-xs font-semibold text-[#6A7680]";
 
 // Shared by the text inputs, the selects and the textarea. `block` matters:
 // form controls are inline-block by default, so the parent keeps a line box
 // and leaves a sliver of descender space under the control — most visible
 // under the textarea.
 const FIELD =
-  "block w-full rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-[12px]/[18px] font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-[14px]/[22px]";
+  "block w-full rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-body-xs font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-body-sm";
 
 // Icon tiles — the contact rows and the social links share the same chip.
 const TILE =
@@ -47,7 +47,7 @@ export default function ContactFormSection() {
     <div className="relative bg-[#FAF6F2] pt-72 lg:pt-124">
       <span
         aria-hidden
-        className="absolute inset-x-0 bottom-0 hidden h-210 bg-[#0A1D38] lg:block"
+        className="bg-navy-700 absolute inset-x-0 bottom-0 hidden h-210 lg:block"
       />
       <Section
         bg="transparent"
@@ -71,7 +71,7 @@ export default function ContactFormSection() {
               "text-[30px]/[40px] font-medium sm:text-[44px]/[452px] md:text-[56px]/[64px] lg:text-display",
             rule: "my-8 lg:my-16",
             description:
-              "mt-0 text-[14px]/[22px] font-normal rgba(8,34,53,0.60) sm:text-[16px]/[24px]",
+              "mt-0 text-body-sm font-normal rgba(8,34,53,0.60) sm:text-body",
           }}
           description={DESCRIPTION}
         />
@@ -185,13 +185,13 @@ export default function ContactFormSection() {
               </div>
 
               <div className="flex flex-col gap-12 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-navy-800/50 text-[12px]/[18px]">
+                <p className="text-navy-800/50 text-body-xs">
                   We&rsquo;ll reply to your registered email.
                 </p>
 
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-8 rounded-[60px] bg-[#082235] px-24 py-8 text-[18px]/[30px] font-medium tracking-[3.42px] text-white uppercase sm:w-auto lg:py-20 lg:text-[18px]/[normal]"
+                  className="text-body-lg bg-navy-800 flex w-full items-center justify-center gap-8 rounded-[60px] px-24 py-8 font-medium tracking-[3.42px] text-white uppercase sm:w-auto lg:py-20 lg:text-[18px]/[normal]"
                 >
                   <SendIcon className="text-gold-300 size-16 shrink-0" />
                   Send message
@@ -205,7 +205,7 @@ export default function ContactFormSection() {
             <div className="lg:max-w-303">
               <FooterLogo className="h-40 w-auto" />
 
-              <p className="text-muted-foreground mt-8 text-[14px]/[22px] font-medium">
+              <p className="text-muted-foreground text-body-sm mt-8 font-medium">
                 {CONTACT_INTRO}
               </p>
 
@@ -222,12 +222,12 @@ export default function ContactFormSection() {
                       {href ? (
                         <a
                           href={href}
-                          className="hover:text-gold-300 mt-4 block text-[14px]/[22px] font-semibold break-words text-white transition-colors duration-200"
+                          className="hover:text-gold-300 text-body-sm mt-4 block font-semibold break-words text-white transition-colors duration-200"
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="mt-4 text-[12px]/[18px] text-[rgba(255,255,255,0.85)]">
+                        <p className="text-body-xs mt-4 text-[rgba(255,255,255,0.85)]">
                           {value}
                         </p>
                       )}

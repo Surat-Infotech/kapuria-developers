@@ -30,7 +30,7 @@ export default function OurMissionSection() {
   return (
     <Section
       spacing="default"
-      className="bg-[#0A1D38]"
+      className="bg-navy-700"
       classNames={{ container: "lg:px-24" }}
     >
       <div className="flex flex-col items-center gap-24 lg:flex-row lg:items-center lg:gap-36">
@@ -44,7 +44,7 @@ export default function OurMissionSection() {
         />
 
         <div className="w-full">
-          <p className="text-gold-300 text-[14px]/[22px] font-medium tracking-[2.52px] uppercase">
+          <p className="text-gold-300 text-body-sm font-medium tracking-[2.52px] uppercase">
             {EYEBROW}
           </p>
 
@@ -59,7 +59,7 @@ export default function OurMissionSection() {
             className="bg-gold-400 mt-16 mb-11 block h-1 w-34 md:my-16"
           />
 
-          <p className="text-body-xs mb-24 font-medium text-[rgba(255,255,255,0.60)] md:text-[16px]/[24px]">
+          <p className="text-body-xs md:text-body mb-24 font-medium text-[rgba(255,255,255,0.60)]">
             {MISSION}
           </p>
           <div className="grid grid-cols-1 gap-24 md:grid-cols-3">
@@ -68,19 +68,19 @@ export default function OurMissionSection() {
                 key={label}
                 className="border-t border-[#EBC37F] pt-8 md:pt-14"
               >
-                <h3 className="flex items-center gap-8 text-[14px]/[22px] font-medium tracking-[2.52px] text-[#F2F5FA] uppercase">
+                <h3 className="text-body-sm flex items-center gap-8 font-medium tracking-[2.52px] text-[#F2F5FA] uppercase">
                   <CheckIcon className="text-gold-300 shrink-0" />
                   {label}
                 </h3>
 
-                <p className="md:text-body-xs mt-8 text-[14px]/[22px] font-normal text-[#B8C4D4]">
+                <p className="md:text-body-xs text-body-sm mt-8 font-normal text-[#B8C4D4]">
                   {detail}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="text-body-xs mt-24 font-medium text-[rgba(255,255,255,0.60)] md:text-[16px]/[24px]">
+          <p className="text-body-xs md:text-body mt-24 font-medium text-[rgba(255,255,255,0.60)]">
             We don&rsquo;t ask families to take our word for it.{" "}
             <span className="text-white">We hand them the proof.</span>
           </p>

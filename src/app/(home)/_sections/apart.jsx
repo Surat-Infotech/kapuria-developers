@@ -97,7 +97,7 @@ export default function ApartSection() {
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 md:justify-start lg:gap-96 lg:pt-114">
-          <h2 className="lg:text-display-sm hidden text-center text-[24px]/[32px] font-medium text-white sm:text-[40px]/[48px] md:block">
+          <h2 className="lg:text-display-sm text-h5 hidden text-center font-medium text-white sm:text-[40px]/[48px] md:block">
             What{" "}
             <span className="font-playfair text-gold-400 italic">sets</span> us
             apart?
