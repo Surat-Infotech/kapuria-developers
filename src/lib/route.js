@@ -2,14 +2,13 @@ export const ROUTES = {
   HOME: "/",
 
   // Projects
-  PROJECTS: "/villa",
-  OUR_PROJECTS: "/our-projects",
+  PROJECTS: "/our-projects",
   CONSTRUCTION: "/site",
 
   // About
   OUR_STORY: "/abut",
   OUR_TEAM: "/our-team",
-  ARCHITECTS: "/archit",
+  ARCHITECTS: "/architects",
   WHY_US: "/why",
 
   // More
