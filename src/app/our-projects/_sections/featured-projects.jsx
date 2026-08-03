@@ -88,29 +88,38 @@ function ProjectSpecTable({ project, className = "" }) {
 function ProjectSpecLines({ project, className = "" }) {
   return (
     <div className={className}>
-      <div className="flex flex-wrap items-center gap-x-16 gap-y-8 text-[18px]/[26px] font-medium text-white/60">
-        <span className="font-bold whitespace-nowrap text-white">
+      <div className="flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-16 xl:text-[22px]/[30px]">
+        <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
           {project.type},
         </span>
-        <span className="whitespace-nowrap">
+        <span className="flex items-center gap-8 whitespace-nowrap">
           Plot Size{" "}
-          <span className="font-bold text-white">{project.plotSize}</span>
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
+            {project.plotSize}
+          </span>
         </span>
         <span aria-hidden className="h-26 w-px shrink-0 bg-white/25" />
-        <span className="whitespace-nowrap">
+        <span className="flex items-center gap-8 whitespace-nowrap">
           Built Area{" "}
-          <span className="font-bold text-white">{project.builtArea}</span>
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
+            {project.builtArea}
+          </span>
         </span>
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center gap-x-16 gap-y-8 text-[18px]/[26px] font-medium text-white/60">
-        <span className="whitespace-nowrap">
+      <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-16 xl:text-[22px]/[30px]">
+        <span className="flex items-center gap-8 whitespace-nowrap">
           Bedrooms{" "}
-          <span className="font-bold text-white">{project.bedrooms}</span>
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
+            {project.bedrooms}
+          </span>
         </span>
         <span aria-hidden className="h-26 w-px shrink-0 bg-white/25" />
-        <span className="whitespace-nowrap">
-          Floors <span className="font-bold text-white">{project.floors}</span>
+        <span className="flex items-center gap-8 whitespace-nowrap">
+          Floors{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
+            {project.floors}
+          </span>
         </span>
       </div>
     </div>
@@ -163,7 +172,7 @@ function ProjectCard({ project }) {
           ))}
         </ul>
 
-        <p className="text-body-xs sm:text-body mt-24 line-clamp-3 font-normal text-white/60 sm:font-medium lg:line-clamp-4 lg:max-w-590">
+        <p className="text-body-xs sm:text-body mt-24 line-clamp-3 font-normal tracking-[-0.3px] text-white/60 sm:font-medium lg:line-clamp-4 lg:max-w-590">
           {project.description}
         </p>
 
