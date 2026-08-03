@@ -85,7 +85,7 @@ export default function GlobalPresence() {
 
       {/* Horizontal rail — the next card peeks in past the gutter, as designed. */}
       <div ref={emblaRef} className="my-24 overflow-hidden sm:mt-36 md:my-64">
-        <div className="flex gap-24">
+        <div className="flex gap-16 sm:gap-24">
           {LOCATIONS.map(({ image, city, country, description }) => (
             <div
               key={city}
