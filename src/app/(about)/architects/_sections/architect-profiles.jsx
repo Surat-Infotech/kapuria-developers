@@ -40,7 +40,7 @@ const ARCHITECTS = [
   {
     name: "Rachit Malhotra",
     role: "Architect",
-    bio: "Every plan begins with the site and the people who will live on it — orientation, daylight, airflow and privacy resolved long before a line is drawn, so that the design which follows feels inevitable rather than imposed.",
+    bio: "We follow advanced construction methods designed for structural balance, load optimisation, long-term settlement control, and resistance to environmental stress — engineering every element with future resilience in mind.",
     photo: RachitMalhotra,
     photoMobile: RachitMalhotraMobile,
     studio: RachitStudio,

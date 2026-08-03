@@ -27,6 +27,12 @@ const MOBILE_LINK =
 const DROPDOWN_LINK =
   "block text-center text-body-relaxed font-medium whitespace-nowrap transition-colors duration-200";
 
+// Routes that show something other than the default in the mobile pill.
+const MOBILE_TITLES = {
+  "/architects": "Construction",
+  "/our-projects": "Projects",
+};
+
 // Items without an `href` are dropdown triggers only, so their active state
 // comes purely from whether a child route is current.
 const isBranchActive = (pathname, item) =>
@@ -197,7 +203,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
         </Link>
 
         <span className="text-body-sm font-medium tracking-[2.66px] text-white uppercase">
-          {mobileTitle}
+          {MOBILE_TITLES[pathname] ?? mobileTitle}
         </span>
 
         <button
