@@ -16,7 +16,7 @@ export default function OurLocationSection() {
         {EYEBROW}
       </p>
 
-      <div className="mb-24 flex flex-col items-start text-left md:mb-40 lg:mb-64">
+      <div className="mb-16 flex flex-col items-start text-left sm:mb-24 md:mb-40 lg:mb-64">
         <h2 className="lg:text-display max-w-xl text-[32px]/[40px] font-medium min-[426px]:text-[40px]/[48px] md:text-[48px]/[56px]">
           Crafting{" "}
           <span className="font-playfair text-gold-400 italic">

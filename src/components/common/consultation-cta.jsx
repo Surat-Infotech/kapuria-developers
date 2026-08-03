@@ -44,9 +44,8 @@ export default function ConsultationCta({
 }) {
   return (
     <Section
-      bg="dark"
       spacing="none"
-      className="bg-[#001B2E] bg-cover bg-center bg-no-repeat py-32 sm:py-64 lg:bg-(image:--bg-desktop) lg:py-156"
+      className="bg-(image:--bg-desktop) bg-cover bg-center bg-no-repeat py-32 sm:py-64 lg:py-156"
       style={{
         "--bg-desktop": `url(${ConsultationBg.src})`,
       }}
@@ -67,7 +66,7 @@ export default function ConsultationCta({
             <span className="text-gold-300 font-serif italic">{accent}</span>
           </h2>
 
-          <hr className="my-8 h-1 w-34 border-0 bg-[#EBC37F] lg:my-16" />
+          <hr className="text-gold-300 my-8 w-34 lg:my-16" />
 
           <p className="text-body-xs sm:text-body font-medium text-[rgba(255,255,255,0.60)] lg:text-[18px]/[26px]">
             {description}
