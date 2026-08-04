@@ -24,7 +24,15 @@ const TILE =
   "flex size-44 shrink-0 items-center justify-center rounded-[12px] bg-[#1A4059]";
 
 const DETAIL_LABEL =
-  "text-[11px]/[16px] font-semibold tracking-[1.6px] text-white/45 uppercase";
+  "text-[10px]/[14px] font-semibold tracking-[1.5px] text-white/45 uppercase lg:text-[12px]/[16px]";
+
+// The project desk lists the socials in its own order — the footer keeps the
+// shared SOCIAL_LINKS order.
+const SOCIAL_ORDER = ["Facebook", "Instagram", "YouTube", "X"];
+
+const CONTACT_SOCIAL_LINKS = [...SOCIAL_LINKS].sort(
+  (a, b) => SOCIAL_ORDER.indexOf(a.label) - SOCIAL_ORDER.indexOf(b.label)
+);
 
 export default function ContactFormSection() {
   const handleSubmit = (event) => {
@@ -152,7 +160,7 @@ export default function ContactFormSection() {
                       ))}
                     </select>
 
-                    <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-16 size-16 -translate-y-1/2" />
+                    <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-16 size-16 -translate-y-1/2 [&_path]:stroke-[#6A7680]" />
                   </div>
                 </div>
 
@@ -177,7 +185,7 @@ export default function ContactFormSection() {
 
                 <button
                   type="submit"
-                  className="text-body-lg bg-navy-800 flex w-full items-center justify-center gap-8 rounded-[60px] px-24 py-8 font-medium tracking-[3.42px] text-white uppercase sm:w-auto lg:py-20 lg:text-[18px]/[normal]"
+                  className="text-body-lg hover:text-gold-300 flex w-full cursor-pointer items-center justify-center gap-8 rounded-[60px] bg-[#082235] px-24 py-8 font-medium tracking-[3.42px] text-white uppercase transition-all duration-250 hover:-translate-y-1 sm:w-auto lg:py-20 lg:text-[18px]/[normal]"
                 >
                   <SendIcon className="text-gold-300 size-16 shrink-0" />
                   Send message
@@ -225,14 +233,14 @@ export default function ContactFormSection() {
               <h2 className={`${DETAIL_LABEL} mt-16 lg:mt-24`}>Follow us</h2>
 
               <ul className="mt-8 flex items-center gap-8 lg:gap-10">
-                {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                {CONTACT_SOCIAL_LINKS.map(({ label, href, Icon }) => (
                   <li key={label}>
                     <a
                       href={href}
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label={label}
-                      className={`${TILE} hover:text-gold-300 size-40 rounded-[11px] border border-[#2A4256] text-white transition-colors duration-200 hover:bg-white/15`}
+                      className={`${TILE} hover:text-gold-300 size-40 rounded-[11px] border border-[#2A4256] bg-[#152F42] text-white transition-colors duration-200 hover:bg-white/15`}
                     >
                       <Icon className="size-18" />
                     </a>
