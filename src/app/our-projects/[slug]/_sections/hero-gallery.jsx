@@ -13,7 +13,7 @@ const DISCLAIMER = "Computer Generated";
 // Full-bleed banner. It sits under the fixed header, which is why the badge and
 // the arrows are pinned to the bottom edge rather than the top.
 export default function HeroGallerySection({ project, images }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel();
 
   return (
     <div className="relative">
