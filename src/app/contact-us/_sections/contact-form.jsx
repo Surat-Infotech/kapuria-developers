@@ -21,7 +21,7 @@ import SendIcon from "@/assets/svgs/common/send";
 const LABEL = "mb-8 block text-body-xs font-semibold text-[#6A7680]";
 
 const FIELD =
-  "block w-full rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-body-xs font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-body-sm";
+  "block w-full rounded-[6px] lg:rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-body-xs font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-body-sm";
 
 const FLAG = "h-14 w-20 shrink-0 rounded-xs ring-1 ring-black/10";
 
@@ -166,7 +166,7 @@ export default function ContactFormSection() {
 
         <div className="grid overflow-hidden rounded-[20px] border border-[#E4DFD4] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
           {/* ── Enquiry form ─────────────────────────────────────── */}
-          <div className="bg-surface p-16 md:p-24 lg:p-32">
+          <div className="bg-surface p-16 pb-32 md:p-24 lg:p-32">
             <form onSubmit={handleSubmit} className="flex flex-col gap-16">
               <div className="grid gap-x-14 gap-y-16 lg:grid-cols-2">
                 <div>
