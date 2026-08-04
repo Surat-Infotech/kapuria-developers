@@ -1,5 +1,7 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+
 import {
   CONTACT_DETAILS,
   CONTACT_INTRO,
@@ -24,7 +26,7 @@ const TILE =
   "flex size-44 shrink-0 items-center justify-center rounded-[12px] bg-[#1A4059]";
 
 const DETAIL_LABEL =
-  "text-[10px]/[14px] font-semibold tracking-[1.5px] text-white/45 uppercase lg:text-[12px]/[16px]";
+  "text-[10px]/[14px] font-bold tracking-[1.5px] text-white/50 uppercase lg:text-[12px]/[16px]";
 
 // The project desk lists the socials in its own order — the footer keeps the
 // shared SOCIAL_LINKS order.
@@ -173,13 +175,13 @@ export default function ContactFormSection() {
                     name="message"
                     rows={4}
                     placeholder="Hi team, I'd like to schedule a site visit for Villa 12 next week and confirm the possession timeline."
-                    className={`${FIELD} h-124 resize-none`}
+                    className={`${FIELD} h-109 resize-none overflow-y-auto sm:h-124`}
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-12 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-navy-800/50 text-body-xs">
+                <p className="text-body-xs text-[#6A7680]">
                   We&rsquo;ll reply to your registered email.
                 </p>
 
@@ -199,13 +201,13 @@ export default function ContactFormSection() {
             <div className="lg:max-w-303">
               <FooterLogo className="h-40 w-auto" />
 
-              <p className="text-muted-foreground text-body-sm mt-8 font-medium">
+              <p className="text-body-sm mt-8 text-[rgba(255,255,255,0.72)]">
                 {CONTACT_INTRO}
               </p>
 
               <ul className="mt-16 flex max-w-290 flex-col gap-16 sm:max-w-full lg:mt-24 lg:gap-24">
                 {CONTACT_DETAILS.map(({ label, value, href, Icon }) => (
-                  <li key={label} className="flex items-start gap-14">
+                  <li key={label} className="flex items-center gap-14">
                     <span className={TILE}>
                       <Icon className="text-gold-300 size-19" />
                     </span>
@@ -216,12 +218,12 @@ export default function ContactFormSection() {
                       {href ? (
                         <a
                           href={href}
-                          className="hover:text-gold-300 text-body-sm mt-4 block font-semibold break-words text-white transition-colors duration-200"
+                          className="hover:text-gold-300 text-body-xs sm:text-body-sm mt-4 block font-semibold break-words text-white transition-colors duration-200"
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="text-body-xs mt-4 text-[rgba(255,255,255,0.85)]">
+                        <p className="text-body-xs sm:text-body-sm mt-4 text-[rgba(255,255,255,0.85)]">
                           {value}
                         </p>
                       )}
@@ -240,7 +242,10 @@ export default function ContactFormSection() {
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label={label}
-                      className={`${TILE} hover:text-gold-300 size-40 rounded-[11px] border border-[#2A4256] bg-[#152F42] text-white transition-colors duration-200 hover:bg-white/15`}
+                      className={cn(
+                        TILE,
+                        "hover:text-gold-300 size-40 rounded-[11px] border border-[#2A4256] bg-[#152F42] text-white transition-colors duration-200 hover:bg-white/15"
+                      )}
                     >
                       <Icon className="size-18" />
                     </a>
