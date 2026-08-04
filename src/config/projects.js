@@ -70,7 +70,7 @@ export const AMENITIES = {
 // Every project in the design carries this same paragraph, so it is hoisted
 // until each one gets copy of its own.
 const DESCRIPTION =
-  "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation, reducing the need for artificial lighting and climate control.";
+  "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation, reducing the need for artificial heating or cooling. The villa's structure often incorporates recycled materials, such as reclaimed wood and repurposed stone, minimizing the ecological footprint while infusing the space with a rustic yet contemporary aesthetic.";
 
 const PALATIAL_ARC = {
   slug: "the-palatial-arc",
