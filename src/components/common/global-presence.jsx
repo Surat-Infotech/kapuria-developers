@@ -127,7 +127,7 @@ export default function GlobalPresence() {
 
                   {/* Rides in with the overlay on desktop; always visible on
                     touch, where there is nothing to trigger the reveal. */}
-                  <p className="lg:text-body-lg text-[14px]/[24px] font-medium text-white transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none lg:translate-y-16 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-visible:translate-y-0 lg:group-focus-visible:opacity-100">
+                  <p className="lg:text-body-lg text-[12px]/[18px] font-medium text-white transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none lg:translate-y-16 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-visible:translate-y-0 lg:group-focus-visible:opacity-100">
                     {description}
                   </p>
                 </div>
