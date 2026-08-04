@@ -72,7 +72,7 @@ export default function ContactFormSection() {
           </p>
         </div>
 
-        <div className="grid overflow-hidden rounded-[20px] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
+        <div className="grid overflow-hidden rounded-[20px] border border-[#E4DFD4] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
           {/* ── Enquiry form ─────────────────────────────────────── */}
           <div className="bg-surface p-16 md:p-24 lg:p-32">
             <form onSubmit={handleSubmit} className="flex flex-col gap-16">
