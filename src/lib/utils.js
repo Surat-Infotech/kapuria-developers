@@ -21,6 +21,7 @@ const twMerge = extendTailwindMerge({
             "body",
             "body-relaxed",
             "body-sm",
+            "body-xs",
             "btn",
             "eyebrow",
             "link",
