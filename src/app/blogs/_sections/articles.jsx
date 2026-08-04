@@ -83,7 +83,7 @@ const ArticleCard = ({
   <article className="flex flex-col items-start gap-16 lg:gap-18">
     <Link
       href={href}
-      className="focus-visible:ring-gold-400 relative w-full overflow-hidden rounded-[12px] focus-visible:ring-2 focus-visible:outline-none lg:rounded-[11px]"
+      className="focus-visible:ring-gold-400 relative w-full overflow-hidden rounded-xl focus-visible:ring-2 focus-visible:outline-none lg:rounded-[11px]"
     >
       <Image
         src={image}
@@ -103,7 +103,7 @@ const ArticleCard = ({
 
     <div className="flex w-full flex-col items-start gap-8 lg:gap-16">
       <div className="flex w-full flex-col items-start gap-8 lg:gap-4">
-        <h3 className="text-navy-800 text-[18px]/[26px] font-semibold lg:text-[16px]/[25px]">
+        <h3 className="text-navy-800 text-[18px]/[26px] font-semibold sm:text-[16px]/[25px]">
           <Link
             href={href}
             className="focus-visible:ring-gold-400 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
@@ -118,20 +118,23 @@ const ArticleCard = ({
         </p>
       </div>
 
-      {/* Mobile prints the meta as one bulleted line; desktop boxes it. */}
-      <p className="text-navy-800/60 text-[12px]/[18px] font-normal lg:hidden">
-        {meta.join("   •   ")}
-      </p>
-
-      <div className="border-navy-800/5 hidden flex-wrap items-center gap-8 rounded-[6px] border-[0.75px] bg-white px-16 py-8 lg:flex">
+      {/* Chip bar — dots separate the values on mobile, hairlines inside a
+          bordered box from `lg` up. */}
+      <div className="border-navy-800/5 flex flex-wrap items-center gap-8 rounded-md bg-white lg:border-[0.75px] lg:px-16 lg:py-7">
         {meta.map((value, index) => (
           <div key={value} className="flex items-center gap-8">
-            <span className="text-navy-800/60 text-[14px]/[22px] font-normal whitespace-nowrap">
+            <span className="text-navy-800/60 text-body-xs font-normal whitespace-nowrap sm:text-[14px]/[22px]">
               {value}
             </span>
 
             {index < meta.length - 1 && (
-              <span aria-hidden className="bg-navy-800/10 h-18 w-px" />
+              <>
+                <span
+                  aria-hidden
+                  className="bg-navy-800/10 hidden h-18 w-px lg:block"
+                />
+                <span className="bg-navy-800/60 size-3 rounded-2xl lg:hidden"></span>
+              </>
             )}
           </div>
         ))}
@@ -167,12 +170,12 @@ export default function Articles() {
       {/* Mobile is one column throughout; desktop splits into a 2-up hero row
           and a 3-up row beneath it. */}
       <div className="mt-24 flex flex-col gap-32 lg:mt-36 lg:gap-36">
-        <div className="flex flex-col gap-32 lg:grid lg:grid-cols-2 lg:gap-24">
+        <div className="flex flex-col gap-32 sm:grid sm:grid-cols-2 sm:gap-16 md:gap-24">
           <ArticleCard {...first} />
           <ArticleCard {...second} />
         </div>
 
-        <div className="flex flex-col gap-32 lg:grid lg:grid-cols-3 lg:gap-24">
+        <div className="flex flex-col gap-32 sm:grid sm:grid-cols-2 sm:gap-16 md:grid-cols-3 lg:gap-24">
           {rest.map((article) => (
             <ArticleCard key={article.id} {...article} />
           ))}

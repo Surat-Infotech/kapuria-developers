@@ -67,7 +67,7 @@ export default function BannerSection() {
                     className="flex items-center gap-8 sm:gap-16"
                   >
                     <div className="flex items-center gap-8 sm:py-8">
-                      <dt className="text-body-sm sm:text-body hidden font-medium text-white/60 sm:block">
+                      <dt className="text-body-xs sm:text-body font-medium text-white/60">
                         {label}
                       </dt>
                       <dd className="text-body-xs xs:text-body-sm sm:text-body font-medium text-white">
@@ -76,13 +76,7 @@ export default function BannerSection() {
                     </div>
 
                     {index < meta.length - 1 && (
-                      <>
-                        <span
-                          aria-hidden
-                          className="hidden h-20 w-px bg-white/25 sm:block"
-                        />
-                        <span className="lh-2 text-white sm:hidden">.</span>
-                      </>
+                      <span aria-hidden className="h-20 w-px bg-white/25" />
                     )}
                   </div>
                 ))}
