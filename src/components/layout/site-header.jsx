@@ -33,6 +33,7 @@ const MOBILE_TITLES = {
   "/architects": "Construction",
   "/contact-us": "Contact Us",
   "/our-projects": "Projects",
+  "/blogs": "News & Media",
 };
 
 const PROJECT_PATH_PREFIX = "/our-projects/";
