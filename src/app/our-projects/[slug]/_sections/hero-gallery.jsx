@@ -40,7 +40,7 @@ export default function HeroGallerySection({ project, images }) {
         className="pointer-events-none absolute inset-x-0 bottom-16 min-[700px]:bottom-32 lg:bottom-40"
       >
         <div className="flex items-center justify-between gap-16">
-          <span className="text-body-xs lg:text-body-sm rounded-full bg-[rgba(255,255,255,0.20)] px-12 py-4 font-medium text-white/90 backdrop-blur-[6px] backdrop-filter">
+          <span className="flex w-185 items-center justify-center rounded-full bg-[rgba(255,255,255,0.20)] px-12 py-4 text-[12px]/[18px] font-medium text-white/90 backdrop-blur-[6px] backdrop-filter sm:text-[14px]/[18px]">
             {DISCLAIMER}
           </span>
 
