@@ -92,51 +92,39 @@ function ProjectSpecTable({ project, className = "" }) {
 function ProjectSpecLines({ project, className = "" }) {
   return (
     <div className={className}>
-      <div className="flex flex-wrap items-center gap-x-8 gap-y-8 xl:gap-x-20">
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-8 font-medium text-white/60 xl:gap-x-10">
-          <span className="text-[16px]/[24px] xl:text-[20px]/[34px]">
-            Property Type
-          </span>
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[34px]">
-            {project.type}
-          </span>
-        </div>
-        <span aria-hidden className="h-26 w-px shrink-0 bg-white" />
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-8 font-medium text-white/60 xl:gap-x-10">
-          <span className="text-[16px]/[24px] xl:text-[20px]/[34px]">
-            Plot Size{" "}
-          </span>
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[34px]">
+      <div className="flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-16 xl:text-[22px]/[30px]">
+        <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
+          {project.type},
+        </span>
+        <span className="flex items-center gap-8 whitespace-nowrap">
+          Plot Size{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
             {project.plotSize}
           </span>
-        </div>
-        <span aria-hidden className="h-26 w-px shrink-0 bg-white" />
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-8 font-medium text-white/60 xl:gap-x-10">
-          <span className="text-[16px]/[24px] xl:text-[20px]/[34px]">
-            Built Area
-          </span>
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[34px]">
+        </span>
+        <span aria-hidden className="h-26 w-px shrink-0 bg-white/25" />
+        <span className="flex items-center gap-8 whitespace-nowrap">
+          Built Area{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
             {project.builtArea}
           </span>
-        </div>
-        <span aria-hidden className="h-26 w-px shrink-0 bg-white" />
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-8 font-medium text-white/60 xl:gap-x-10">
-          <span className="text-[16px]/[24px] xl:text-[20px]/[34px]">
-            Bedrooms
-          </span>
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[34px]">
+        </span>
+      </div>
+
+      <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-16 xl:text-[22px]/[30px]">
+        <span className="flex items-center gap-8 whitespace-nowrap">
+          Bedrooms{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
             {project.bedrooms}
           </span>
-        </div>
+        </span>
         <span aria-hidden className="h-26 w-px shrink-0 bg-white/25" />
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-8 font-medium text-white/60 xl:gap-x-10">
-          <span className="text-[16px]/[24px] xl:text-[20px]/[34px]">
-            Floors{" "}
-          </span>
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[34px]">
+        <span className="flex items-center gap-8 whitespace-nowrap">
+          Floors{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
             {project.floors}
           </span>
-        </div>
+        </span>
       </div>
     </div>
   );
@@ -149,6 +137,7 @@ function ProjectCard({ project }) {
   // them with a gap, so the rhythm survives cards being added or reordered.
   return (
     <article className="relative flex flex-col items-center gap-16 py-32 md:gap-32 md:py-64 lg:flex-row lg:gap-32 lg:border-0 lg:py-100 xl:gap-64 xl:py-128">
+      <hr className="absolute bottom-0 -left-16 w-full text-[rgba(235,195,127,0.25)]" />
       <ProjectGallery
         project={project}
         className="mx-auto w-full sm:max-w-481 lg:shrink-0"
@@ -188,7 +177,7 @@ function ProjectCard({ project }) {
           ))}
         </ul>
 
-        <p className="text-body-xs sm:text-body mt-24 line-clamp-3 font-normal text-white/60 lg:line-clamp-4 lg:max-w-590">
+        <p className="text-body-xs sm:text-body mt-24 line-clamp-3 font-normal text-white/60 sm:font-medium lg:line-clamp-4 lg:max-w-590">
           {project.description}
         </p>
 
@@ -204,8 +193,6 @@ function ProjectCard({ project }) {
           </Link>
         </Button>
       </div>
-
-      <hr className="absolute -inset-x-16 bottom-0 w-auto text-[rgba(235,195,127,0.25)] lg:hidden" />
     </article>
   );
 }
