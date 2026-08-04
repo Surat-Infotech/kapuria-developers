@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
 import {
@@ -21,6 +23,8 @@ const LABEL = "mb-8 block text-body-xs font-semibold text-[#6A7680]";
 const FIELD =
   "block w-full rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-body-xs font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-body-sm";
 
+const FLAG = "h-14 w-20 shrink-0 rounded-xs ring-1 ring-black/10";
+
 // Icon tiles — the contact rows and the social links share the same chip.
 const TILE =
   "flex size-44 shrink-0 items-center justify-center rounded-[12px] bg-[#1A4059]";
@@ -36,7 +40,95 @@ const CONTACT_SOCIAL_LINKS = [...SOCIAL_LINKS].sort(
   (a, b) => SOCIAL_ORDER.indexOf(a.label) - SOCIAL_ORDER.indexOf(b.label)
 );
 
+// A native <option> can't hold an image, so the dial code runs on a custom
+// listbox — that's the only way the flags show up in the open list too.
+function DialCodeSelect({ value, onChange }) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  const selected =
+    PHONE_COUNTRY_CODES.find(({ code }) => code === value) ??
+    PHONE_COUNTRY_CODES[0];
+  const SelectedFlag = selected.Flag;
+
+  // Click-away and Escape close the list.
+  useEffect(() => {
+    if (!open) return;
+
+    const onPointerDown = (event) => {
+      if (!containerRef.current?.contains(event.target)) setOpen(false);
+    };
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  return (
+    <div ref={containerRef} className="relative w-full max-w-104 shrink-0">
+      {/* Keeps the value in the form payload now that the select is gone */}
+      <input type="hidden" name="dialCode" value={value} />
+
+      <button
+        type="button"
+        id="contact-dial-code"
+        onClick={() => setOpen((isOpen) => !isOpen)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={`Country dialling code — ${selected.label} ${selected.code}`}
+        className={cn(
+          FIELD,
+          "flex cursor-pointer items-center justify-center gap-6 px-8"
+        )}
+      >
+        <SelectedFlag className={FLAG} />
+        {selected.code}
+      </button>
+
+      {open && (
+        <ul
+          role="listbox"
+          aria-label="Country dialling code"
+          className="absolute top-[calc(100%+4px)] left-0 z-20 max-h-224 w-full overflow-y-auto rounded-[11px] border border-[#D9D2C6] bg-white p-4 shadow-[0_12px_32px_0_rgba(8,34,53,0.12)]"
+        >
+          {PHONE_COUNTRY_CODES.map(({ code, label, Flag }) => (
+            <li key={code} role="presentation">
+              <button
+                type="button"
+                role="option"
+                aria-selected={code === value}
+                aria-label={`${label} ${code}`}
+                onClick={() => {
+                  onChange(code);
+                  setOpen(false);
+                }}
+                className={cn(
+                  "text-body-xs md:text-body-sm flex w-full cursor-pointer items-center justify-center gap-6 rounded-lg px-4 py-8 text-[#0B2233] transition-colors duration-200 hover:bg-[#FAF6F2]",
+                  code === value && "bg-[#FAF6F2]"
+                )}
+              >
+                <Flag className={FLAG} />
+                {code}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function ContactFormSection() {
+  const [dialCode, setDialCode] = useState(PHONE_COUNTRY_CODES[0].code);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // TODO: wire up to the enquiry endpoint / server action.
@@ -72,7 +164,7 @@ export default function ContactFormSection() {
           </p>
         </div>
 
-        <div className="grid overflow-hidden rounded-[20px] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
+        <div className="grid overflow-hidden rounded-[20px] border border-[#E4DFD4] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
           {/* ── Enquiry form ─────────────────────────────────────── */}
           <div className="bg-surface p-16 md:p-24 lg:p-32">
             <form onSubmit={handleSubmit} className="flex flex-col gap-16">
@@ -113,23 +205,9 @@ export default function ContactFormSection() {
                   </label>
 
                   <div className="flex gap-8">
-                    {/* Centred and chevron-less: the box reads as a prefix on
-                        the number beside it, not as a field of its own. */}
-                    <label htmlFor="contact-dial-code" className="sr-only">
-                      Country dialling code
-                    </label>
-                    <select
-                      id="contact-dial-code"
-                      name="dialCode"
-                      defaultValue={PHONE_COUNTRY_CODES[0].code}
-                      className={`${FIELD} w-full max-w-104 shrink-0 cursor-pointer appearance-none px-16 text-center`}
-                    >
-                      {PHONE_COUNTRY_CODES.map(({ code, label, flag }) => (
-                        <option key={code} value={code}>
-                          {flag} {code}
-                        </option>
-                      ))}
-                    </select>
+                    {/* Chevron-less: the box reads as a prefix on the number
+                        beside it, not as a field of its own. */}
+                    <DialCodeSelect value={dialCode} onChange={setDialCode} />
 
                     <input
                       id="contact-phone"
