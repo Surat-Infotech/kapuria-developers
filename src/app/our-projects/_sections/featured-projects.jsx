@@ -192,26 +192,13 @@ function ProjectCard({ project }) {
           {project.description}
         </p>
 
-        {/* <Button
-          asChild
-          variant="secondary"
-          width="full"
-          className="text-navy-800 mt-16 px-16 py-8 font-medium tracking-[3.04px] md:px-24 md:py-16 md:tracking-[3.42px] lg:mt-36 lg:w-auto"
-        >
-          <Link href={projectHref(project)}>
-            <span className="lg:hidden">View Property</span>
-            <span className="hidden lg:inline">Know More</span>
-          </Link>
-        </Button> */}
-
         <Button
           asChild
           variant="secondary"
           width="full"
           className="text-navy-800 mt-16 px-16 py-8 font-medium tracking-[3.04px] md:px-24 md:py-16 md:tracking-[3.42px] lg:mt-36 lg:w-auto"
         >
-          <Link href="">
-            {/* Mobile leads with the action, desktop with the invitation. */}
+          <Link href={projectHref(project)}>
             <span className="lg:hidden">View Property</span>
             <span className="hidden lg:inline">Know More</span>
           </Link>

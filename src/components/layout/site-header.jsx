@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 import { HEADER_CTA, NAV_ITEMS } from "@/config/navigation";
+import { getProjectBySlug } from "@/config/projects";
 
 import { HeaderLogo, LogoMark } from "@/components/common/logo";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,24 @@ const DROPDOWN_LINK =
 const MOBILE_TITLES = {
   "/architects": "Construction",
   "/our-projects": "Projects",
+};
+
+const PROJECT_PATH_PREFIX = "/our-projects/";
+
+// Project detail pages can't be listed above — one entry per slug. The pill
+// carries the project's type instead, so /our-projects/the-vantage reads
+// "Villas", matching the breadcrumb segment below the banner.
+const resolveMobileTitle = (pathname, fallback) => {
+  if (MOBILE_TITLES[pathname]) return MOBILE_TITLES[pathname];
+
+  if (pathname.startsWith(PROJECT_PATH_PREFIX)) {
+    const slug = pathname.slice(PROJECT_PATH_PREFIX.length).replace(/\/$/, "");
+    const project = getProjectBySlug(slug);
+
+    if (project) return project.typePlural;
+  }
+
+  return fallback;
 };
 
 // Items without an `href` are dropdown triggers only, so their active state
@@ -203,7 +222,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
         </Link>
 
         <span className="text-body-sm font-medium tracking-[2.66px] text-white uppercase">
-          {MOBILE_TITLES[pathname] ?? mobileTitle}
+          {resolveMobileTitle(pathname, mobileTitle)}
         </span>
 
         <button
