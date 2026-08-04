@@ -259,7 +259,7 @@ const CANOPY_VEIL = {
 export const PROJECTS = [PALATIAL_ARC, MAJESTIC_VILLA, VANTAGE, CANOPY_VEIL];
 
 export const projectHref = (project) =>
-  `${ROUTES.OUR_PROJECTS}/${project.slug}`;
+  `${ROUTES.PROJECTS}/${project.slug}`;
 
 export const getProjectBySlug = (slug) =>
   PROJECTS.find((project) => project.slug === slug);
