@@ -24,8 +24,8 @@ export default function BreadcrumbSection({ project }) {
   ];
 
   return (
-    <nav aria-label="Breadcrumb" className="bg-navy-800">
-      <div className="mx-auto max-w-xl px-16 py-14 lg:py-20">
+    <nav aria-label="Breadcrumb" className="bg-[#001B2E]">
+      <div className="mx-auto max-w-xl px-16 py-8 lg:py-20">
         <ol className="text-body-xs sm:text-body flex flex-wrap items-center gap-6 font-medium sm:gap-10 lg:text-[18x]/[normal]">
           {trail.map((crumb, index) => {
             const isCurrent = index === trail.length - 1;
