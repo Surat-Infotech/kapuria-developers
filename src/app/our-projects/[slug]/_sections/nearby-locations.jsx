@@ -36,7 +36,7 @@ export default function NearbyLocationsSection({ project }) {
           which is the container's 1140 exactly. */}
       <div className="grid grid-cols-1 gap-32 lg:grid-cols-[minmax(0,491fr)_minmax(0,607fr)] lg:gap-36">
         <div>
-          <h2 className="text-h3 text-navy-800 font-medium lg:text-[36px]/[68px]">
+          <h2 className="text-h3 font-medium text-[#082235] lg:text-[36px]/[68px]">
             Near by locations
           </h2>
           <div className="mt-16 max-h-210 overflow-y-auto mask-[linear-gradient(to_bottom,#000_80%,transparent_100%)] lg:mt-24 lg:max-h-588">
@@ -51,7 +51,7 @@ export default function NearbyLocationsSection({ project }) {
                   </dt>
                   {/* No margin between the two: the 26/34 and 22/30 leading is
                       what sets them apart in the design. */}
-                  <dd className="text-body-sm lg:text-body-relaxed font-normal text-[rgba(8,34,53,0.60)]">
+                  <dd className="text-body-sm font-normal text-[rgba(8,34,53,0.60)] lg:text-[16px]/[30px]">
                     {place.distance}
                   </dd>
                 </div>
@@ -94,7 +94,7 @@ export default function NearbyLocationsSection({ project }) {
             asChild
             size="sm"
             width="full"
-            className="lg:text-body-lg mt-44 gap-12 px-24 py-8 text-[16px]/[30px] tracking-[3px] lg:mt-56 lg:w-auto lg:gap-12 lg:py-14 lg:tracking-[3.42px]"
+            className="lg:text-body-lg mt-44 gap-12 px-24 py-8 text-[16px]/[30px] tracking-[3px] lg:mt-56 lg:w-auto lg:gap-12 lg:py-16 lg:tracking-[3.42px]"
           >
             <Link href={ROUTES.CONTACT}>
               <QuadrantIcon className="text-gold-300 hidden size-18 shrink-0 lg:inline-block" />
