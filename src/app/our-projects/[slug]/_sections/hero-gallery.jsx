@@ -26,7 +26,7 @@ export default function HeroGallerySection({ project, images }) {
               alt={`${project.name} — view ${index + 1}`}
               priority={index === 0}
               sizes="100vw"
-              className="aspect-375/522 w-full min-w-0 shrink-0 grow-0 basis-full object-cover lg:h-screen lg:w-full"
+              className="aspect-375/522 h-full w-full min-w-0 shrink-0 grow-0 basis-full object-cover min-[450px]:aspect-auto min-[450px]:h-screen lg:w-full"
             />
           ))}
         </div>
