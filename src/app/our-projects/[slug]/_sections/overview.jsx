@@ -76,7 +76,7 @@ export default function OverviewSection({ project }) {
 
       {/* Mobile mutes the location and leans on the description; desktop does
           the reverse, so the two lines swap weight across the breakpoint. */}
-      <p className="text-body mt-8 font-medium text-[rgba(8,34,53,0.60)] sm:text-[18px]/[26px] md:text-[22px]/[30px] lg:mt-18 lg:text-[25px]/[34px]">
+      <p className="mt-8 text-[16px]/[24px] text-[rgba(8,34,53,0.55)] sm:text-[18px]/[26px] md:text-[22px]/[30px] lg:mt-12 lg:text-[25px]/[34px] lg:text-[#082235]">
         {project.city}
       </p>
 
