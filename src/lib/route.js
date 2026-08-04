@@ -14,7 +14,7 @@ export const ROUTES = {
   // More
   BLOG: "/bloag",
   FAQS: "/faaq",
-  CONTACT: "/contacat",
+  CONTACT: "/contact-us",
 
   // Legal / Policy
   PRIVACY_POLICY: "/privacy-policy",
