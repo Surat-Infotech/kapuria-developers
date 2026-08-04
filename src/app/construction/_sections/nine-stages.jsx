@@ -119,13 +119,13 @@ export default function NineStagesSection() {
                 alt={title}
                 width={427}
                 height={389}
-                className="aspect-427/389 w-full object-cover"
+                className="aspect-250/225 w-full object-cover md:aspect-427/389"
               />
 
               <div className="p-16 pt-8 lg:p-36 lg:pt-16">
                 <p
                   aria-hidden
-                  className="text-gold-300 font-playfair -mt-10 text-[150px]/[135px] italic"
+                  className="text-gold-300 font-playfair -mt-10 text-[36px]/[36px] italic sm:text-[40px]/[40px] md:text-[44px]/[44px]"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </p>
@@ -134,7 +134,7 @@ export default function NineStagesSection() {
                   {title}
                 </h3>
 
-                <p className="mt-8 text-[10px]/[13px] font-medium text-[#A5AEB4] lg:mt-16 lg:text-[16px]/[28px]">
+                <p className="mt-8 text-[10px]/[14px] font-medium text-[#A5AEB4] sm:text-[16px]/[28px] lg:mt-16">
                   {description}
                 </p>
               </div>

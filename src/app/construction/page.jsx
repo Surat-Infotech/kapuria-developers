@@ -1,6 +1,7 @@
 import BannerSection from "./_sections/banner";
 import BeneathSurfaceSection from "./_sections/beneath-surface";
 import CheckpointsSection from "./_sections/checkpoints";
+import MaterialsSection from "./_sections/materials";
 import NineStagesSection from "./_sections/nine-stages";
 import OurApproachSection from "./_sections/our-approach";
 
@@ -17,6 +18,7 @@ export default function Construction() {
       <BeneathSurfaceSection />
       <NineStagesSection />
       <CheckpointsSection />
+      <MaterialsSection />
       {/* <ConsultationCtaSection /> */}
     </>
   );
