@@ -38,7 +38,7 @@ export default function MoreArticles() {
         </p>
       </div>
 
-      <div className="mt-24 grid grid-cols-1 gap-32 lg:mt-36 lg:grid-cols-3 lg:gap-24">
+      <div className="mt-24 grid grid-cols-1 gap-32 sm:grid-cols-2 sm:gap-x-16 lg:mt-36 lg:grid-cols-3 lg:gap-24">
         {POSTS.map(({ id, image }) => (
           <article key={id} className="flex flex-col items-start gap-16">
             <Link
@@ -55,7 +55,7 @@ export default function MoreArticles() {
             </Link>
 
             <div className="flex w-full flex-col items-start gap-8">
-              <h3 className="text-navy-800 text-[18px]/[26px] font-semibold lg:text-[16px]/[24px]">
+              <h3 className="text-navy-800 text-[18px]/[26px] font-semibold sm:text-[16px]/[24px]">
                 <Link
                   href=""
                   className="focus-visible:ring-gold-400 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
@@ -67,12 +67,13 @@ export default function MoreArticles() {
                 </Link>
               </h3>
 
-              <p className="text-navy-800/60 line-clamp-3 text-[12px]/[18px] font-normal lg:text-[14px]/[22px]">
+              <p className="text-navy-800/60 line-clamp-3 text-[12px]/[18px] font-normal sm:text-[14px]/[22px]">
                 {EXCERPT}
               </p>
 
-              {/* Chip bar — hairlines separate the values, so they sit between. */}
-              <div className="border-navy-800/5 flex flex-wrap items-center gap-8 rounded-md border-[0.75px] bg-white px-16 py-7">
+              {/* Chip bar — dots separate the values on mobile, hairlines
+                  inside a bordered box from `lg` up. */}
+              <div className="border-navy-800/5 flex flex-wrap items-center gap-8 rounded-md lg:border-[0.75px] lg:bg-white lg:px-16 lg:py-7">
                 {META.map((value, index) => (
                   <div key={value} className="flex items-center gap-8">
                     <span className="text-navy-800/60 text-body-xs font-normal whitespace-nowrap sm:text-[14px]/[22px]">
@@ -80,7 +81,13 @@ export default function MoreArticles() {
                     </span>
 
                     {index < META.length - 1 && (
-                      <span aria-hidden className="bg-navy-800/10 h-18 w-px" />
+                      <>
+                        <span
+                          aria-hidden
+                          className="bg-navy-800/10 hidden h-18 w-px lg:block"
+                        />
+                        <span className="bg-navy-800/60 size-3 rounded-2xl lg:hidden"></span>
+                      </>
                     )}
                   </div>
                 ))}

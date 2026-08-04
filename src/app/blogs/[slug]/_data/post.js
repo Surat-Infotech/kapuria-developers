@@ -1,3 +1,5 @@
+import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
+
 // Article content for the demo post. When a CMS lands, this shape is what the
 // page consumes: `sections` drives both the body and the table of contents.
 export const POST = {
@@ -9,6 +11,7 @@ export const POST = {
   author: {
     name: "Sophia Anderson",
     role: "Freelance Journalist",
+    avatar: sophiaAnderson,
   },
 };
 
@@ -73,9 +76,6 @@ export const SECTIONS = [
     id: "comparison-table",
     title: "Fly Ash Bricks vs Red Bricks: Comparison Table",
     type: "table",
-    body: [
-      "Here is the short version, before we get into why each of these differences exists.",
-    ],
   },
   {
     id: "manufacturing-process",
