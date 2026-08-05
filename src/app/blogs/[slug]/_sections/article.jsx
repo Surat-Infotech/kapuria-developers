@@ -49,22 +49,20 @@ const RelatedPanel = ({ className = "" }) => (
             className="h-93 w-104 shrink-0 rounded-md object-cover lg:h-97 lg:w-full"
           />
           <div className="flex flex-col gap-6 sm:gap-4">
-            <p className="text-navy-800 xs:text-body-sm line-clamp-3 text-xs font-semibold">
+            <p className="text-navy-800 line-clamp-3 text-xs font-semibold">
               Building Better Futures:{" "}
               <span className="font-normal">
                 Constructing Community Homes for a Brighter Tomorrow
               </span>
             </p>
-            <p className="text-navy-800/60 xs:text-body-sm text-xs font-normal">
-              10 mins
-            </p>
+            <p className="text-navy-800/60 text-xs font-normal">10 mins</p>
           </div>
         </li>
       ))}
     </ul>
 
     <div className="border-navy-800/10 mt-18 flex flex-col items-center gap-16 border-t pt-18">
-      <p className="text-navy-800 text-[16px]/[24px] font-semibold">
+      <p className="text-navy-800 text-body md:text-body-lg font-semibold">
         Share this article
       </p>
 
