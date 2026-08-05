@@ -82,7 +82,7 @@ const PROJECTS = [
 ];
 
 const Pill = ({ children }) => (
-  <span className="border-navy-800/40 text-navy-800 flex items-center justify-center rounded-[145px] border px-16 py-8 text-[12px]/[18px] font-normal whitespace-nowrap sm:py-11 lg:text-[14px]/[18px]">
+  <span className="border-navy-800/40 text-navy-800 text-body-xs flex items-center justify-center rounded-[145px] border px-16 py-8 font-normal whitespace-nowrap sm:py-11 lg:text-[14px]/[18px]">
     {children}
   </span>
 );
@@ -90,8 +90,8 @@ const Pill = ({ children }) => (
 // Desktop stacks a smaller "THE" above the name; mobile runs the whole thing
 // on one line. The arched window always replaces the name's first vowel.
 const Wordmark = ({ prefix, suffix }) => (
-  <h3 className="text-navy-800 font-bold uppercase sm:mb-16">
-    <span className="flex flex-wrap items-center gap-2 text-[22px]/[30px] lg:flex-col lg:items-start lg:gap-4 lg:text-[60px]/[44px]">
+  <h3 className="text-navy-800 font-bold uppercase">
+    <span className="xs:text-h4 sm:text-h3 flex flex-wrap items-center gap-4 text-[22px]/[30px] lg:flex-col lg:items-start lg:text-[60px]/[44px]">
       <span className="lg:text-[36px]/[44px]">THE</span>
 
       <span className="flex items-center gap-2 lg:items-end lg:gap-4">
@@ -134,13 +134,17 @@ export default function ProjectsSection() {
                   className="hidden lg:absolute lg:inset-0 lg:block lg:bg-[linear-gradient(264.82deg,rgba(255,255,255,0)_51.99%,rgba(255,255,255,0.5)_98.1%)]"
                 />
 
-                <div className="border-navy-800/25 relative border-b bg-white px-16 py-32 lg:border-0 lg:bg-transparent lg:px-150 lg:py-64">
-                  <div className="flex flex-col gap-24 lg:max-w-618 lg:gap-36">
+                {/* On desktop this panel is absolutely positioned so it can
+                    fill the article's min-height and centre the copy against
+                    the villa behind it. Mobile keeps it in flow, under the
+                    image. */}
+                <div className="border-navy-800/25 relative border-b bg-white px-16 py-32 lg:absolute lg:inset-0 lg:flex lg:flex-col lg:justify-center lg:border-0 lg:bg-transparent lg:px-64 lg:py-64 xl:px-150">
+                  <div className="flex flex-col gap-16 sm:gap-24 lg:max-w-618 lg:gap-36">
                     <div className="flex flex-col gap-16">
-                      <div className="flex flex-col gap-6 lg:gap-4">
+                      <div className="flex flex-col gap-6 sm:gap-12 lg:gap-16">
                         <Wordmark prefix={prefix} suffix={suffix} />
 
-                        <p className="text-navy-800 lg:text-body text-[12px]/[18px] font-normal">
+                        <p className="text-navy-800 xs:text-body-sm sm:text-body lg:text-body text-body-xs font-normal">
                           {tagline}
                         </p>
                       </div>
@@ -159,7 +163,7 @@ export default function ProjectsSection() {
                         {specs.map(({ label, value }, index) => (
                           <div
                             key={label}
-                            className="border-navy-800/12 flex items-center justify-between border-b py-8 text-[12px]/[18px] sm:text-[16px]/[24px] lg:justify-start lg:gap-10 lg:border-0 lg:py-0 lg:text-[20px]/[34px]"
+                            className="border-navy-800/12 text-body-xs sm:text-body flex items-center justify-between border-b py-8 lg:justify-start lg:gap-10 lg:border-0 lg:py-0 lg:text-[20px]/[34px]"
                           >
                             <dt className="text-navy-800/60 font-medium">
                               {label}
@@ -186,7 +190,11 @@ export default function ProjectsSection() {
                     </div>
 
                     <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
-                      <Button asChild width="full" className="lg:w-auto">
+                      <Button
+                        asChild
+                        width="full"
+                        className="mt-8 lg:mt-0 lg:w-auto"
+                      >
                         <Link href={href}>
                           <QuadrantIcon className="text-gold-300 size-18 shrink-0" />
                           View Property
@@ -200,7 +208,7 @@ export default function ProjectsSection() {
                           prevLabel="Previous property"
                           nextLabel="Next property"
                         />
-                        <span className="text-navy-800/80 text-[14px]/[22px] font-semibold whitespace-nowrap">
+                        <span className="text-navy-800/80 text-body-sm font-semibold whitespace-nowrap">
                           View Next Property
                         </span>
                       </div>

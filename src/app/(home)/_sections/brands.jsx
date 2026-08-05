@@ -85,7 +85,7 @@ const Row = ({ items, direction }) => (
 
 export default function Brands() {
   return (
-    <Section bg="surface" spacing="default" width="full">
+    <Section bg="surface" spacing="default" width="full" className="py-64">
       <div className="mx-auto flex max-w-740 flex-col items-center gap-16 px-16 text-center">
         <h2 className="lg:text-display text-navy-800 text-[32px]/[40px] font-medium sm:text-[48px]/[56px]">
           We use top brands for{" "}
@@ -96,7 +96,7 @@ export default function Brands() {
 
         <hr className="text-gold-400 w-34" />
 
-        <p className="md:text-body sm:text-body-sm text-navy-800/60 text-[12px]/[18px] font-medium">
+        <p className="md:text-body sm:text-body-sm text-navy-800/60 text-body-xs font-medium">
           We select only the top brands to ensure exceptional quality and
           longevity.
         </p>

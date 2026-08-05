@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
+import { cn } from "@/lib/utils";
+
 import {
   CONTACT_DETAILS,
   CONTACT_INTRO,
@@ -9,35 +13,122 @@ import {
 import { SOCIAL_LINKS } from "@/config/footer";
 
 import { FooterLogo } from "@/components/common/logo";
-import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
-import SectionHeader from "@/components/ui/section-header";
 
 import ChevronDownIcon from "@/assets/svgs/common/chevron-down";
 import SendIcon from "@/assets/svgs/common/send";
 
-const EYEBROW = "Support";
+const LABEL = "mb-8 block text-body-xs font-semibold text-[#6A7680]";
 
-const DESCRIPTION =
-  "Questions about your villa, documents or handover? Your project team usually replies within one business day.";
-
-const LABEL = "mb-8 block text-[12px]/[18px] font-semibold text-[#6A7680]";
-
-// Shared by the text inputs, the selects and the textarea. `block` matters:
-// form controls are inline-block by default, so the parent keeps a line box
-// and leaves a sliver of descender space under the control — most visible
-// under the textarea.
 const FIELD =
-  "block w-full rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-[12px]/[18px] font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-[14px]/[22px]";
+  "block w-full rounded-[6px] lg:rounded-[11px] border border-[#D9D2C6] bg-white px-16 py-9 text-body-xs font-normal text-[#0B2233] outline-none transition-colors duration-200 placeholder:text-navy-800/40 focus-visible:border-gold-400 focus-visible:ring-2 focus-visible:ring-gold-400/25 md:text-body-sm";
+
+const FLAG = "h-14 w-20 shrink-0 rounded-xs ring-1 ring-black/10";
 
 // Icon tiles — the contact rows and the social links share the same chip.
 const TILE =
   "flex size-44 shrink-0 items-center justify-center rounded-[12px] bg-[#1A4059]";
 
 const DETAIL_LABEL =
-  "text-[11px]/[16px] font-semibold tracking-[1.6px] text-white/45 uppercase";
+  "text-[10px]/[14px] font-bold tracking-[1.5px] text-white/50 uppercase lg:text-[12px]/[16px]";
+
+// The project desk lists the socials in its own order — the footer keeps the
+// shared SOCIAL_LINKS order.
+const SOCIAL_ORDER = ["Facebook", "Instagram", "YouTube", "X"];
+
+const CONTACT_SOCIAL_LINKS = [...SOCIAL_LINKS].sort(
+  (a, b) => SOCIAL_ORDER.indexOf(a.label) - SOCIAL_ORDER.indexOf(b.label)
+);
+
+// A native <option> can't hold an image, so the dial code runs on a custom
+// listbox — that's the only way the flags show up in the open list too.
+function DialCodeSelect({ value, onChange }) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  const selected =
+    PHONE_COUNTRY_CODES.find(({ code }) => code === value) ??
+    PHONE_COUNTRY_CODES[0];
+  const SelectedFlag = selected.Flag;
+
+  // Click-away and Escape close the list.
+  useEffect(() => {
+    if (!open) return;
+
+    const onPointerDown = (event) => {
+      if (!containerRef.current?.contains(event.target)) setOpen(false);
+    };
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  return (
+    <div ref={containerRef} className="relative w-full max-w-104 shrink-0">
+      {/* Keeps the value in the form payload now that the select is gone */}
+      <input type="hidden" name="dialCode" value={value} />
+
+      <button
+        type="button"
+        id="contact-dial-code"
+        onClick={() => setOpen((isOpen) => !isOpen)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={`Country dialling code — ${selected.label} ${selected.code}`}
+        className={cn(
+          FIELD,
+          "flex cursor-pointer items-center justify-center gap-6 px-8"
+        )}
+      >
+        <SelectedFlag className={FLAG} />
+        {selected.code}
+      </button>
+
+      {open && (
+        <ul
+          role="listbox"
+          aria-label="Country dialling code"
+          className="absolute top-[calc(100%+4px)] left-0 z-20 max-h-224 w-full overflow-y-auto rounded-[11px] border border-[#D9D2C6] bg-white p-4 shadow-[0_12px_32px_0_rgba(8,34,53,0.12)]"
+        >
+          {PHONE_COUNTRY_CODES.map(({ code, label, Flag }) => (
+            <li key={code} role="presentation">
+              <button
+                type="button"
+                role="option"
+                aria-selected={code === value}
+                aria-label={`${label} ${code}`}
+                onClick={() => {
+                  onChange(code);
+                  setOpen(false);
+                }}
+                className={cn(
+                  "text-body-xs md:text-body-sm flex w-full cursor-pointer items-center justify-center gap-6 rounded-lg px-4 py-8 text-[#0B2233] transition-colors duration-200 hover:bg-[#FAF6F2]",
+                  code === value && "bg-[#FAF6F2]"
+                )}
+              >
+                <Flag className={FLAG} />
+                {code}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 export default function ContactFormSection() {
+  const [dialCode, setDialCode] = useState(PHONE_COUNTRY_CODES[0].code);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // TODO: wire up to the enquiry endpoint / server action.
@@ -47,38 +138,35 @@ export default function ContactFormSection() {
     <div className="relative bg-[#FAF6F2] pt-72 lg:pt-124">
       <span
         aria-hidden
-        className="absolute inset-x-0 bottom-0 hidden h-210 bg-[#0A1D38] lg:block"
+        className="bg-navy-700 absolute inset-x-0 bottom-0 hidden h-210 lg:block"
       />
       <Section
         bg="transparent"
         spacing="none"
         className="relative pt-32 pb-32 lg:pt-64 lg:pb-120"
       >
-        <p className="text-eyebrow text-gold-400 mb-8 uppercase">{EYEBROW}</p>
+        <p className="text-eyebrow text-gold-400 mb-8 font-semibold uppercase">
+          Support
+        </p>
 
-        <SectionHeader
-          className="mb-32"
-          heading={
-            <>
-              Get{" "}
-              <span className="font-playfair text-gold-400 italic">
-                in touch
-              </span>
-            </>
-          }
-          classNames={{
-            heading:
-              "text-[30px]/[40px] font-medium sm:text-[44px]/[452px] md:text-[56px]/[64px] lg:text-display",
-            rule: "my-8 lg:my-16",
-            description:
-              "mt-0 text-[14px]/[22px] font-normal rgba(8,34,53,0.60) sm:text-[16px]/[24px]",
-          }}
-          description={DESCRIPTION}
-        />
+        <div className="mb-32 flex flex-col items-start text-left">
+          <h2 className="lg:text-display max-w-xl text-[30px]/[40px] font-medium sm:text-[44px]/[452px] md:text-[56px]/[64px]">
+            Get{" "}
+            <span className="font-playfair text-gold-400 italic">in touch</span>
+          </h2>
 
-        <div className="grid overflow-hidden rounded-[20px] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
+          {/* Gold rule — the recurring 34px divider under every section heading */}
+          <hr className="text-gold-400 my-8 block w-34 sm:my-16" />
+
+          <p className="text-body-sm sm:text-body text-navy-800/60 font-medium">
+            Questions about your villa, documents or handover? Your project team
+            usually replies within one business day.
+          </p>
+        </div>
+
+        <div className="grid overflow-hidden rounded-[20px] border border-[#E4DFD4] shadow-[0_20px_60px_0_rgba(8,34,53,0.08)] lg:grid-cols-[1fr_384px] lg:rounded-3xl">
           {/* ── Enquiry form ─────────────────────────────────────── */}
-          <div className="bg-surface p-16 md:p-24 lg:p-32">
+          <div className="bg-surface p-16 pb-32 md:p-24 lg:p-32">
             <form onSubmit={handleSubmit} className="flex flex-col gap-16">
               <div className="grid gap-x-14 gap-y-16 lg:grid-cols-2">
                 <div>
@@ -117,23 +205,9 @@ export default function ContactFormSection() {
                   </label>
 
                   <div className="flex gap-8">
-                    {/* Centred and chevron-less: the box reads as a prefix on
-                        the number beside it, not as a field of its own. */}
-                    <label htmlFor="contact-dial-code" className="sr-only">
-                      Country dialling code
-                    </label>
-                    <select
-                      id="contact-dial-code"
-                      name="dialCode"
-                      defaultValue={PHONE_COUNTRY_CODES[0].code}
-                      className={`${FIELD} w-full max-w-104 shrink-0 cursor-pointer appearance-none px-16 text-center`}
-                    >
-                      {PHONE_COUNTRY_CODES.map(({ code, label, flag }) => (
-                        <option key={code} value={code}>
-                          {flag} {code}
-                        </option>
-                      ))}
-                    </select>
+                    {/* Chevron-less: the box reads as a prefix on the number
+                        beside it, not as a field of its own. */}
+                    <DialCodeSelect value={dialCode} onChange={setDialCode} />
 
                     <input
                       id="contact-phone"
@@ -166,7 +240,7 @@ export default function ContactFormSection() {
                       ))}
                     </select>
 
-                    <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-16 size-16 -translate-y-1/2" />
+                    <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-16 size-16 -translate-y-1/2 [&_path]:stroke-[#6A7680]" />
                   </div>
                 </div>
 
@@ -179,19 +253,19 @@ export default function ContactFormSection() {
                     name="message"
                     rows={4}
                     placeholder="Hi team, I'd like to schedule a site visit for Villa 12 next week and confirm the possession timeline."
-                    className={`${FIELD} h-124 resize-none`}
+                    className={`${FIELD} h-109 resize-none overflow-y-auto sm:h-124`}
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-12 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-navy-800/50 text-[12px]/[18px]">
+                <p className="text-body-xs text-[#6A7680]">
                   We&rsquo;ll reply to your registered email.
                 </p>
 
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-8 rounded-[60px] bg-[#082235] px-24 py-8 text-[18px]/[30px] font-medium tracking-[3.42px] text-white uppercase sm:w-auto lg:py-20 lg:text-[18px]/[normal]"
+                  className="text-body-lg hover:text-gold-300 flex w-full cursor-pointer items-center justify-center gap-8 rounded-[60px] bg-[#082235] px-24 py-8 font-medium tracking-[3.42px] text-white uppercase transition-all duration-250 hover:-translate-y-1 sm:w-auto lg:py-20 lg:text-[18px]/[normal]"
                 >
                   <SendIcon className="text-gold-300 size-16 shrink-0" />
                   Send message
@@ -205,13 +279,13 @@ export default function ContactFormSection() {
             <div className="lg:max-w-303">
               <FooterLogo className="h-40 w-auto" />
 
-              <p className="text-muted-foreground mt-8 text-[14px]/[22px] font-medium">
+              <p className="text-body-sm mt-8 text-[rgba(255,255,255,0.72)]">
                 {CONTACT_INTRO}
               </p>
 
               <ul className="mt-16 flex max-w-290 flex-col gap-16 sm:max-w-full lg:mt-24 lg:gap-24">
                 {CONTACT_DETAILS.map(({ label, value, href, Icon }) => (
-                  <li key={label} className="flex items-start gap-14">
+                  <li key={label} className="flex items-center gap-14">
                     <span className={TILE}>
                       <Icon className="text-gold-300 size-19" />
                     </span>
@@ -222,12 +296,12 @@ export default function ContactFormSection() {
                       {href ? (
                         <a
                           href={href}
-                          className="hover:text-gold-300 mt-4 block text-[14px]/[22px] font-semibold break-words text-white transition-colors duration-200"
+                          className="hover:text-gold-300 text-body-xs sm:text-body-sm mt-4 block font-semibold break-words text-white transition-colors duration-200"
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="mt-4 text-[12px]/[18px] text-[rgba(255,255,255,0.85)]">
+                        <p className="text-body-xs sm:text-body-sm mt-4 text-[rgba(255,255,255,0.85)]">
                           {value}
                         </p>
                       )}
@@ -239,14 +313,17 @@ export default function ContactFormSection() {
               <h2 className={`${DETAIL_LABEL} mt-16 lg:mt-24`}>Follow us</h2>
 
               <ul className="mt-8 flex items-center gap-8 lg:gap-10">
-                {SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                {CONTACT_SOCIAL_LINKS.map(({ label, href, Icon }) => (
                   <li key={label}>
                     <a
                       href={href}
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label={label}
-                      className={`${TILE} hover:text-gold-300 size-40 rounded-[11px] border border-[#2A4256] text-white transition-colors duration-200 hover:bg-white/15`}
+                      className={cn(
+                        TILE,
+                        "hover:text-gold-300 size-40 rounded-[11px] border border-[#2A4256] bg-[#152F42] text-white transition-colors duration-200 hover:bg-white/15"
+                      )}
                     >
                       <Icon className="size-18" />
                     </a>

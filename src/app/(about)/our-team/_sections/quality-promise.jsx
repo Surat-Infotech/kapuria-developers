@@ -81,13 +81,16 @@ const PLATE =
 
 export default function QualityPromiseSection() {
   return (
-    // The panel straddles the seam between the cream page and the navy block
-    // below it, so the split lives on the section rather than its neighbours.
-    // Mobile has no seam — it is navy end to end.
+    // On desktop the panel straddles the seam between the cream page and the
+    // navy block below it, so the split lives on the section rather than its
+    // neighbours. Mobile has no seam — it is navy end to end.
+    //
+    // The `image:` hint keeps the flat colour and the gradient on separate
+    // properties — without it both classes fight over `background-color`.
     <Section
       bg="transparent"
       spacing="none"
-      className="bg-navy-950 lg:bg-[linear-gradient(to_bottom,var(--color-cream-200)_0,var(--color-cream-200)_50%,var(--color-navy-950)_50%)] lg:py-64"
+      className="bg-[#0B1E39] lg:bg-[#0A1D38] lg:bg-[image:linear-gradient(0deg,#0B1E39_48.89%,#FAF6F2_48.95%)] lg:py-64"
       classNames={{ container: "px-16 py-40 lg:py-0" }}
     >
       {/* ── Mobile: the coin gets its own plate above the promise card. The
@@ -98,7 +101,9 @@ export default function QualityPromiseSection() {
         <Image
           src={PromiseBadgeMobile}
           alt="Kapuria Developers 115 point promise"
-          className="w-full"
+          className="mx-auto block"
+          width={343}
+          height={194}
         />
       </div>
 
@@ -152,7 +157,7 @@ export default function QualityPromiseSection() {
             <div className="lg:flex lg:items-center lg:gap-24">
               {/* Width and shrink belong on the flex child, not the copy. */}
               <div className="lg:border-r-gold-300/50 lg:w-354 lg:shrink-0 lg:border-r">
-                <p className="text-gold-300 text-center text-[14px]/[22px] font-medium tracking-[1.5px] uppercase lg:text-left lg:text-[20px]/[28px] lg:tracking-[3.6px]">
+                <p className="text-gold-300 text-body-sm text-center font-medium tracking-[1.5px] uppercase lg:text-left lg:text-[20px]/[28px] lg:tracking-[3.6px]">
                   Soil to slab to seal
                   {/* Italic is a desktop-only distinction — mobile runs both
                     lines in the one upright style. */}
@@ -162,7 +167,7 @@ export default function QualityPromiseSection() {
                 </p>
               </div>
 
-              <p className="mt-16 text-center text-[14px]/[22px] font-medium text-[rgba(255,255,255,0.60)] lg:mt-0 lg:text-left lg:text-[16px]/[24px]">
+              <p className="text-body-sm lg:text-body mt-16 text-center font-medium text-[rgba(255,255,255,0.60)] lg:mt-0 lg:text-left">
                 {CREDENTIALS}{" "}
                 <span className="text-white">
                   in every wall you&rsquo;ll never see.
@@ -174,7 +179,7 @@ export default function QualityPromiseSection() {
           </div>
         </div>
 
-        <p className="mt-16 text-[16px]/[24px] font-normal text-[#F2F5FA] sm:mt-24 md:mt-40 lg:mt-56 lg:text-center lg:text-[18px]/[26px] lg:font-medium">
+        <p className="text-body mt-16 font-normal text-[#F2F5FA] sm:mt-24 md:mt-40 lg:mt-56 lg:text-center lg:text-[18px]/[26px] lg:font-medium">
           {DOCUMENTATION}
         </p>
 

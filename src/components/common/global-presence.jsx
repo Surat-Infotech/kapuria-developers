@@ -7,11 +7,11 @@ import Image from "next/image";
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
 
-import abuDhabi from "@/assets/images/home/abu-dhabi.webp";
-import athens from "@/assets/images/home/athens.webp";
-import globalPresenceBg from "@/assets/images/home/bg-global-presence.webp";
-import dubai from "@/assets/images/home/dubai.webp";
-import india from "@/assets/images/home/india.webp";
+import abuDhabi from "@/assets/images/common/abu-dhabi.webp";
+import athens from "@/assets/images/common/athens.webp";
+import globalPresenceBg from "@/assets/images/common/bg-global-presence.webp";
+import dubai from "@/assets/images/common/dubai.webp";
+import india from "@/assets/images/common/india.webp";
 
 const LOCATIONS = [
   {
@@ -62,28 +62,30 @@ export default function GlobalPresence() {
       }}
     >
       <div className="flex flex-col items-start gap-16">
-        <p className="text-eyebrow text-gold-300 font-medium uppercase">
-          Our Reach
-        </p>
+        <div>
+          <p className="text-eyebrow text-gold-300 mb-8 font-medium uppercase">
+            Our Reach
+          </p>
 
-        <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
-          Our{" "}
-          <span className="font-playfair text-gold-300 italic">
-            Global Presence
-          </span>
-        </h2>
+          <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
+            Our{" "}
+            <span className="font-playfair text-gold-300 italic">
+              Global Presence
+            </span>
+          </h2>
+        </div>
 
         <hr className="text-gold-300 w-34" />
 
-        <p className="md:text-body sm:text-body-sm text-[12px]/[18px] font-medium text-neutral-400">
+        <p className="md:text-body sm:text-body-sm text-body-xs font-medium text-neutral-400">
           Bringing thoughtful design, lasting quality, and timeless
           craftsmanship to every location we build in.
         </p>
       </div>
 
       {/* Horizontal rail — the next card peeks in past the gutter, as designed. */}
-      <div ref={emblaRef} className="mt-24 overflow-hidden sm:mt-36 md:mt-64">
-        <div className="flex gap-24">
+      <div ref={emblaRef} className="my-24 overflow-hidden sm:mt-36 md:my-64">
+        <div className="flex gap-16 sm:gap-24">
           {LOCATIONS.map(({ image, city, country, description }) => (
             <div
               key={city}
@@ -118,14 +120,14 @@ export default function GlobalPresence() {
                     <h4 className="text-[26px]/[26px] font-bold text-white uppercase">
                       {city}
                     </h4>
-                    <h3 className="font-playfair text-[24px]/[34px] text-white/60 italic lg:text-[26px]/[26px]">
+                    <h3 className="font-playfair text-h4 text-white/60 italic lg:text-[26px]/[26px]">
                       {country}
                     </h3>
                   </div>
 
                   {/* Rides in with the overlay on desktop; always visible on
                     touch, where there is nothing to trigger the reveal. */}
-                  <p className="lg:text-body-lg text-[14px]/[24px] font-medium text-white transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none lg:translate-y-16 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-visible:translate-y-0 lg:group-focus-visible:opacity-100">
+                  <p className="lg:text-body-lg text-[12px]/[18px] font-medium text-white transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none lg:translate-y-16 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-visible:translate-y-0 lg:group-focus-visible:opacity-100">
                     {description}
                   </p>
                 </div>
@@ -138,7 +140,7 @@ export default function GlobalPresence() {
       <CarouselNav
         api={emblaApi}
         variant="light"
-        className="mt-40 justify-end"
+        className="justify-end"
         prevLabel="Previous locations"
         nextLabel="Next locations"
       />

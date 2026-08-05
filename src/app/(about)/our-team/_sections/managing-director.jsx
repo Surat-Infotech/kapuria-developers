@@ -12,13 +12,17 @@ const QUOTE =
 
 export default function ManagingDirectorSection() {
   return (
-    <Section spacing="lg">
+    <Section
+      id="managing-director"
+      spacing="lg"
+      className="py-32 sm:py-64 lg:py-120"
+    >
       <div className="flex flex-col items-center gap-24 text-center lg:flex-row lg:gap-64 lg:text-left">
         {/* The gold circle and ring are baked into the artwork. */}
         <Image src={Portrait} alt={`${NAME}, ${ROLE}`} className="shrink-0" />
 
         <div>
-          <h2 className="lg:text-display-sm text-[32px]/[40px] font-medium sm:text-[42px]/[50px] md:text-[52px]/[60px] lg:text-[60px]/[68px]">
+          <h2 className="lg:text-display-sm text-[32px]/[40px] font-medium sm:text-[42px]/[50px] md:text-[52px]/[60px]">
             A word from our
             <span className="text-gold-400 block font-serif italic">
               {ROLE}
@@ -35,7 +39,7 @@ export default function ManagingDirectorSection() {
             &ldquo;{QUOTE}&rdquo;
           </blockquote>
 
-          <p className="text-foreground text-body-xs mt-8 font-medium sm:text-[16px]/[24px] md:text-[18px]/[36px] lg:mt-16">
+          <p className="text-foreground text-body-xs sm:text-body mt-8 font-medium md:text-[18px]/[36px] lg:mt-16">
             – {NAME}
             <span className="text-foreground/60">, {ROLE}</span>
           </p>

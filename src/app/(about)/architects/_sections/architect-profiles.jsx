@@ -40,7 +40,7 @@ const ARCHITECTS = [
   {
     name: "Rachit Malhotra",
     role: "Architect",
-    bio: "Every plan begins with the site and the people who will live on it — orientation, daylight, airflow and privacy resolved long before a line is drawn, so that the design which follows feels inevitable rather than imposed.",
+    bio: "We follow advanced construction methods designed for structural balance, load optimisation, long-term settlement control, and resistance to environmental stress — engineering every element with future resilience in mind.",
     photo: RachitMalhotra,
     photoMobile: RachitMalhotraMobile,
     studio: RachitStudio,
@@ -70,6 +70,7 @@ export default function ArchitectProfilesSection() {
           style,
         }) => (
           <Section
+            id="architect-profiles"
             key={name}
             bg="dark"
             spacing="none"
@@ -98,7 +99,7 @@ export default function ArchitectProfilesSection() {
               <div className="lg:max-w-558">
                 {/* Tracking is 2.52px here, off the shared `text-eyebrow`
                   preset, and desktop sets it bold where mobile stays medium. */}
-                <p className="text-gold-300 text-[14px]/[22px] font-medium tracking-[2.52px] uppercase lg:font-bold">
+                <p className="text-gold-300 text-body-sm font-medium tracking-[2.52px] uppercase lg:font-bold">
                   {KICKER}
                 </p>
 
@@ -108,7 +109,7 @@ export default function ArchitectProfilesSection() {
                 </h2>
 
                 {/* Deeper gold than the kicker, and tracked in on mobile only. */}
-                <p className="font-serif text-[26px]/[34px] font-medium tracking-[-0.78px] text-[#DFB367] italic sm:text-[28px]/[36px] md:text-[32px]/[40px] lg:text-[36px]/[44px] lg:tracking-normal">
+                <p className="text-h3 font-serif font-medium tracking-[-0.78px] text-[#DFB367] italic sm:text-[28px]/[36px] md:text-[32px]/[40px] lg:text-[36px]/[44px] lg:tracking-normal">
                   {role}
                 </p>
 
@@ -119,7 +120,7 @@ export default function ArchitectProfilesSection() {
                 />
 
                 {/* Mobile carries the extra weight; desktop drops back to 400. */}
-                <p className="text-[12px]/[18px] font-medium text-[rgba(255,255,255,0.60)] sm:text-[16px]/[24px] lg:font-normal">
+                <p className="text-body-xs sm:text-body font-medium text-[rgba(255,255,255,0.60)] lg:font-normal">
                   {bio}
                 </p>
 

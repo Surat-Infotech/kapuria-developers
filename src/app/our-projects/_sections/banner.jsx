@@ -36,7 +36,7 @@ export default function BannerSection() {
               </span>
             </h1>
             <hr className="text-gold-300 my-14 w-34" />
-            <p className="md:text-body sm:text-body-sm mb-0 text-[12px]/[18px] text-white">
+            <p className="md:text-body sm:text-body-sm text-body-xs mb-0 text-white">
               Peruse are projects from all over the world.
             </p>
           </div>

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
-import SectionHeader from "@/components/ui/section-header";
 
 import QuadrantIcon from "@/assets/svgs/common/quadrant";
 
@@ -33,48 +32,88 @@ export default function testing() {
       {/* Section variants */}
       <div className="-mx-16 w-[calc(100%+32px)]">
         <Section bg="muted">
-          <SectionHeader
-            heading="Our 115-point quality promise."
-            description="Most residential and commercial properties are sold on a feeling. Ours passes a 115-point inspection - soil to slab to seal."
-          />
+          <div className="mb-40 flex flex-col items-start text-left">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              Our 115-point quality promise.
+            </h2>
+            <span aria-hidden className="bg-gold-300 mt-16 block h-1 w-34" />
+            <p className="text-body mt-16 font-medium">
+              Most residential and commercial properties are sold on a feeling.
+              Ours passes a 115-point inspection - soil to slab to seal.
+            </p>
+          </div>
           <Button>Download Checklist</Button>
         </Section>
 
         <Section bg="surface">
-          <SectionHeader
-            align="center"
-            heading="We use top brands."
-            description="We select only the top brands to ensure exceptional quality and longevity."
-          />
+          <div className="mb-40 flex flex-col items-center text-center">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              We use top brands.
+            </h2>
+            <span
+              aria-hidden
+              className="bg-gold-300 mx-auto mt-16 block h-1 w-34"
+            />
+            <p className="text-body mt-16 font-medium">
+              We select only the top brands to ensure exceptional quality and
+              longevity.
+            </p>
+          </div>
         </Section>
 
         <Section bg="dark">
-          <SectionHeader
-            heading="A Home That Sounds as Good as It Looks"
-            description="Every villa is equipped with home theatre provisions and high-quality audio wiring."
-          />
+          <div className="mb-40 flex flex-col items-start text-left">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              A Home That Sounds as Good as It Looks
+            </h2>
+            <span aria-hidden className="bg-gold-300 mt-16 block h-1 w-34" />
+            <p className="text-body mt-16 font-medium">
+              Every villa is equipped with home theatre provisions and
+              high-quality audio wiring.
+            </p>
+          </div>
           <Button variant="secondary">View Our Work</Button>
         </Section>
 
         <Section bg="inverse">
-          <SectionHeader heading="Footer surface" rule={false} />
+          <div className="mb-40 flex flex-col items-start text-left">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              Footer surface
+            </h2>
+          </div>
         </Section>
 
         {/* Spacing variants */}
         <Section bg="surface" spacing="sm">
-          <SectionHeader heading="spacing sm — 32 / 44" rule={false} />
+          <div className="mb-40 flex flex-col items-start text-left">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              spacing sm — 32 / 44
+            </h2>
+          </div>
         </Section>
 
         <Section bg="muted" spacing="default">
-          <SectionHeader heading="spacing default — 40 / 64" rule={false} />
+          <div className="mb-40 flex flex-col items-start text-left">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              spacing default — 40 / 64
+            </h2>
+          </div>
         </Section>
 
         <Section bg="surface" spacing="lg" spacingBottom="none">
-          <SectionHeader heading="lg, flush bottom" rule={false} />
+          <div className="mb-40 flex flex-col items-start text-left">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              lg, flush bottom
+            </h2>
+          </div>
         </Section>
 
         <Section bg="surface" spacingTop="none">
-          <SectionHeader heading="flush top — pairs with above" rule={false} />
+          <div className="mb-40 flex flex-col items-start text-left">
+            <h2 className="text-display-sm sm:text-display max-w-xl font-medium">
+              flush top — pairs with above
+            </h2>
+          </div>
         </Section>
       </div>
     </main>

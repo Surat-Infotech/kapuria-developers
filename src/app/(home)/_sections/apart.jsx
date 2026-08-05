@@ -77,12 +77,12 @@ const FEATURES = [
 
 export default function ApartSection() {
   return (
-    <Section spacing="default">
+    <Section spacing="lg" className="py-32 sm:py-64 lg:py-120">
       <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:hidden">
         What <span className="font-playfair text-gold-400 italic">sets</span> us
         apart?
       </h2>
-      <div className="relative overflow-hidden rounded-3xl lg:rounded-[54px]">
+      <div className="relative overflow-hidden rounded-3xl md:rounded-[54px]">
         <Image
           src={videoCover}
           alt="A Kapuria residence lit at dusk"
@@ -96,8 +96,8 @@ export default function ApartSection() {
           className="absolute inset-0 bg-[linear-gradient(106.31deg,rgba(0,0,0,0.5)_17.9%,rgba(0,0,0,0.315)_39.9%,rgba(0,0,0,0.24)_44.9%,rgba(0,0,0,0.195)_57.6%,rgba(0,0,0,0)_64.6%)]"
         />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 md:justify-start lg:gap-96 lg:pt-114">
-          <h2 className="lg:text-display-sm hidden text-center text-[24px]/[32px] font-medium text-white sm:text-[40px]/[48px] md:block">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 md:justify-start md:pt-100 lg:gap-96 lg:pt-114">
+          <h2 className="lg:text-display-sm text-h5 hidden text-center font-medium text-white sm:text-[40px]/[48px] md:block">
             What{" "}
             <span className="font-playfair text-gold-400 italic">sets</span> us
             apart?
@@ -106,15 +106,15 @@ export default function ApartSection() {
           <button
             type="button"
             aria-label="Play video"
-            className="flex min-h-32 min-w-32 cursor-pointer items-center justify-center rounded-[112px] border border-[#6B6B6B] bg-[rgba(54,54,54,0.1)] backdrop-blur-[13.964285850524902px] lg:h-112 lg:w-112"
+            className="xs:w-60 xs:h-60 flex min-h-32 min-w-32 cursor-pointer items-center justify-center rounded-[112px] border border-[#6B6B6B] bg-[rgba(54,54,54,0.1)] backdrop-blur-[13.964285850524902px] sm:h-80 sm:w-80 md:h-100 md:w-100 lg:h-112 lg:w-112"
           >
-            <div className="flex items-center justify-center sm:h-52 sm:w-52">
+            <div className="flex items-center justify-center lg:h-52 lg:w-52">
               <Image
                 src={playIcon}
                 alt="Play Icon"
                 width={40}
                 height={40}
-                className="ms-4 h-12 w-12 sm:ms-8 sm:h-20 sm:w-20 md:h-full md:w-full"
+                className="xs:h-20 xs:w-20 ms-4 h-12 w-12 sm:ms-8 sm:h-30 sm:w-30 md:h-full md:w-full"
               />
             </div>
           </button>
@@ -132,7 +132,7 @@ export default function ApartSection() {
           >
             <Image
               src={icon}
-              alt=""
+              alt="Icon"
               width={70}
               height={70}
               className="h-56 w-56 shrink-0 object-contain sm:h-70 sm:w-70"

@@ -15,6 +15,10 @@ import palatialArc2 from "@/assets/images/our-projects/palatial-arc-2.webp";
 import palatialArc3 from "@/assets/images/our-projects/palatial-arc-3.webp";
 import palatialArc4 from "@/assets/images/our-projects/palatial-arc-4.webp";
 import palatialArc5 from "@/assets/images/our-projects/palatial-arc-5.webp";
+import canopyVeilHero from "@/assets/images/our-projects/project-details/canopy-veil.webp";
+import magesticVillaHero from "@/assets/images/our-projects/project-details/mangestic-vista.webp";
+import palatialArcHero from "@/assets/images/our-projects/project-details/polentail-arc.webp";
+import vantageHero from "@/assets/images/our-projects/project-details/vantage.webp";
 import vantage1 from "@/assets/images/our-projects/vantage-1.webp";
 import vantage2 from "@/assets/images/our-projects/vantage-2.webp";
 import vantage3 from "@/assets/images/our-projects/vantage-3.webp";
@@ -70,7 +74,7 @@ export const AMENITIES = {
 // Every project in the design carries this same paragraph, so it is hoisted
 // until each one gets copy of its own.
 const DESCRIPTION =
-  "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation, reducing the need for artificial lighting and climate control.";
+  "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation, reducing the need for artificial heating or cooling. The villa's structure often incorporates recycled materials, such as reclaimed wood and repurposed stone, minimizing the ecological footprint while infusing the space with a rustic yet contemporary aesthetic.";
 
 const PALATIAL_ARC = {
   slug: "the-palatial-arc",
@@ -80,9 +84,9 @@ const PALATIAL_ARC = {
   lockup: ["The P", "o", "latial Arc"],
   location: "Sector 88, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
-  // No project has art-directed hero photography yet, so every `hero` below is
-  // empty and the detail banner falls back to the gallery frames, cropping
-  // them to its own ratio — see `heroImages` at the foot of the file.
+  // `images` are the listing frames; `hero` is the art-directed banner set the
+  // detail page shows instead. Every project carries the same four renders,
+  // each page leading with its own — see `heroImages` at the foot of the file.
   images: [
     palatialArc1,
     palatialArc2,
@@ -90,7 +94,7 @@ const PALATIAL_ARC = {
     palatialArc4,
     palatialArc5,
   ],
-  hero: [],
+  hero: [palatialArcHero, magesticVillaHero, vantageHero, canopyVeilHero],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,852 sq.ft.",
@@ -137,7 +141,7 @@ const MAJESTIC_VILLA = {
     magesticVilla4,
     magesticVilla5,
   ],
-  hero: [],
+  hero: [magesticVillaHero, palatialArcHero, vantageHero, canopyVeilHero],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "1,835.19 sq.ft.",
@@ -178,7 +182,7 @@ const VANTAGE = {
   location: "Sector 79, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
   images: [vantage1, vantage2, vantage3, vantage4, vantage5, vantage6],
-  hero: [],
+  hero: [vantageHero, palatialArcHero, magesticVillaHero, canopyVeilHero],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,756.25 sq.ft.",
@@ -219,7 +223,7 @@ const CANOPY_VEIL = {
   location: "Sector 60, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
   images: [canopyVeil1, canopyVeil2, canopyVeil3, canopyVeil4, canopyVeil5],
-  hero: [],
+  hero: [canopyVeilHero, palatialArcHero, magesticVillaHero, vantageHero],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "3,750 sq.ft.",
@@ -258,14 +262,13 @@ const CANOPY_VEIL = {
 
 export const PROJECTS = [PALATIAL_ARC, MAJESTIC_VILLA, VANTAGE, CANOPY_VEIL];
 
-export const projectHref = (project) =>
-  `${ROUTES.OUR_PROJECTS}/${project.slug}`;
+export const projectHref = (project) => `${ROUTES.PROJECTS}/${project.slug}`;
 
 export const getProjectBySlug = (slug) =>
   PROJECTS.find((project) => project.slug === slug);
 
 // The hero runs full-bleed at 1440×922, a ratio no gallery frame has. Where a
-// project has no hero art yet the gallery frames stand in and the banner crops
+// project has no hero art the gallery frames stand in and the banner crops
 // them, so the carousel is never empty.
 export const heroImages = (project) =>
   project.hero.length > 0 ? project.hero : project.images;

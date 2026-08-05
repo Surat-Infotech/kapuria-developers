@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 import { HEADER_CTA, NAV_ITEMS } from "@/config/navigation";
+import { getProjectBySlug } from "@/config/projects";
 
 import { HeaderLogo, LogoMark } from "@/components/common/logo";
 import { Button } from "@/components/ui/button";
@@ -25,7 +26,33 @@ const MOBILE_LINK =
 
 // Dropdown items are sentence-cased, not uppercase, and unspaced.
 const DROPDOWN_LINK =
-  "block text-center text-[16px]/[26px] font-medium whitespace-nowrap transition-colors duration-200";
+  "block text-center text-body-relaxed font-medium whitespace-nowrap transition-colors duration-200";
+
+// Routes that show something other than the default in the mobile pill.
+const MOBILE_TITLES = {
+  "/architects": "Construction",
+  "/contact-us": "Contact Us",
+  "/our-projects": "Projects",
+  "/blogs": "News & Media",
+};
+
+const PROJECT_PATH_PREFIX = "/our-projects/";
+
+// Project detail pages can't be listed above — one entry per slug. The pill
+// carries the project's type instead, so /our-projects/the-vantage reads
+// "Villas", matching the breadcrumb segment below the banner.
+const resolveMobileTitle = (pathname, fallback) => {
+  if (MOBILE_TITLES[pathname]) return MOBILE_TITLES[pathname];
+
+  if (pathname.startsWith(PROJECT_PATH_PREFIX)) {
+    const slug = pathname.slice(PROJECT_PATH_PREFIX.length).replace(/\/$/, "");
+    const project = getProjectBySlug(slug);
+
+    if (project) return project.typePlural;
+  }
+
+  return fallback;
+};
 
 // Items without an `href` are dropdown triggers only, so their active state
 // comes purely from whether a child route is current.
@@ -71,7 +98,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-16 pt-16 lg:px-24 lg:pt-64">
       {/* ── Desktop: single floating pill ─────────────────────── */}
-      <div className="pointer-events-auto mx-auto hidden max-w-1210 items-center gap-16 rounded-[60px] bg-[#082235] px-16 py-10 backdrop-blur-[12.5px] backdrop-filter lg:flex xl:gap-32 xl:px-30">
+      <div className="bg-navy-800/60 pointer-events-auto mx-auto hidden max-w-1210 items-center gap-16 rounded-[60px] px-16 py-10 backdrop-blur-[12.5px] backdrop-filter lg:flex xl:gap-32 xl:px-30">
         <Link
           href="/"
           aria-label="Kapuria Developers — home"
@@ -87,7 +114,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
           aria-label="Primary"
           className="flex flex-1 justify-center self-stretch"
         >
-          <ul className="flex items-stretch gap-32">
+          <ul className="flex items-stretch gap-24 xl:gap-48">
             {NAV_ITEMS.map((item) => {
               const active = isBranchActive(pathname, item);
 
@@ -150,7 +177,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
 
                   {/* mt-10 == the bar's py-10, so the panel's gold top border
                       sits flush on the bar's bottom edge with no hover gap. */}
-                  <ul className="border-gold-300 invisible absolute top-full left-1/2 mt-10 flex -translate-x-1/2 flex-col gap-16 rounded-b-[10px] border-t bg-[#082235] px-26 py-16 opacity-0 shadow-[0_7px_15.5px_0_rgba(0,0,0,0.15)] backdrop-blur-[12.5px] backdrop-filter transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <ul className="border-gold-300 bg-navy-800 invisible absolute top-full left-1/2 mt-10 flex -translate-x-1/2 flex-col gap-16 rounded-b-[10px] border-t px-26 py-16 opacity-0 shadow-[0_7px_15.5px_0_rgba(0,0,0,0.15)] backdrop-blur-[12.5px] backdrop-filter transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                     {item.children.map((child) => (
                       <li key={child.href}>
                         <Link
@@ -180,14 +207,14 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
           asChild
           variant="secondary"
           size="sm"
-          className="shrink-0 px-16 py-9 text-[14px]/[22px] tracking-[0.56px]"
+          className="text-body-sm shrink-0 px-16 py-9 tracking-[0.56px]"
         >
           <Link href={HEADER_CTA.href}>{HEADER_CTA.label}</Link>
         </Button>
       </div>
 
       {/* ── Mobile: compact pill ──────────────────────────────── */}
-      <div className="pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center rounded-[60px] bg-[#082235] px-20 py-12 backdrop-blur-[12.5px] backdrop-filter lg:hidden">
+      <div className="bg-navy-800/60 pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center rounded-[60px] px-20 py-12 backdrop-blur-[12.5px] backdrop-filter lg:hidden">
         <Link
           href="/"
           aria-label="Kapuria Developers — home"
@@ -196,8 +223,8 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
           <LogoMark priority />
         </Link>
 
-        <span className="text-[14px]/[22px] font-medium tracking-[2.66px] text-white uppercase">
-          {mobileTitle}
+        <span className="text-body-sm font-medium tracking-[2.66px] text-white uppercase">
+          {resolveMobileTitle(pathname, mobileTitle)}
         </span>
 
         <button
@@ -362,7 +389,7 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
           variant="secondary"
           size="sm"
           width="full"
-          className="mt-32 py-9 text-[14px]/[22px] font-medium tracking-[2px]"
+          className="text-body-sm mt-32 py-9 font-medium tracking-[2px]"
           tabIndex={menuOpen ? undefined : -1}
         >
           <Link href={HEADER_CTA.href} onClick={closeMenu}>

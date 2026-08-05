@@ -2,6 +2,11 @@ import ClockBoldIcon from "@/assets/svgs/common/clock-bold";
 import MailIcon from "@/assets/svgs/common/mail";
 import MapPinIcon from "@/assets/svgs/common/map-pin";
 import PhoneIcon from "@/assets/svgs/common/phone";
+import GreeceFlag from "@/assets/svgs/flags/greece";
+import IndiaFlag from "@/assets/svgs/flags/india";
+import UnitedArabEmiratesFlag from "@/assets/svgs/flags/united-arab-emirates";
+import UnitedKingdomFlag from "@/assets/svgs/flags/united-kingdom";
+import UnitedStatesFlag from "@/assets/svgs/flags/united-states";
 
 // TODO: swap in the real desk details.
 export const CONTACT_INTRO =
@@ -35,13 +40,14 @@ export const CONTACT_DETAILS = [
 ];
 
 // Dial codes cover the regions on the global-presence map, plus the two
-// markets most enquiries arrive from.
+// markets most enquiries arrive from. Flags ship as SVGs — the emoji ones
+// don't render on Windows.
 export const PHONE_COUNTRY_CODES = [
-  { code: "+91", label: "India", flag: "🇮🇳" },
-  { code: "+971", label: "United Arab Emirates", flag: "🇦🇪" },
-  { code: "+30", label: "Greece", flag: "🇬🇷" },
-  { code: "+44", label: "United Kingdom", flag: "🇬🇧" },
-  { code: "+1", label: "United States", flag: "🇺🇸" },
+  { code: "+91", label: "India", Flag: IndiaFlag },
+  { code: "+971", label: "United Arab Emirates", Flag: UnitedArabEmiratesFlag },
+  { code: "+30", label: "Greece", Flag: GreeceFlag },
+  { code: "+44", label: "United Kingdom", Flag: UnitedKingdomFlag },
+  { code: "+1", label: "United States", Flag: UnitedStatesFlag },
 ];
 
 export const ENQUIRY_TOPICS = [

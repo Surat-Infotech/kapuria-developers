@@ -6,6 +6,7 @@ import Section from "@/components/ui/section";
 
 import bannerMobile from "@/assets/images/architects/architect-banner-mobile.webp";
 import banner from "@/assets/images/architects/architect-banner.webp";
+import mouseScroll from "@/assets/images/home/svg/mouse-scroll.svg";
 
 export default function BannerSection() {
   return (
@@ -36,13 +37,27 @@ export default function BannerSection() {
               <span className="font-playfair text-gold-300 italic">Page.</span>
             </h1>
             <hr className="text-gold-300 my-14 w-34" />
-            <p className="md:text-body sm:text-body-sm mb-0 text-[12px]/[18px] text-white">
+            <p className="md:text-body sm:text-body-sm text-body-xs mb-0 text-white">
               Curating premium residential and commercial properties across the
               globe, backed by a 115-point quality promise, a 10-year structural
               warranty, and a philosophy that values substance over shine.
             </p>
           </div>
         </div>
+
+        <a
+          href="#architect-profiles"
+          aria-label="Scroll to next section"
+          className="mx-auto mt-24 hidden w-fit rounded-full transition-opacity duration-200 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none sm:block"
+        >
+          <Image
+            src={mouseScroll}
+            alt="Mouse Scroll"
+            width={29}
+            height={56}
+            className="animate-scroll-bob h-56 w-29"
+          />
+        </a>
       </Section>
     </div>
   );

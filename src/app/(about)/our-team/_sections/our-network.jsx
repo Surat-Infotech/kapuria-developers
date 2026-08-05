@@ -112,10 +112,10 @@ function PartnerTable({ heading, count, rows }) {
               key={trade}
               className="flex items-start justify-between gap-16 border-b border-white/8 py-12 last:border-b-0 lg:justify-start"
             >
-              <dt className="text-body-xs shrink-0 font-semibold text-[#F0EBE0] lg:w-150 lg:text-[14px]/[22px]">
+              <dt className="text-body-xs lg:text-body-sm shrink-0 font-semibold text-[#F0EBE0] lg:w-150">
                 {trade}
               </dt>
-              <dd className="text-body-xs text-right font-normal text-[rgba(255,255,255,0.62)] lg:flex-1 lg:text-left lg:text-[14px]/[22px]">
+              <dd className="text-body-xs lg:text-body-sm text-right font-normal text-[rgba(255,255,255,0.62)] lg:flex-1 lg:text-left">
                 {names.map((name, index) => (
                   <span key={name}>
                     {/* Separator carries the gold; the names stay muted. */}
@@ -146,7 +146,7 @@ export default function OurNetworkSection() {
     >
       <div className="flex flex-col gap-24 lg:flex-row lg:items-center lg:justify-between">
         <div className="lg:max-w-770">
-          <p className="text-[14px]/[22px] font-medium tracking-[2.52px] text-[#EBC37F] uppercase">
+          <p className="text-body-sm font-medium tracking-[2.52px] text-[#EBC37F] uppercase">
             {EYEBROW}
           </p>
 
@@ -159,7 +159,7 @@ export default function OurNetworkSection() {
           {/* Gold rule is a desktop-only beat — mobile runs heading into copy. */}
           <hr className="my-8 h-1 w-34 border-0 bg-[#EBC37F] sm:my-16" />
 
-          <p className="text-body-xs max-w-596 font-medium text-[rgba(255,255,255,0.60)] lg:text-[16px]/[24px]">
+          <p className="text-body-xs lg:text-body max-w-596 font-medium text-[rgba(255,255,255,0.60)]">
             {DESCRIPTION}
           </p>
         </div>
@@ -206,7 +206,7 @@ export default function OurNetworkSection() {
             <Button
               variant="outline"
               size="sm"
-              className="hover:bg-gold-400/10 sm:text-body-xs w-full shrink-0 px-16 py-11 text-[16px]/[24px] font-semibold tracking-[1.8px] text-[#EBC37F] sm:py-12 lg:w-auto"
+              className="hover:bg-gold-400/10 sm:text-body-xs text-body w-full shrink-0 px-16 py-11 font-semibold tracking-[1.8px] text-[#EBC37F] sm:py-12 lg:w-auto"
             >
               Become a Partner
             </Button>
