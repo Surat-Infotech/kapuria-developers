@@ -73,7 +73,7 @@ export default function Materials() {
     <Section bg="dark" spacing="default">
       <div className="flex flex-col items-start gap-16">
         <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
-          The materials we &amp;{" "}
+          The materials we{" "}
           <span className="font-playfair text-gold-300 italic">
             build with.
           </span>
