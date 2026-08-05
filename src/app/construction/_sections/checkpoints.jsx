@@ -13,7 +13,7 @@ export default function CheckpointsSection() {
         {/* Decorative — the same figure is spelled out in the sentence beside it. */}
         <p
           aria-hidden
-          className="text-gold-300 font-playfair -mt-10 shrink-0 pb-27 text-[130px]/[150px] italic"
+          className="text-gold-300 font-playfair -mt-10 shrink-0 pb-42 text-[150px]/[135px] italic"
         >
           115
         </p>

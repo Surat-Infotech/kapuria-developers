@@ -48,7 +48,7 @@ export default function BannerSection() {
         {/* Scroll cue — mouse body plus the chevron below it, one asset.
             Anchors to the next section so it works without client JS. */}
         <a
-          href="#consultation-cta"
+          href="#our-approach"
           aria-label="Scroll to next section"
           className="mx-auto mt-24 hidden w-fit rounded-full transition-opacity duration-200 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none sm:block"
         >
