@@ -31,6 +31,7 @@ const DROPDOWN_LINK =
 // Routes that show something other than the default in the mobile pill.
 const MOBILE_TITLES = {
   "/architects": "Construction",
+  "/construction": "Construction",
   "/contact-us": "Contact Us",
   "/our-projects": "Projects",
   "/blogs": "News & Media",

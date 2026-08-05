@@ -91,7 +91,7 @@ const CAP =
 function PartnerTable({ heading, count, rows }) {
   return (
     <div>
-      <div className="mb-12 flex items-baseline justify-between gap-16">
+      <div className="mb-12 flex items-baseline justify-between gap-16 lg:mb-16">
         <h3 className="text-body-xs font-medium tracking-[1.8px] text-white uppercase lg:text-[14px]/[16px] lg:tracking-[2px]">
           {heading}
         </h3>
@@ -180,7 +180,7 @@ export default function OurNetworkSection() {
 
       {/* `items-start` so the shorter contractors card doesn't stretch to
           match the suppliers column. */}
-      <div className="mt-24 grid gap-32 md:grid-cols-2 lg:mt-64 lg:items-start lg:gap-24">
+      <div className="mt-24 grid gap-32 md:grid-cols-2 lg:mt-64 lg:items-start lg:gap-42">
         <PartnerTable
           heading="Contractors & Trades"
           count="20"
