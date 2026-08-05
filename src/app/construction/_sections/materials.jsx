@@ -7,121 +7,131 @@ import Image from "next/image";
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
 
-import material1 from "@/assets/images/construction/material-1.webp";
-import material2 from "@/assets/images/construction/material-2.webp";
-import material3 from "@/assets/images/construction/material-3.webp";
-import material4 from "@/assets/images/construction/material-4.webp";
-import material5 from "@/assets/images/construction/material-5.webp";
-import material6 from "@/assets/images/construction/material-6.webp";
+import advancedCement from "@/assets/images/home/advanced-cement.webp";
+import aluminiumWindows from "@/assets/images/home/aluminium-windows.webp";
+import highGradeIronBars from "@/assets/images/home/high-grade-iron-bars.webp";
+import premiumBricks from "@/assets/images/home/premium-bricks.webp";
+import strongAdhesive from "@/assets/images/home/strong-adhesive.webp";
+import superiorWood from "@/assets/images/home/superior-wood.webp";
 
-const DESCRIPTION =
-  "We select every material on performance and durability - never on cost alone.";
-
-const CLOSING =
-  "The best materials are placed where they matter most, so there is never anything to cover up later.";
-
-// `description` takes a node rather than a string so a card can emphasise the
-// grade or brand name inside its own sentence.
+// `emphasis` marks the phrase Figma sets in bold inside the description.
 const MATERIALS = [
   {
-    image: material1,
+    image: premiumBricks,
     title: "Premium Bricks",
-    description: (
-      <>
-        Cemented high-density <strong className="font-bold">Fly Ash</strong>-M15
-        bricks that provide durability, fire resistance, low water absorption,
-        superior thermal insulation compared to traditional clay bricks and
-        long-lasting structural strength.
-      </>
-    ),
+    description: [
+      "Cemented high-density ",
+      { emphasis: "Fly Ash" },
+      "-M15 bricks that provide durability, fire resistance, low water absorption, superior thermal insulation compared to traditional clay bricks and long-lasting structural strength.",
+    ],
   },
   {
-    image: material2,
+    image: highGradeIronBars,
     title: "High-Grade Iron Bars",
-    description:
+    description: [
       "TMT (Thermo-Mechanically Treated) iron bars are corrosion-resistant, high-tensile steel for enhanced structural strength, earthquake resistance, and long-term durability.",
+    ],
   },
   {
-    image: material3,
+    image: advancedCement,
     title: "Advanced Cement",
-    description:
-      "Engineered blocks that deliver thermal insulation, sound control, and energy efficiency - cooler, quieter design.",
+    description: [
+      "Engineered blocks that deliver thermal insulation, sound control, and improved energy efficiency - cooler, quieter rooms by design.",
+    ],
   },
   {
-    image: material4,
-    title: "Moisture-Resistant Boards",
-    description:
-      "Green-core boards used for ceilings, partitions, and service shafts - dimensionally stable, resistant to damp and warping, and finished flat enough to hold paint without hairline cracks.",
+    image: superiorWood,
+    title: "Superior Wood",
+    description: [
+      { emphasis: "HDHMR" },
+      " (High-Density High Moisture Resistance) is an engineered wood with superior density, moisture resistance, pest & borer resistance compared to traditional MDF.",
+    ],
   },
   {
-    image: material5,
-    title: "Polymer Tile Adhesive",
-    description:
-      "Polymer-modified adhesive laid in place of site-mixed mortar, giving every tile full bed contact, far stronger bond strength, and floors and walls that stay put without hollow spots.",
+    image: strongAdhesive,
+    title: "Strong Adhesive",
+    description: [
+      "Bioflex is a highly polymer-modified, flexible mineral adhesive designed for high-performance bonding. It features a non-slip formula and is ideal for wet zones.",
+    ],
   },
   {
-    image: material6,
-    title: "uPVC Windows",
-    description:
-      "Multi-chambered uPVC frames with sealed glazing and steel reinforcement - quieter rooms, no rust or repainting, and joinery that keeps dust and monsoon water outside where it belongs.",
+    image: aluminiumWindows,
+    title: "Aluminium Windows",
+    description: [
+      "Aluminium windows offer superior durability, slim profiles, and weather resistance for residential spaces. Because the material is exceptionally strong, it easily supports large glass spans without needing bulky framing.",
+    ],
   },
 ];
 
-export default function MaterialsSection() {
+export default function Materials() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",
   });
 
   return (
-    <Section bg="none" spacing="none" className="bg-[#0A1C2B] py-32 md:py-64">
-      <div className="max-w-880">
-        <h2 className="text-[32px]/[40px] font-medium text-white sm:text-[40px]/[48px] md:text-[46px]/[58px] lg:text-[64px]/[72px]">
-          The materials we{" "}
-          <span className="text-gold-300 font-playfair italic">
+    <Section bg="dark" spacing="default">
+      <div className="flex flex-col items-start gap-16">
+        <h2 className="lg:text-display text-[32px]/[40px] font-medium text-white sm:text-[48px]/[56px]">
+          The materials we &amp;{" "}
+          <span className="font-playfair text-gold-300 italic">
             build with.
           </span>
         </h2>
 
-        <hr className="text-gold-300 my-8 w-34 lg:my-16" />
+        <hr className="text-gold-300 w-34" />
 
-        <p className="text-[12px]/[18px] font-medium text-white/60 lg:text-[16px]/[24px]">
-          {DESCRIPTION}
+        <p className="md:text-body sm:text-body-sm text-muted-foreground text-body-xs font-medium">
+          We select every material on performance and durability - never on cost
+          alone.
         </p>
       </div>
 
-      <div ref={emblaRef} className="mt-24 overflow-hidden md:mt-36 lg:mt-48">
-        <div className="flex items-stretch gap-16 sm:gap-24">
+      <div ref={emblaRef} className="my-24 overflow-hidden sm:my-36 md:my-64">
+        <div className="flex gap-24">
           {MATERIALS.map(({ image, title, description }) => (
-            <article
+            <div
               key={title}
-              className="relative min-w-0 shrink-0 grow-0 basis-251 overflow-hidden rounded-[14px] border border-[rgba(235,195,127,0.25)] bg-[#0F2436] sm:basis-477"
+              tabIndex={0}
+              className="rounded-md bg-[linear-gradient(180deg,#00000000_0%,#EBC37F33_100%)] p-1 sm:rounded-[18px]"
             >
-              <Image
-                src={image}
-                alt={title}
-                width={477}
-                height={687}
-                className="aspect-251/355 w-full object-cover sm:aspect-477/687"
-              />
+              <article className="group focus-visible:ring-gold-300 relative h-386 w-250 shrink-0 overflow-hidden rounded-md focus-visible:ring-2 focus-visible:outline-none sm:h-689 sm:w-480 sm:rounded-[18px] lg:h-689 lg:w-480">
+                <Image
+                  src={image}
+                  alt={title}
+                  width={480}
+                  height={689}
+                  className="absolute inset-0 size-full object-cover"
+                />
 
-              {/* The copy sits on the artwork, so the image is darkened from the
-                  bottom up rather than the card being split into two halves. */}
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-linear-to-t from-[#04121B] from-5% via-[#04121B]/70 via-40% to-transparent to-80%"
-              />
+                {/* Scrim and copy both retreat downward on hover, leaving just
+                  the photograph. Touch devices have no hover, so they keep it. */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 transition-transform duration-500 ease-out [background:linear-gradient(0deg,rgba(8,34,53,0)_48.84%,rgba(8,34,53,0.5)_100%),linear-gradient(180deg,rgba(8,34,53,0)_51.16%,#001B2E_100%)] motion-reduce:transition-none lg:group-hover:translate-y-full lg:group-focus-visible:translate-y-full"
+                />
 
-              <div className="absolute inset-x-0 bottom-0 p-16 sm:p-24 lg:p-36">
-                <h3 className="text-[16px]/[22px] font-bold text-white md:text-[20px]/[28px] lg:text-[24px]/[34px]">
-                  {title}
-                </h3>
+                <div className="relative flex h-full flex-col justify-end p-16 sm:p-24 lg:p-36">
+                  <div className="flex flex-col gap-8 transition-[transform,opacity] duration-500 ease-out motion-reduce:transition-none sm:gap-16 lg:group-hover:translate-y-24 lg:group-hover:opacity-0 lg:group-focus-visible:translate-y-24 lg:group-focus-visible:opacity-0">
+                    <h3 className="text-body xs:text-body-lg sm:text-h5 lg:text-h4 font-bold text-white">
+                      {title}
+                    </h3>
 
-                <p className="mt-8 text-[11px]/[18px] font-medium text-white/80 sm:text-[16px]/[28px] lg:mt-16">
-                  {description}
-                </p>
-              </div>
-            </article>
+                    <p className="lg:text-body-lg xs:text-[12px]/[20px] sm:text-body-sm text-[10px]/[18px] font-normal text-white/90">
+                      {description.map((part, index) =>
+                        typeof part === "string" ? (
+                          part
+                        ) : (
+                          <strong key={index} className="font-bold">
+                            {part.emphasis}
+                          </strong>
+                        )
+                      )}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
           ))}
         </div>
       </div>
@@ -129,14 +139,10 @@ export default function MaterialsSection() {
       <CarouselNav
         api={emblaApi}
         variant="light"
-        className="mt-24 justify-end lg:mt-40"
+        className="justify-end"
         prevLabel="Previous material"
         nextLabel="Next material"
       />
-
-      <p className="mt-24 text-[12px]/[18px] font-medium text-white sm:text-[16px]/[24px] lg:hidden">
-        {CLOSING}
-      </p>
     </Section>
   );
 }
