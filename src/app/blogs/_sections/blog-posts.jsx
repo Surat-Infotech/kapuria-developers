@@ -62,7 +62,7 @@ const PostCard = ({ image, titleLead, titleRest, excerpt, meta, href }) => (
 
     <div className="flex w-full flex-col items-start gap-8 sm:gap-16">
       <div className="flex w-full flex-col items-start gap-8">
-        <h3 className="text-navy-800 text-body font-semibold">
+        <h3 className="text-navy-800 text-body-lg sm:text-body font-semibold">
           <Link
             href={href}
             className="focus-visible:ring-gold-400 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
