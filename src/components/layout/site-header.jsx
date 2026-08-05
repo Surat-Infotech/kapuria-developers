@@ -35,6 +35,7 @@ const MOBILE_TITLES = {
   "/contact-us": "Contact Us",
   "/our-projects": "Projects",
   "/blogs": "News & Media",
+  "/our-team": "Our Story",
 };
 
 const PROJECT_PATH_PREFIX = "/our-projects/";
@@ -70,6 +71,8 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
   const [openSection, setOpenSection] = useState(null);
   const [lastPathname, setLastPathname] = useState(pathname);
 
+  const [suppressedDropdown, setSuppressedDropdown] = useState(null);
+
   // Close the drawer whenever the route changes — covers back/forward too.
   if (lastPathname !== pathname) {
     setLastPathname(pathname);
@@ -77,6 +80,8 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
   }
 
   const closeMenu = () => setMenuOpen(false);
+
+  const solidBar = pathname === "/contact-us";
 
   // Escape closes, and the page behind the drawer must not scroll.
   useEffect(() => {
@@ -99,7 +104,12 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-16 pt-16 lg:px-24 lg:pt-64">
       {/* ── Desktop: single floating pill ─────────────────────── */}
-      <div className="bg-navy-800/60 pointer-events-auto mx-auto hidden max-w-1210 items-center gap-16 rounded-[60px] px-16 py-10 backdrop-blur-[12.5px] backdrop-filter lg:flex xl:gap-32 xl:px-30">
+      <div
+        className={cn(
+          "bg-navy-800/60 pointer-events-auto mx-auto hidden max-w-1210 items-center gap-16 rounded-[60px] px-16 py-10 backdrop-blur-[12.5px] backdrop-filter lg:flex xl:gap-32 xl:px-30",
+          solidBar && "bg-navy-800"
+        )}
+      >
         <Link
           href="/"
           aria-label="Kapuria Developers — home"
@@ -145,19 +155,38 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
                 active ? "text-gold-300" : "hover:text-gold-300 text-white"
               );
 
+              const dropdownKey = item.href ?? item.label;
+              const suppressed = suppressedDropdown === dropdownKey;
+
+              // Blurring matters as much as the state flip: without it the
+              // clicked link keeps focus, so the panel would spring back open
+              // the moment the pointer leaves and clears the suppression.
+              const closeDropdown = (event) => {
+                event.currentTarget.blur();
+                setSuppressedDropdown(dropdownKey);
+              };
+
               const chevron = (
-                <ChevronDownIcon className="size-14 transition-transform duration-200 group-focus-within:-rotate-180 group-hover:-rotate-180" />
+                <ChevronDownIcon
+                  className={cn(
+                    "size-14 transition-transform duration-200",
+                    !suppressed &&
+                      "group-focus-within:-rotate-180 group-hover:-rotate-180"
+                  )}
+                />
               );
 
               return (
                 <li
                   key={item.label}
+                  onMouseLeave={() => setSuppressedDropdown(null)}
                   className="group relative flex items-center"
                 >
                   {item.href ? (
                     <Link
                       href={item.href}
                       aria-current={active ? "page" : undefined}
+                      onClick={closeDropdown}
                       className={triggerClassName}
                     >
                       {item.label}
@@ -178,11 +207,18 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
 
                   {/* mt-10 == the bar's py-10, so the panel's gold top border
                       sits flush on the bar's bottom edge with no hover gap. */}
-                  <ul className="border-gold-300 bg-navy-800 invisible absolute top-full left-1/2 mt-10 flex -translate-x-1/2 flex-col gap-16 rounded-b-[10px] border-t px-26 py-16 opacity-0 shadow-[0_7px_15.5px_0_rgba(0,0,0,0.15)] backdrop-blur-[12.5px] backdrop-filter transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <ul
+                    className={cn(
+                      "border-gold-300 bg-navy-800 invisible absolute top-full left-1/2 mt-10 flex -translate-x-1/2 flex-col gap-16 rounded-b-[10px] border-t px-26 py-16 opacity-0 shadow-[0_7px_15.5px_0_rgba(0,0,0,0.15)] backdrop-blur-[12.5px] backdrop-filter transition-[opacity,visibility] duration-200",
+                      !suppressed &&
+                        "group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
+                    )}
+                  >
                     {item.children.map((child) => (
                       <li key={child.href}>
                         <Link
                           href={child.href}
+                          onClick={closeDropdown}
                           aria-current={
                             pathname === child.href ? "page" : undefined
                           }
@@ -215,7 +251,12 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
       </div>
 
       {/* ── Mobile: compact pill ──────────────────────────────── */}
-      <div className="bg-navy-800/60 pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center rounded-[60px] px-20 py-12 backdrop-blur-[12.5px] backdrop-filter lg:hidden">
+      <div
+        className={cn(
+          "bg-navy-800/60 pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center rounded-[60px] px-20 py-12 backdrop-blur-[12.5px] backdrop-filter lg:hidden",
+          solidBar && "bg-navy-800"
+        )}
+      >
         <Link
           href="/"
           aria-label="Kapuria Developers — home"
@@ -230,7 +271,11 @@ const SiteHeader = ({ mobileTitle = "Welcome" }) => {
 
         <button
           type="button"
-          onClick={() => setMenuOpen(true)}
+          // Collapsing the accordion on open rather than on close is
+          onClick={() => {
+            setOpenSection(null);
+            setMenuOpen(true);
+          }}
           aria-label="Open menu"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"

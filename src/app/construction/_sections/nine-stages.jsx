@@ -102,7 +102,7 @@ export default function NineStagesSection() {
 
         <hr className="text-gold-300 my-8 w-34 lg:my-16" />
 
-        <p className="text-[12px]/[18px] font-medium text-white/60 lg:text-[16px]/[24px]">
+        <p className="text-[12px]/[18px] font-medium text-white/60 sm:text-[14px]/[22px] md:text-[16px]/[24px]">
           {DESCRIPTION}
         </p>
       </div>
@@ -134,7 +134,7 @@ export default function NineStagesSection() {
                   {title}
                 </h3>
 
-                <p className="mt-8 text-[10px]/[14px] font-medium text-[#A5AEB4] sm:text-[16px]/[28px] lg:mt-16">
+                <p className="mt-8 text-[10px]/[14px] font-medium text-[#A5AEB4] sm:text-[14px]/[22px] md:text-[16px]/[28px] lg:mt-16">
                   {description}
                 </p>
               </div>
