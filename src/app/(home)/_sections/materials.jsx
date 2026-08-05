@@ -136,13 +136,21 @@ export default function Materials() {
         </div>
       </div>
 
-      <CarouselNav
-        api={emblaApi}
-        variant="light"
-        className="justify-end"
-        prevLabel="Previous material"
-        nextLabel="Next material"
-      />
+      <div className="flex flex-col-reverse items-center justify-start gap-24 lg:flex-row lg:justify-between lg:gap-8">
+        <p className="sm:text-body-sm text-center text-[12px]/[18px] font-medium text-white lg:text-start xl:text-[16px]/[24px]">
+          Four layers stand between your family and the elements - block,
+          membrane, plaster, and finish. We test everyone.
+        </p>
+        <div className="ms-auto lg:ms-0">
+          <CarouselNav
+            api={emblaApi}
+            variant="light"
+            className="justify-end"
+            prevLabel="Previous material"
+            nextLabel="Next material"
+          />
+        </div>
+      </div>
     </Section>
   );
 }
