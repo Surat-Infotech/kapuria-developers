@@ -92,7 +92,7 @@ export default function Contact() {
                   name="message"
                   rows={4}
                   placeholder="Write a Message..."
-                  className={`${FIELD} h-160 resize-none`}
+                  className={`${FIELD} block h-160 resize-none`}
                 />
               </div>
             </div>

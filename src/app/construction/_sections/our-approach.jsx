@@ -15,12 +15,13 @@ export default function OurApproachSection() {
       bg="none"
       spacing="none"
       className="bg-[#071521] py-32 sm:py-64 md:py-100 lg:py-203"
+      id="our-approach"
     >
       {/* Reversed on mobile so the artwork leads; at `md` the text takes the
           left column again. */}
       <div className="flex flex-col-reverse gap-24 md:flex-row md:items-center lg:justify-between lg:gap-32 xl:gap-64">
         <div className="w-full lg:max-w-558">
-          <p className="text-[12px]/[18px] font-medium tracking-[2.4px] text-[#EBC37F] sm:text-[14px]/[22px] sm:tracking-[2.52px]">
+          <p className="text-[14px]/[22px] font-medium tracking-[2.52px] text-[#EBC37F]">
             {KICKER}
           </p>
 
@@ -41,7 +42,7 @@ export default function OurApproachSection() {
           alt="A Kapuria Developers slab lifted into place by crane"
           width={456}
           height={534}
-          className="aspect-343/366 w-full rounded-[16px] object-cover md:aspect-auto md:h-414 md:max-w-450 lg:max-w-518 lg:shrink-0"
+          className="aspect-343/366 w-full rounded-xl object-cover md:aspect-auto md:h-414 md:max-w-450 lg:max-w-518 lg:shrink-0"
         />
       </div>
     </Section>

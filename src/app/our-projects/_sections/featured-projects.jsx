@@ -81,14 +81,6 @@ function ProjectSpecTable({ project, className = "" }) {
   );
 }
 
-// 18px, not the 22px in Figma: the details column is a fixed 595px at `lg`+
-// (1140 container − 481 gallery − 64 gap), and row one needs ~693px at 22px, so
-// it could only ever wrap. At 18px it comes to ~576px and sits on one line for
-// the shorter projects, while Vantage and Canopy Veil push `Built Area` down —
-// which is the grouping each mock shows.
-//
-// Each pair is `whitespace-nowrap` so a value can never split mid-phrase
-// ("2,756.25" / "sq.ft"); `flex-wrap` gives the whole pair somewhere to go.
 function ProjectSpecLines({ project, className = "" }) {
   return (
     <div className={className}>
@@ -132,12 +124,9 @@ function ProjectSpecLines({ project, className = "" }) {
 
 function ProjectCard({ project }) {
   const [nameStart, nameLetter, nameEnd] = project.lockup;
-
-  // Each block carries its own vertical padding rather than the list spacing
-  // them with a gap, so the rhythm survives cards being added or reordered.
   return (
     <article className="relative flex flex-col items-center gap-16 py-32 md:gap-32 md:py-64 lg:flex-row lg:gap-32 lg:border-0 lg:py-100 xl:gap-64 xl:py-128">
-      <hr className="absolute bottom-0 -left-16 w-full text-[rgba(235,195,127,0.25)]" />
+      <hr className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 text-[rgba(235,195,127,0.25)] lg:hidden" />
       <ProjectGallery
         project={project}
         className="mx-auto w-full sm:max-w-481 lg:shrink-0"
@@ -197,9 +186,11 @@ function ProjectCard({ project }) {
   );
 }
 
+// `overflow-x-clip` keeps the full-bleed dividers from adding a horizontal
+// scrollbar when a vertical one narrows the document below 100vw.
 export default function FeaturedProjectsSection() {
   return (
-    <Section bg="dark" spacing="none" className="py-0">
+    <Section bg="dark" spacing="none" className="overflow-hidden py-0">
       {PROJECTS.map((project) => (
         <ProjectCard key={project.slug} project={project} />
       ))}
