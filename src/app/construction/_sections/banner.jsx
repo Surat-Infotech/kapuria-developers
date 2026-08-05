@@ -37,7 +37,7 @@ export default function BannerSection() {
               </span>
             </h1>
             <hr className="text-gold-300 my-14 w-34" />
-            <p className="md:text-body sm:max-w-auto sm:text-body-sm mb-0 text-[12px]/[18px] text-white">
+            <p className="md:text-body sm:max-w-auto sm:text-body-sm mb-0 max-w-320 text-[12px]/[18px] text-white">
               Curating premium residential and commercial properties across the
               globe, backed by a 115-point quality promise, a 10-year structural
               warranty, and a philosophy that values substance over shine.
