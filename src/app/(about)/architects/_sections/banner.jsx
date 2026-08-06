@@ -13,14 +13,14 @@ export default function BannerSection() {
     <div className="relative">
       <Image
         src={banner}
-        alt="Home Banner"
+        alt="architects banner"
         width="100%"
         height="100%"
         className="hidden w-full min-[700px]:block"
       />
       <Image
         src={bannerMobile}
-        alt="Home Banner"
+        alt="architects banner"
         width="100%"
         height="100%"
         className="w-full min-[700px]:hidden"

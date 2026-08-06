@@ -31,7 +31,7 @@ const PROJECTS = [
       { label: "Bedrooms", value: "5" },
     ],
     pills: ["Private Pool", "1 Indoor Parking"],
-    href: "",
+    href: "/our-projects/the-canopy-veil",
   },
   {
     image: villa2,
@@ -47,7 +47,7 @@ const PROJECTS = [
       { label: "Bedrooms", value: "5" },
     ],
     pills: ["Private Pool", "2 Indoor Parking"],
-    href: "",
+    href: "/our-projects/the-palatial-arc",
   },
   {
     image: villa3,
@@ -62,7 +62,7 @@ const PROJECTS = [
       { label: "Bedrooms", value: "5" },
     ],
     pills: ["Private Pool", "1 Indoor Parking"],
-    href: "",
+    href: "/our-projects/the-vantage",
   },
   {
     image: villa4,
@@ -77,7 +77,7 @@ const PROJECTS = [
       { label: "Bedrooms", value: "5" },
     ],
     pills: ["Private Pool", "1 Indoor Parking"],
-    href: "",
+    href: "/our-projects/the-majestic-villa",
   },
 ];
 

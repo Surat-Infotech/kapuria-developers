@@ -16,6 +16,10 @@ import InstagramIcon from "@/assets/svgs/social/instagram";
 import XIcon from "@/assets/svgs/social/x";
 import YoutubeIcon from "@/assets/svgs/social/youtube";
 
+const RELATED_TITLE_LEAD = "Building Better Futures:";
+const RELATED_TITLE_REST =
+  "Constructing Community Homes for a Brighter Tomorrow";
+
 const RELATED = [
   { id: "rel-1", image: blogPost1 },
   { id: "rel-2", image: blogPost2 },
@@ -43,17 +47,15 @@ const RelatedPanel = ({ className = "" }) => (
         >
           <Image
             src={image}
-            alt=""
+            alt={`${RELATED_TITLE_LEAD} ${RELATED_TITLE_REST}`}
             width={104}
             height={78}
             className="h-93 w-104 shrink-0 rounded-md object-cover lg:h-97 lg:w-full"
           />
           <div className="flex flex-col gap-6 sm:gap-4">
             <p className="text-navy-800 line-clamp-3 text-xs font-semibold">
-              Building Better Futures:{" "}
-              <span className="font-normal">
-                Constructing Community Homes for a Brighter Tomorrow
-              </span>
+              {RELATED_TITLE_LEAD}{" "}
+              <span className="font-normal">{RELATED_TITLE_REST}</span>
             </p>
             <p className="text-navy-800/60 text-xs font-normal">10 mins</p>
           </div>
@@ -209,10 +211,7 @@ export default function Article({ post, sections, comparison, faqs }) {
         <div className="flex min-w-0 flex-1 flex-col gap-32 lg:gap-40">
           <article className="flex flex-col gap-24">
             {sections.map(
-              (
-                { id, title, body, list, type, imagePosition, imageAlt },
-                index
-              ) => (
+              ({ id, title, body, list, type, imagePosition }, index) => (
                 <section
                   key={id}
                   id={id}
@@ -223,7 +222,7 @@ export default function Article({ post, sections, comparison, faqs }) {
                   {imagePosition === "top" && (
                     <Image
                       src={articleImage}
-                      alt={imageAlt ?? ""}
+                      alt={`${post.titleLead}${post.titleRest}`}
                       width="100%"
                       height="100%"
                       className="order-last w-full rounded-xl object-cover lg:order-first"

@@ -132,7 +132,7 @@ export default function ApartSection() {
           >
             <Image
               src={icon}
-              alt="Icon"
+              alt={key}
               width={70}
               height={70}
               className="h-56 w-56 shrink-0 object-contain sm:h-70 sm:w-70"

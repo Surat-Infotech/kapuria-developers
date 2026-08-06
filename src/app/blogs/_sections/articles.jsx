@@ -87,7 +87,7 @@ const ArticleCard = ({
     >
       <Image
         src={image}
-        alt=""
+        alt={`${titleLead} ${titleRest}`}
         width={546}
         height={330}
         className={`w-full object-cover transition-transform duration-500 ease-out hover:scale-105 ${
@@ -147,7 +147,11 @@ export default function Articles() {
   const [first, second, ...rest] = ARTICLES;
 
   return (
-    <Section bg="surface" spacing="none" className="py-32 lg:py-64">
+    <Section
+      bg="none"
+      spacing="none"
+      className="bg-[rgba(244,239,230,0.15)] py-32 lg:py-64"
+    >
       <div className="flex flex-col items-start gap-24 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
         <div className="flex flex-col items-start gap-8">
           <h2 className="text-navy-800 text-[22px]/[30px] font-semibold lg:text-[36px]/[44px]">
