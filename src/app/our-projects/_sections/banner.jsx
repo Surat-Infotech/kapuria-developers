@@ -30,9 +30,9 @@ export default function BannerSection() {
         <div className="flex w-full items-end justify-between">
           <div className="lg:max-w-958">
             <h1 className="lg:text-display text-[32px]/[40px] text-white min-[426px]:text-[40px]/[48px] md:text-[48px]/[56px]">
-              Our{" "}
+              Take a look at{" "}
               <span className="font-playfair text-gold-300 italic">
-                projects
+                our projects
               </span>
             </h1>
             <hr className="text-gold-300 my-14 w-34" />
