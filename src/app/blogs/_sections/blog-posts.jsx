@@ -53,7 +53,7 @@ const PostCard = ({ image, titleLead, titleRest, excerpt, meta, href }) => (
     >
       <Image
         src={image}
-        alt=""
+        alt={`${titleLead} ${titleRest}`}
         width={330}
         height={244}
         className="h-180 w-full object-cover transition-transform duration-500 ease-out hover:scale-105 sm:h-244"

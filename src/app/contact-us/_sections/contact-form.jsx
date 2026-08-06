@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import {
   CONTACT_DETAILS,
   CONTACT_INTRO,
+  CONTACT_SOCIAL_LINKS,
   ENQUIRY_TOPICS,
   PHONE_COUNTRY_CODES,
 } from "@/config/contact";
-import { SOCIAL_LINKS } from "@/config/footer";
 
 import { FooterLogo } from "@/components/common/logo";
 import Section from "@/components/ui/section";
@@ -31,14 +31,6 @@ const TILE =
 
 const DETAIL_LABEL =
   "text-[10px]/[14px] font-bold tracking-[1.5px] text-white/50 uppercase lg:text-[12px]/[16px]";
-
-// The project desk lists the socials in its own order — the footer keeps the
-// shared SOCIAL_LINKS order.
-const SOCIAL_ORDER = ["Facebook", "Instagram", "YouTube", "X"];
-
-const CONTACT_SOCIAL_LINKS = [...SOCIAL_LINKS].sort(
-  (a, b) => SOCIAL_ORDER.indexOf(a.label) - SOCIAL_ORDER.indexOf(b.label)
-);
 
 // A native <option> can't hold an image, so the dial code runs on a custom
 // listbox — that's the only way the flags show up in the open list too.

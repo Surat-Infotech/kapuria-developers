@@ -13,34 +13,42 @@ import safetyChecksIcon from "@/assets/images/home/svg/safety-Checks.svg";
 import siteSoilIcon from "@/assets/images/home/svg/site-soil.svg";
 import structuralFrameIcon from "@/assets/images/home/svg/structural-frame.svg";
 
+// `key` is the stable identity and the icon's alt text; `title` may carry
+// markup for line breaks, so it can't stand in for either.
 const CATEGORIES = [
   {
     icon: siteSoilIcon,
+    key: "Site & Soil",
     title: "Site & Soil",
     description: "Soil testing, bearing capacity, drainage planning",
   },
   {
     icon: brickWorkIcon,
+    key: "Brickwork",
     title: "Brickwork",
     description: "Quality, alignment, mortar ratio, curing",
   },
   {
     icon: roofExternalIcon,
+    key: "Roof & External",
     title: "Roof & External",
     description: "Slope, parapet waterproofing, drainage",
   },
   {
     icon: electricalIcon,
+    key: "Electrical",
     title: "Electrical",
     description: "Load calculation, earthing, MCB/ELCB checks",
   },
   {
     icon: plumbingIcon,
+    key: "Plumbing & Waterproofing",
     title: "Plumbing & Waterproofing",
     description: "Pressure tests, pond tests, sealed joints",
   },
   {
     icon: structuralFrameIcon,
+    key: "Structural Frame",
     title: (
       <>
         {" "}
@@ -51,11 +59,13 @@ const CATEGORIES = [
   },
   {
     icon: foundationFootingIcon,
+    key: "Foundation & Footing",
     title: "Foundation & Footing",
     description: "Reinforcement, alignment, curing",
   },
   {
     icon: safetyChecksIcon,
+    key: "Safety & Final Checks",
     title: "Safety & Final Checks",
     description: "Structural inspection and completion audit",
   },
@@ -84,11 +94,11 @@ export default function QualityPromise() {
       </div>
 
       <div className="mt-36 grid grid-cols-2 gap-x-16 gap-y-24 sm:mt-64 sm:gap-x-36 sm:gap-y-40 md:grid-cols-3 lg:grid-cols-4 lg:gap-y-64">
-        {CATEGORIES.map(({ icon, title, description }) => (
-          <div key={title} className="flex flex-col items-center gap-20">
+        {CATEGORIES.map(({ icon, key, title, description }) => (
+          <div key={key} className="flex flex-col items-center gap-20">
             <Image
               src={icon}
-              alt="Icon"
+              alt={key}
               width={70}
               height={70}
               className="size-56 shrink-0 object-contain lg:size-70"

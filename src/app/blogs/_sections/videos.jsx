@@ -9,9 +9,9 @@ import { useState } from "react";
 import CarouselNav from "@/components/ui/carousel-nav";
 import Section from "@/components/ui/section";
 
+import playIcon from "@/assets/images/blogs/play-icon.svg";
 import videoCover1 from "@/assets/images/blogs/videos-cover-1.webp";
 import videoCover2 from "@/assets/images/blogs/videos-cover-2.webp";
-import playIcon from "@/assets/images/home/svg/play.svg";
 import ChevronDownIcon from "@/assets/svgs/common/chevron-down";
 
 // `shortTitle` is the terser line the mobile comp uses in place of the
@@ -66,7 +66,7 @@ const VideoCard = ({
     >
       <Image
         src={image}
-        alt=""
+        alt={title}
         width={1044}
         height={589}
         className="absolute inset-0 size-full object-cover"
@@ -81,15 +81,13 @@ const VideoCard = ({
 
       {/* Mobile centres the play button; desktop stacks it above the copy. */}
       <span className="absolute inset-0 flex items-center justify-center lg:hidden">
-        <span className="grid size-54 place-items-center rounded-full bg-white">
-          <Image
-            src={playIcon}
-            alt="Play Icon"
-            width={20}
-            height={22}
-            className="ms-2 h-20 w-18 object-contain"
-          />
-        </span>
+        <Image
+          src={playIcon}
+          alt="Play Icon"
+          width={54}
+          height={54}
+          className="h-54 w-54 object-contain"
+        />
       </span>
 
       <span className="absolute inset-0 flex flex-col justify-end p-16 text-left lg:p-50">
