@@ -24,7 +24,7 @@ export default function BannerSection({ post }) {
     <div className="relative">
       <Image
         src={blogDetailBanner}
-        alt="Blog Detail Banner"
+        alt={`${titleLead}${titleRest}`}
         width={1440}
         height={910}
         priority

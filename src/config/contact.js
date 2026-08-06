@@ -1,3 +1,5 @@
+import { EXTERNAL_ROUTES } from "@/lib/route";
+
 import ClockBoldIcon from "@/assets/svgs/common/clock-bold";
 import MailIcon from "@/assets/svgs/common/mail";
 import MapPinIcon from "@/assets/svgs/common/map-pin";
@@ -7,6 +9,10 @@ import IndiaFlag from "@/assets/svgs/flags/india";
 import UnitedArabEmiratesFlag from "@/assets/svgs/flags/united-arab-emirates";
 import UnitedKingdomFlag from "@/assets/svgs/flags/united-kingdom";
 import UnitedStatesFlag from "@/assets/svgs/flags/united-states";
+import FacebookIcon from "@/assets/svgs/social/facebook";
+import InstagramIcon from "@/assets/svgs/social/instagram";
+import XIcon from "@/assets/svgs/social/x";
+import YoutubeIcon from "@/assets/svgs/social/youtube";
 
 // TODO: swap in the real desk details.
 export const CONTACT_INTRO =
@@ -37,6 +43,27 @@ export const CONTACT_DETAILS = [
     value: "Mon–Fri · 10:00 – 18:00 IST",
     Icon: ClockBoldIcon,
   },
+];
+
+// Same icons and chip as the footer — only the destinations differ, and the
+// desk lists them in its own order.
+export const CONTACT_SOCIAL_LINKS = [
+  {
+    label: "Facebook",
+    href: EXTERNAL_ROUTES.CONTACT_FACEBOOK,
+    Icon: FacebookIcon,
+  },
+  {
+    label: "Instagram",
+    href: EXTERNAL_ROUTES.CONTACT_INSTAGRAM,
+    Icon: InstagramIcon,
+  },
+  {
+    label: "YouTube",
+    href: EXTERNAL_ROUTES.CONTACT_YOUTUBE,
+    Icon: YoutubeIcon,
+  },
+  { label: "X", href: EXTERNAL_ROUTES.CONTACT_X, Icon: XIcon },
 ];
 
 // Dial codes cover the regions on the global-presence map, plus the two

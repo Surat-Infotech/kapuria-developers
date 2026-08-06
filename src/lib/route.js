@@ -12,7 +12,7 @@ export const ROUTES = {
   WHY_US: "/why",
 
   // More
-  BLOG: "/bloag",
+  BLOG: "/blogs",
   FAQS: "/faaq",
   CONTACT: "/contact-us",
 
@@ -29,4 +29,11 @@ export const EXTERNAL_ROUTES = {
   INSTAGRAM: "https://instagram.com",
   X: "https://x.com",
   YOUTUBE: "https://youtube.com",
+
+  // Social — the contact desk points at its own handles, so these stay
+  // separate from the site-wide ones above.
+  CONTACT_FACEBOOK: "https://facebook.com",
+  CONTACT_INSTAGRAM: "https://www.instagram.com/kapuria_developers/",
+  CONTACT_X: "https://x.com/KapuriaDevelops?s=20",
+  CONTACT_YOUTUBE: "https://www.youtube.com/@Kapuria-Developers",
 };
