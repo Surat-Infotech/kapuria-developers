@@ -12,7 +12,7 @@ export const ROUTES = {
   WHY_US: "/why",
 
   // More
-  BLOG: "/bloag",
+  BLOG: "/blogs",
   FAQS: "/faaq",
   CONTACT: "/contact-us",
 
