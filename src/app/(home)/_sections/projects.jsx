@@ -8,9 +8,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CarouselNav from "@/components/ui/carousel-nav";
 
+import villa1Mobile from "@/assets/images/home/villa-1-mobile.webp";
 import villa1 from "@/assets/images/home/villa-1.webp";
+import villa2Mobile from "@/assets/images/home/villa-2-mobile.webp";
 import villa2 from "@/assets/images/home/villa-2.webp";
+import villa3Mobile from "@/assets/images/home/villa-3-mobile.webp";
 import villa3 from "@/assets/images/home/villa-3.webp";
+import villa4Mobile from "@/assets/images/home/villa-4-mobile.webp";
 import villa4 from "@/assets/images/home/villa-4.webp";
 import ArchQuadrantIcon from "@/assets/svgs/common/arch-quadrant";
 import QuadrantIcon from "@/assets/svgs/common/quadrant";
@@ -19,6 +23,7 @@ import QuadrantIcon from "@/assets/svgs/common/quadrant";
 const PROJECTS = [
   {
     image: villa1,
+    imageMobile: villa1Mobile,
     prefix: "C",
     suffix: "NOPY VEIL",
     tagline:
@@ -35,6 +40,7 @@ const PROJECTS = [
   },
   {
     image: villa2,
+    imageMobile: villa2Mobile,
     prefix: "P",
     suffix: "LATIAL ARC",
     tagline:
@@ -51,6 +57,7 @@ const PROJECTS = [
   },
   {
     image: villa3,
+    imageMobile: villa3Mobile,
     prefix: "V",
     suffix: "NTAGE",
     tagline:
@@ -66,6 +73,7 @@ const PROJECTS = [
   },
   {
     image: villa4,
+    imageMobile: villa4Mobile,
     prefix: "M",
     suffix: "GESTIC VISTA",
     tagline:
@@ -114,19 +122,37 @@ export default function ProjectsSection() {
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex">
           {PROJECTS.map(
-            ({ image, prefix, suffix, tagline, specs, pills, href }) => (
+            ({
+              image,
+              imageMobile,
+              prefix,
+              suffix,
+              tagline,
+              specs,
+              pills,
+              href,
+            }) => (
               <article
                 key={prefix + suffix}
                 className="relative w-full shrink-0 basis-full lg:min-h-768"
               >
                 {/* Desktop: the villa fills the panel and a white scrim from the
-                    left keeps the copy readable. Mobile stacks image over card. */}
+                    left keeps the copy readable. Mobile stacks image over card,
+                    and uses a separately cropped portrait-friendly asset. */}
                 <Image
                   src={image}
                   alt={`The ${prefix}A${suffix}`}
                   width={1440}
                   height={768}
-                  className="h-241 w-full object-cover lg:absolute lg:inset-0 lg:h-full"
+                  className="xs:block xs:h-241 xs:w-full hidden object-cover lg:absolute lg:inset-0 lg:h-full"
+                />
+
+                <Image
+                  src={imageMobile}
+                  alt={`The ${prefix}A${suffix}`}
+                  width={375}
+                  height={241}
+                  className="xs:hidden h-241 w-full object-cover"
                 />
 
                 <div
