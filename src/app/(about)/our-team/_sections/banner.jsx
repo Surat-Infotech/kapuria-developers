@@ -16,14 +16,14 @@ export default function BannerSection() {
         alt="Our Team Banner"
         width="100%"
         height="100%"
-        className="hidden w-full min-[700px]:block md:h-732 lg:h-auto"
+        className="hidden h-screen w-full object-cover min-[700px]:block"
       />
       <Image
         src={bannerMobile}
         alt="Our Team Banner"
         width="100%"
         height="100%"
-        className="w-full min-[700px]:hidden"
+        className="w-full min-[508px]:h-screen min-[700px]:hidden"
       />
       <Section
         bg="transparent"

@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+
+import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -76,49 +80,63 @@ const FEATURES = [
 ];
 
 export default function ApartSection() {
+  // The <video> only mounts on click, so the file never downloads on page load.
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <Section spacing="lg" className="py-32 sm:py-64 lg:py-120">
-      <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:hidden">
+      <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] font-medium sm:text-[40px]/[48px]">
         What <span className="font-playfair text-gold-400 italic">sets</span> us
         apart?
       </h2>
-      <div className="relative overflow-hidden rounded-3xl md:rounded-[54px]">
-        <Image
-          src={videoCover}
-          alt="A Kapuria residence lit at dusk"
-          width={1140}
-          height={613}
-          className="h-full w-full object-cover"
-        />
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[54px]">
+        {isPlaying ? (
+          // Only the end of the clip hands the card back to the cover art —
+          // pausing or scrubbing from the control bar leaves playback alone.
+          <video
+            src="/videos/home/kd-video.webm"
+            poster={videoCover.src}
+            controls
+            autoPlay
+            playsInline
+            onEnded={() => setIsPlaying(false)}
+            className="aspect-1140/613 h-full w-full bg-black object-cover"
+          />
+        ) : (
+          <>
+            <Image
+              src={videoCover}
+              alt="A Kapuria residence lit at dusk"
+              width={1140}
+              height={613}
+              className="h-full w-full object-cover"
+            />
 
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(106.31deg,rgba(0,0,0,0.5)_17.9%,rgba(0,0,0,0.315)_39.9%,rgba(0,0,0,0.24)_44.9%,rgba(0,0,0,0.195)_57.6%,rgba(0,0,0,0)_64.6%)]"
-        />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-[linear-gradient(106.31deg,rgba(0,0,0,0.5)_17.9%,rgba(0,0,0,0.315)_39.9%,rgba(0,0,0,0.24)_44.9%,rgba(0,0,0,0.195)_57.6%,rgba(0,0,0,0)_64.6%)]"
+            />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 md:justify-start md:pt-100 lg:gap-96 lg:pt-114">
-          <h2 className="lg:text-display-sm text-h5 hidden text-center font-medium text-white sm:text-[40px]/[48px] md:block">
-            What{" "}
-            <span className="font-playfair text-gold-400 italic">sets</span> us
-            apart?
-          </h2>
-
-          <button
-            type="button"
-            aria-label="Play video"
-            className="xs:w-60 xs:h-60 flex min-h-32 min-w-32 cursor-pointer items-center justify-center rounded-[112px] border border-[#6B6B6B] bg-[rgba(54,54,54,0.1)] backdrop-blur-[13.964285850524902px] sm:h-80 sm:w-80 md:h-100 md:w-100 lg:h-112 lg:w-112"
-          >
-            <div className="flex items-center justify-center lg:h-52 lg:w-52">
-              <Image
-                src={playIcon}
-                alt="Play Icon"
-                width={40}
-                height={40}
-                className="xs:h-20 xs:w-20 ms-4 h-12 w-12 sm:ms-8 sm:h-30 sm:w-30 md:h-full md:w-full"
-              />
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <button
+                type="button"
+                onClick={() => setIsPlaying(true)}
+                aria-label="Play video"
+                className="xs:w-60 xs:h-60 flex min-h-32 min-w-32 cursor-pointer items-center justify-center rounded-[112px] border border-[#6B6B6B] bg-[rgba(54,54,54,0.1)] backdrop-blur-[13.964285850524902px] transition-transform duration-300 ease-out hover:scale-105 sm:h-80 sm:w-80 md:h-100 md:w-100 lg:h-112 lg:w-112"
+              >
+                <div className="flex items-center justify-center lg:h-52 lg:w-52">
+                  <Image
+                    src={playIcon}
+                    alt="Play Icon"
+                    width={40}
+                    height={40}
+                    className="xs:h-20 xs:w-20 ms-4 h-12 w-12 sm:ms-8 sm:h-30 sm:w-30 md:h-full md:w-full"
+                  />
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
+          </>
+        )}
       </div>
 
       <div className="mt-32 grid grid-cols-2 gap-x-16 gap-y-24 sm:mt-64 md:mt-120 lg:grid-cols-3 lg:gap-y-64">

@@ -27,7 +27,7 @@ const NewsletterForm = () => {
         name="email"
         required
         placeholder="Subscribe to our newsletter..."
-        className="text-navy-800 placeholder:text-navy-800/70 focus-visible:ring-gold-300 focus-visible:ring-offset-navy-800 w-full self-stretch rounded-[60px] bg-white px-16 py-8 text-[16px]/[30px] font-normal outline-none focus-visible:ring-2 focus-visible:ring-offset-2 md:py-16 lg:w-auto lg:flex-[1_0_0] xl:px-24"
+        className="text-navy-800 placeholder:text-navy-800 focus-visible:ring-gold-300 focus-visible:ring-offset-navy-800 w-full self-stretch rounded-[60px] bg-white px-16 py-8 text-[16px]/[30px] font-normal outline-none focus-visible:ring-2 focus-visible:ring-offset-2 md:py-16 lg:w-auto lg:flex-[1_0_0] xl:px-24"
       />
 
       <Button

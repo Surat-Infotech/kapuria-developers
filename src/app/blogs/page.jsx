@@ -1,3 +1,4 @@
+import LatestContent from "../(home)/_sections/latest-content";
 import Articles from "./_sections/articles";
 import BannerSection from "./_sections/banner";
 import BlogPosts from "./_sections/blog-posts";
@@ -14,9 +15,10 @@ export default function Blog() {
     <>
       <BannerSection />
       <BlogPosts />
-      <Videos />
-      <Articles />
-      <Press />
+      <LatestContent />
+      {/* <Videos /> */}
+      {/* <Articles /> */}
+      {/* <Press /> */}
     </>
   );
 }
