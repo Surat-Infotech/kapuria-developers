@@ -12,20 +12,10 @@ import RachitMalhotra from "@/assets/images/architects/rachit-malhotra.webp";
 import RachitStudio from "@/assets/images/architects/rachit-studio.webp";
 import VikramPannuMobile from "@/assets/images/architects/vikram-pannu-mobile.webp";
 import VikramPannu from "@/assets/images/architects/vikram-pannu.webp";
-import GlobeIcon from "@/assets/svgs/social/globe";
 import InstagramIcon from "@/assets/svgs/social/instagram";
-import XIcon from "@/assets/svgs/social/x";
-import YoutubeIcon from "@/assets/svgs/social/youtube";
+import LinkedinIcon from "@/assets/svgs/social/linkedin";
 
 const KICKER = "Architect";
-
-// TODO: swap in each architect's own handles once they are supplied.
-const SOCIALS = [
-  { label: "Website", href: ROUTES.HOME, Icon: GlobeIcon },
-  { label: "Instagram", href: EXTERNAL_ROUTES.INSTAGRAM, Icon: InstagramIcon },
-  { label: "X", href: EXTERNAL_ROUTES.X, Icon: XIcon },
-  { label: "YouTube", href: EXTERNAL_ROUTES.YOUTUBE, Icon: YoutubeIcon },
-];
 
 const ARCHITECTS = [
   {
@@ -34,6 +24,18 @@ const ARCHITECTS = [
     bio: "We follow advanced construction methods designed for structural balance, load optimisation, long-term settlement control, and resistance to environmental stress — engineering every element with future resilience in mind.",
     photo: VikramPannu,
     photoMobile: VikramPannuMobile,
+    socials: [
+      {
+        label: "LinkedIn",
+        href: EXTERNAL_ROUTES.VIKRAM_LINKEDIN,
+        Icon: LinkedinIcon,
+      },
+      {
+        label: "Instagram",
+        href: EXTERNAL_ROUTES.VIKRAM_INSTAGRAM,
+        Icon: InstagramIcon,
+      },
+    ],
     className:
       "border-b-[0.5px] border-[#EBC37F] bg-[#071521] py-32 md:py-50 lg:py-88",
   },
@@ -45,6 +47,18 @@ const ARCHITECTS = [
     photoMobile: RachitMalhotraMobile,
     studio: RachitStudio,
     reverse: true,
+    socials: [
+      {
+        label: "LinkedIn",
+        href: EXTERNAL_ROUTES.RACHIT_LINKEDIN,
+        Icon: LinkedinIcon,
+      },
+      {
+        label: "Instagram",
+        href: EXTERNAL_ROUTES.RACHIT_INSTAGRAM,
+        Icon: InstagramIcon,
+      },
+    ],
     className:
       "bg-[#071521] bg-(image:--bg-mobile) bg-cover bg-center bg-no-repeat py-32 lg:bg-(image:--bg-desktop) md:py-50 lg:py-88",
     style: {
@@ -66,6 +80,7 @@ export default function ArchitectProfilesSection() {
           photoMobile,
           studio,
           reverse,
+          socials,
           className,
           style,
         }) => (
@@ -133,7 +148,7 @@ export default function ArchitectProfilesSection() {
                 )}
 
                 <ul className="mt-8 flex items-center gap-20 md:mt-16">
-                  {SOCIALS.map(({ label, href, Icon }) => (
+                  {socials.map(({ label, href, Icon }) => (
                     <li key={label}>
                       <a
                         href={href}

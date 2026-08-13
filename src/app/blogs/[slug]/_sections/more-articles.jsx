@@ -11,9 +11,8 @@ import ChevronDownIcon from "@/assets/svgs/common/chevron-down";
 const EXCERPT =
   "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing renewable materials and energy-efficient systems…";
 
-// `TITLE_LEAD` carries the heavier weight; the rest runs at medium.
-const TITLE_LEAD = "Building Better Futures:";
-const TITLE_REST = "Constructing Community Homes for a Brighter Tomorrow";
+const TITLE =
+  "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow";
 
 const POSTS = [
   { id: "more-1", image: blogPost1 },
@@ -51,7 +50,7 @@ export default function MoreArticles() {
             >
               <Image
                 src={image}
-                alt={`${TITLE_LEAD} ${TITLE_REST}`}
+                alt={TITLE}
                 width={343}
                 height={210}
                 className="h-210 w-full object-cover transition-transform duration-500 ease-out hover:scale-105"
@@ -64,10 +63,7 @@ export default function MoreArticles() {
                   href=""
                   className="focus-visible:ring-gold-400 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
                 >
-                  {TITLE_LEAD}{" "}
-                  <span className="font-normal lg:font-medium">
-                    {TITLE_REST}
-                  </span>
+                  {TITLE}
                 </Link>
               </h3>
 

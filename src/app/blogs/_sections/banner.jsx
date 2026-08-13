@@ -9,9 +9,8 @@ import banner from "@/assets/images/blogs/blog-banner.webp";
 
 const FEATURED = {
   eyebrow: "Featured Blog",
-  // Split so the lead clause can carry the heavier weight, as in the design.
-  titleLead: "Building Better Futures:",
-  titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+  title:
+    "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
   meta: [
     { label: "Read Time", value: "10 Mins" },
     { label: "Date", value: "10th June, 2026" },
@@ -23,7 +22,7 @@ const FEATURED = {
 };
 
 export default function BannerSection() {
-  const { eyebrow, titleLead, titleRest, meta, excerpt, href } = FEATURED;
+  const { eyebrow, title, meta, excerpt, href } = FEATURED;
 
   return (
     <div className="relative">
@@ -55,8 +54,7 @@ export default function BannerSection() {
 
             <div className="flex w-full flex-col items-start gap-8">
               <h2 className="text-[24px]/[32px] font-medium text-white sm:text-[32px]/[42px] lg:text-[48px]/[60px] lg:tracking-[-1.44px]">
-                <span className="font-semibold">{titleLead}</span>{" "}
-                <span className="font-normal">{titleRest}</span>
+                {title}
               </h2>
 
               {/* Hairline separators sit between the pairs, not after them. */}
