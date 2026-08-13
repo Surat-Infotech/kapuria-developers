@@ -26,7 +26,7 @@ export const ROUTES = {
 export const EXTERNAL_ROUTES = {
   // Social
   FACEBOOK: "https://facebook.com",
-  INSTAGRAM: "https://instagram.com",
+  INSTAGRAM: "https://www.instagram.com/kapuria_developers/reels/",
   X: "https://x.com",
   YOUTUBE: "https://youtube.com",
 

@@ -24,7 +24,7 @@ export default function BannerSection() {
         alt="Home Banner"
         width="100%"
         height="100%"
-        className="min-[508px]:h-screen min-[700px]:hidden"
+        className="object-cover min-[508px]:h-screen min-[700px]:hidden"
       />
       <Section
         bg="transparent"

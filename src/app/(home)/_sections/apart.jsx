@@ -85,11 +85,11 @@ export default function ApartSection() {
 
   return (
     <Section spacing="lg" className="py-32 sm:py-64 lg:py-120">
-      <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] font-medium sm:text-[40px]/[48px] md:hidden">
+      <h2 className="lg:text-display-sm mb-32 text-center text-[32px]/[40px] font-medium sm:text-[40px]/[48px]">
         What <span className="font-playfair text-gold-400 italic">sets</span> us
         apart?
       </h2>
-      <div className="relative overflow-hidden rounded-3xl md:rounded-[54px]">
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl md:rounded-[54px]">
         {isPlaying ? (
           // Only the end of the clip hands the card back to the cover art —
           // pausing or scrubbing from the control bar leaves playback alone.
@@ -117,13 +117,7 @@ export default function ApartSection() {
               className="absolute inset-0 bg-[linear-gradient(106.31deg,rgba(0,0,0,0.5)_17.9%,rgba(0,0,0,0.315)_39.9%,rgba(0,0,0,0.24)_44.9%,rgba(0,0,0,0.195)_57.6%,rgba(0,0,0,0)_64.6%)]"
             />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-40 px-16 md:justify-start md:pt-100 lg:gap-96 lg:pt-114">
-              <h2 className="lg:text-display-sm text-h5 hidden text-center font-medium text-white sm:text-[40px]/[48px] md:block">
-                What{" "}
-                <span className="font-playfair text-gold-400 italic">sets</span>{" "}
-                us apart?
-              </h2>
-
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
               <button
                 type="button"
                 onClick={() => setIsPlaying(true)}

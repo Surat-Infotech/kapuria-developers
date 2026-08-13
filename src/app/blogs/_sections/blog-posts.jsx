@@ -141,14 +141,6 @@ export default function BlogPosts() {
               Stay up to date with our most recent blog posts.
             </p>
           </div>
-
-          <button
-            type="button"
-            className="text-navy-800 hover:text-gold-400 focus-visible:ring-gold-400 sm:text-body text-body-xs flex cursor-pointer items-center gap-8 rounded-sm font-semibold tracking-[2.28px] uppercase transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none sm:tracking-[3.42px] md:text-[18px]/[26px]"
-          >
-            Sort by
-            <ChevronDownIcon className="size-20 shrink-0" />
-          </button>
         </div>
 
         <div className="grid w-full grid-cols-1 gap-32 sm:grid-cols-2 sm:gap-16 md:gap-24 lg:grid-cols-3">
@@ -156,14 +148,6 @@ export default function BlogPosts() {
             <PostCard key={post.id} {...post} />
           ))}
         </div>
-
-        <button
-          type="button"
-          className="text-navy-800/60 hover:text-navy-800 focus-visible:ring-gold-400 text-body-sm flex cursor-pointer items-center gap-8 rounded-sm font-semibold tracking-[3px] uppercase transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none sm:text-[18px] sm:tracking-[3.42px]"
-        >
-          View more
-          <ChevronDownIcon className="size-24 shrink-0" />
-        </button>
       </div>
     </Section>
   );
