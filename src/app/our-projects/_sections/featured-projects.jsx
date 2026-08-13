@@ -84,36 +84,40 @@ function ProjectSpecTable({ project, className = "" }) {
 function ProjectSpecLines({ project, className = "" }) {
   return (
     <div className={className}>
-      <div className="flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-16 xl:text-[22px]/[30px]">
-        <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
-          {project.type},
-        </span>
+      <div className="flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-20 xl:text-[20px]/[normal]">
         <span className="flex items-center gap-8 whitespace-nowrap">
-          Plot Size{" "}
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
-            {project.plotSize}
+          Property Type{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[30px]">
+            {project.type}
           </span>
         </span>
         <span aria-hidden className="h-26 w-px shrink-0 bg-white/25" />
         <span className="flex items-center gap-8 whitespace-nowrap">
-          Built Area{" "}
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
-            {project.builtArea}
+          Plot Size{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[normal]">
+            {project.plotSize}
           </span>
         </span>
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-16 xl:text-[22px]/[30px]">
+      <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-8 text-[16px]/[24px] font-medium text-white/60 xl:gap-x-20 xl:text-[20px]/[normal]">
+        <span className="flex items-center gap-8 whitespace-nowrap">
+          Built Area{" "}
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[normal]">
+            {project.builtArea}
+          </span>
+        </span>
+        <span aria-hidden className="h-26 w-px shrink-0 bg-white/25" />
         <span className="flex items-center gap-8 whitespace-nowrap">
           Bedrooms{" "}
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[normal]">
             {project.bedrooms}
           </span>
         </span>
         <span aria-hidden className="h-26 w-px shrink-0 bg-white/25" />
         <span className="flex items-center gap-8 whitespace-nowrap">
           Floors{" "}
-          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[22px]/[30px]">
+          <span className="text-[16px]/[24px] font-semibold whitespace-nowrap text-white xl:text-[20px]/[normal]">
             {project.floors}
           </span>
         </span>
