@@ -16,8 +16,8 @@ const ARTICLES = [
     image: blogPost3,
     badge: "Blog Post",
     featured: true,
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -28,8 +28,8 @@ const ARTICLES = [
     image: blogPost1,
     badge: "News",
     featured: true,
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -39,8 +39,8 @@ const ARTICLES = [
     id: "article-3",
     image: blogPost2,
     badge: "Blog Post",
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -50,8 +50,8 @@ const ARTICLES = [
     id: "article-4",
     image: blogPost1,
     badge: "Article",
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -61,8 +61,8 @@ const ARTICLES = [
     id: "article-5",
     image: blogPost3,
     badge: "Blog Post",
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -74,8 +74,7 @@ const ArticleCard = ({
   image,
   badge,
   featured,
-  titleLead,
-  titleRest,
+  title,
   excerpt,
   meta,
   href,
@@ -87,7 +86,7 @@ const ArticleCard = ({
     >
       <Image
         src={image}
-        alt={`${titleLead} ${titleRest}`}
+        alt={title}
         width={546}
         height={330}
         className={`w-full object-cover transition-transform duration-500 ease-out hover:scale-105 ${
@@ -108,8 +107,7 @@ const ArticleCard = ({
             href={href}
             className="focus-visible:ring-gold-400 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
           >
-            {titleLead}{" "}
-            <span className="font-normal lg:font-medium">{titleRest}</span>
+            {title}
           </Link>
         </h3>
 

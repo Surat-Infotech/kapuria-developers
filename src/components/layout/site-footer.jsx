@@ -9,6 +9,7 @@ import {
 } from "@/config/footer";
 
 import { FooterLogo } from "@/components/common/logo";
+import FooterNavLink from "@/components/layout/footer-nav-link";
 import NewsletterForm from "@/components/layout/newsletter-form";
 
 const COLUMN_HEADING =
@@ -45,9 +46,9 @@ const SiteFooter = () => (
               <ul className="mt-16 flex flex-col gap-16 lg:mt-25 lg:gap-20">
                 {column.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className={COLUMN_LINK}>
+                    <FooterNavLink href={link.href} className={COLUMN_LINK}>
                       {link.label}
-                    </Link>
+                    </FooterNavLink>
                   </li>
                 ))}
               </ul>
@@ -88,12 +89,12 @@ const SiteFooter = () => (
         <ul className="flex items-center justify-between gap-24 lg:justify-end lg:gap-40">
           {LEGAL_LINKS.map((link) => (
             <li key={link.href}>
-              <Link
+              <FooterNavLink
                 href={link.href}
                 className="hover:text-gold-300 text-body-xs sm:text-body-sm md:text-body-relaxed whitespace-nowrap text-neutral-400 transition-colors duration-200"
               >
                 {link.label}
-              </Link>
+              </FooterNavLink>
             </li>
           ))}
         </ul>

@@ -3,49 +3,66 @@ import Link from "next/link";
 
 import Section from "@/components/ui/section";
 
-import blogBanner from "@/assets/images/blogs/blog-banner.webp";
-import blogPost1 from "@/assets/images/blogs/blog-post-1.webp";
-import blogPost2 from "@/assets/images/blogs/blog-post-2.webp";
-import blogPost3 from "@/assets/images/blogs/blog-post-3.webp";
+import blogList1 from "@/assets/images/blogs/blog-list-1.webp";
+import blogList2 from "@/assets/images/blogs/blog-list-2.webp";
+import blogList3 from "@/assets/images/blogs/blog-list-3.webp";
+import blogList4 from "@/assets/images/blogs/blog-list-4.webp";
+import blogList5 from "@/assets/images/blogs/blog-list-5.webp";
 import ChevronDownIcon from "@/assets/svgs/common/chevron-down";
 
 const TODAYS_DATE = "10th June, 2026";
 
-// `titleLead` carries the heavier weight; the rest runs at medium.
 const POSTS = [
   {
     id: "building-better-futures-1",
-    image: blogPost1,
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    image: blogList1,
+    title: "Fly Ash Bricks vs Red Bricks: Which One is Better for Your Home?",
     excerpt:
-      "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
+      "Last March a client of mine, a schoolteacher building her first house on a 30x40 plot, called me from the brick yard. Her mason wanted red bricks. The supplier kept pushing the grey ones. She'd been standing there for forty minutes and nobody could give her a straight answer.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
     href: "/blogs/fly-ash-bricks-vs-red-bricks",
   },
   {
     id: "building-better-futures-2",
-    image: blogPost2,
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    image: blogList2,
+    title:
+      "Why Red Oxide is Important on TMT (Thermo-Mechanically Treated) Bars",
     excerpt:
-      "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
+      "Walk past any construction site that sat idle through a monsoon. The column starter bars poking out of the plinth tell the whole story. The ones left bare have turned a flaky orange-brown, scale peeling off in layers. The ones painted that dull brick-red colour? Still solid underneath.",
+    meta: ["10 mins", "Sustainability", "10th June, 2026"],
+    href: "/blogs/red-oxide-on-tmt-bars",
+  },
+  {
+    id: "building-better-futures-3",
+    image: blogList3,
+    title:
+      "Seepage in Walls and Ceilings: Why It Happens and How to Stop It for Good",
+    excerpt:
+      "It usually starts small. A faint yellowish patch on the bedroom ceiling. Paint bubbling behind the almirah that nobody noticed for months. A musty smell in one corner of the living room that no amount of airing out seems to fix.",
+    meta: ["10 mins", "Sustainability", "10th June, 2026"],
+    href: "/blogs/seepage-in-walls-and-ceilings",
+  },
+  {
+    id: "building-better-futures-4",
+    image: blogList4,
+    title: "10 Common Vastu Beliefs Explained by Science",
+    excerpt:
+      "When buying or building a home, you've probably heard advice like 'Never buy a south-facing house,' 'Keep the kitchen in the southeast,'' or 'Sleep with your head towards the south.'' These recommendations come from Vastu Shastra, India's ancient architectural system that has guided home design for centuries.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
     href: "/blogs/fly-ash-bricks-vs-red-bricks",
   },
   {
-    id: "building-better-futures-3",
-    image: blogPost3,
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    id: "building-better-futures-5",
+    image: blogList5,
+    title: "10 Common Vastu Beliefs Explained by Science",
     excerpt:
-      "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
+      "A decade ago, telling someone in Chandigarh that Airport Road in Mohali would one day carry apartment prices touching ₹15,000 per square foot would have earned a polite laugh. Airport Road was fields. Zirakpur was where the highway traffic slowed down. New Chandigarh didn't exist as an address anyone used.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
     href: "/blogs/fly-ash-bricks-vs-red-bricks",
   },
 ];
 
-const PostCard = ({ image, titleLead, titleRest, excerpt, meta, href }) => (
+const PostCard = ({ image, title, excerpt, meta, href }) => (
   <article className="flex flex-col items-start gap-16 sm:gap-18">
     <Link
       href={href}
@@ -53,7 +70,7 @@ const PostCard = ({ image, titleLead, titleRest, excerpt, meta, href }) => (
     >
       <Image
         src={image}
-        alt={`${titleLead} ${titleRest}`}
+        alt={title}
         width={330}
         height={244}
         className="h-180 w-full object-cover transition-transform duration-500 ease-out hover:scale-105 sm:h-244"
@@ -67,7 +84,7 @@ const PostCard = ({ image, titleLead, titleRest, excerpt, meta, href }) => (
             href={href}
             className="focus-visible:ring-gold-400 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
           >
-            {titleLead} <span className="font-medium">{titleRest}</span>
+            {title}
           </Link>
         </h3>
 
