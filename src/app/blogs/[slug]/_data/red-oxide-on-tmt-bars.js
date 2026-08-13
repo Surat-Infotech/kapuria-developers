@@ -1,4 +1,4 @@
-import heroImage from "@/assets/images/blogs/blog-list-2.webp";
+import heroImage from "@/assets/images/blogs/blog-detail-2.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 export const POST = {
