@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import Section from "@/components/ui/section";
 
-import blogDetailBanner from "@/assets/images/blogs/blog-detail.webp";
 import ChevronsRightIcon from "@/assets/svgs/common/chevrons-right";
 
 const CRUMBS = [
@@ -12,7 +11,7 @@ const CRUMBS = [
 ];
 
 export default function BannerSection({ post }) {
-  const { titleLead, titleRest, readTime, date, author } = post;
+  const { title, image, readTime, date, author } = post;
 
   const meta = [
     { label: "Read Time", value: readTime },
@@ -23,8 +22,8 @@ export default function BannerSection({ post }) {
   return (
     <div className="relative">
       <Image
-        src={blogDetailBanner}
-        alt={`${titleLead}${titleRest}`}
+        src={image}
+        alt={title}
         width={1440}
         height={910}
         priority
@@ -70,16 +69,14 @@ export default function BannerSection({ post }) {
                 aria-current="page"
                 className="text-body-xs min-w-0 flex-1 truncate font-medium text-white lg:text-[18px]"
               >
-                <span className="font-semibold">{titleLead}</span>
-                {titleRest}
+                {title}
               </li>
             </ol>
           </nav>
 
           <div className="xs:gap-16 flex flex-col items-start gap-8 md:gap-24 lg:gap-36">
             <h1 className="text-[22px]/[30px] font-medium text-white sm:text-[40px]/[52px] lg:text-[56px]/[72px]">
-              <span className="font-semibold">{titleLead}</span>
-              {titleRest}
+              {title}
             </h1>
 
             {/* Frosted pill — hairlines sit between the pairs, not after them. */}

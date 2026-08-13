@@ -15,8 +15,8 @@ const PRESS = [
     id: "forbes",
     image: forbes,
     publication: "Forbes",
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -26,8 +26,8 @@ const PRESS = [
     id: "bloomberg",
     image: bloomberg,
     publication: "Bloomberg",
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -37,8 +37,8 @@ const PRESS = [
     id: "allsopp",
     image: allsopp,
     publication: "Allsopp & Allsopp",
-    titleLead: "Building Better Futures:",
-    titleRest: "Constructing Community Homes for a Brighter Tomorrow",
+    title:
+      "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow",
     excerpt:
       "The architectural construction of an eco-friendly villa combines innovative design with sustainable practices, prioritizing the integration of renewable materials and energy-efficient systems. From the initial blueprint, the emphasis is on maximizing natural light and ventilation.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
@@ -46,15 +46,7 @@ const PRESS = [
   },
 ];
 
-const PressCard = ({
-  image,
-  publication,
-  titleLead,
-  titleRest,
-  excerpt,
-  meta,
-  href,
-}) => (
+const PressCard = ({ image, publication, title, excerpt, meta, href }) => (
   <article className="flex flex-col items-start gap-16 lg:gap-18">
     <Link
       href={href}
@@ -76,8 +68,7 @@ const PressCard = ({
             href={href}
             className="focus-visible:ring-gold-400 rounded-sm focus-visible:ring-2 focus-visible:outline-none"
           >
-            {titleLead}{" "}
-            <span className="font-normal lg:font-medium">{titleRest}</span>
+            {title}
           </Link>
         </h3>
 

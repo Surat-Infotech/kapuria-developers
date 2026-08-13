@@ -1,11 +1,12 @@
+import heroImage from "@/assets/images/blogs/blog-detail.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 // Article content for the demo post. When a CMS lands, this shape is what the
 // page consumes: `sections` drives both the body and the table of contents.
 export const POST = {
   slug: "fly-ash-bricks-vs-red-bricks",
-  titleLead: "Fly Ash Bricks vs Red Bricks:",
-  titleRest: " Which One is Better for Your Home?",
+  title: "Fly Ash Bricks vs Red Bricks: Which One is Better for Your Home?",
+  image: heroImage,
   readTime: "10 mins",
   date: "10th June, 2026",
   author: {
@@ -13,6 +14,9 @@ export const POST = {
     role: "Freelance Journalist",
     avatar: sophiaAnderson,
   },
+  metaTitle: "Fly Ash Bricks vs Red Bricks | Kapuria Developers",
+  metaDescription:
+    "Which brick is better for your home? A builder walks through strength, cost, durability and the environmental trade-offs.",
 };
 
 export const COMPARISON = {

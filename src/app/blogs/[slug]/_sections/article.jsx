@@ -6,7 +6,6 @@ import { useState } from "react";
 
 import Section from "@/components/ui/section";
 
-import articleImage from "@/assets/images/blogs/blog-detail.webp";
 import blogPost1 from "@/assets/images/blogs/blog-post-1.webp";
 import blogPost2 from "@/assets/images/blogs/blog-post-2.webp";
 import blogPost3 from "@/assets/images/blogs/blog-post-3.webp";
@@ -16,9 +15,8 @@ import InstagramIcon from "@/assets/svgs/social/instagram";
 import XIcon from "@/assets/svgs/social/x";
 import YoutubeIcon from "@/assets/svgs/social/youtube";
 
-const RELATED_TITLE_LEAD = "Building Better Futures:";
-const RELATED_TITLE_REST =
-  "Constructing Community Homes for a Brighter Tomorrow";
+const RELATED_TITLE =
+  "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow";
 
 const RELATED = [
   { id: "rel-1", image: blogPost1 },
@@ -47,15 +45,14 @@ const RelatedPanel = ({ className = "" }) => (
         >
           <Image
             src={image}
-            alt={`${RELATED_TITLE_LEAD} ${RELATED_TITLE_REST}`}
+            alt={RELATED_TITLE}
             width={104}
             height={78}
             className="h-93 w-104 shrink-0 rounded-md object-cover lg:h-97 lg:w-full"
           />
           <div className="flex flex-col gap-6 sm:gap-4">
             <p className="text-navy-800 line-clamp-3 text-xs font-semibold">
-              {RELATED_TITLE_LEAD}{" "}
-              <span className="font-normal">{RELATED_TITLE_REST}</span>
+              {RELATED_TITLE}
             </p>
             <p className="text-navy-800/60 text-xs font-normal">10 mins</p>
           </div>
@@ -211,7 +208,22 @@ export default function Article({ post, sections, comparison, faqs }) {
         <div className="flex min-w-0 flex-1 flex-col gap-32 lg:gap-40">
           <article className="flex flex-col gap-24">
             {sections.map(
-              ({ id, title, body, list, type, imagePosition }, index) => (
+              (
+                {
+                  id,
+                  title,
+                  body,
+                  list,
+                  steps,
+                  blocks,
+                  definitions,
+                  footer,
+                  type,
+                  imagePosition,
+                  imageAlt,
+                },
+                index
+              ) => (
                 <section
                   key={id}
                   id={id}
@@ -221,8 +233,8 @@ export default function Article({ post, sections, comparison, faqs }) {
                       `order` flips it without disturbing the DOM sequence. */}
                   {imagePosition === "top" && (
                     <Image
-                      src={articleImage}
-                      alt={`${post.titleLead}${post.titleRest}`}
+                      src={post.image}
+                      alt={imageAlt ?? post.title}
                       width="100%"
                       height="100%"
                       className="order-last w-full rounded-xl object-cover lg:order-first"
@@ -249,6 +261,58 @@ export default function Article({ post, sections, comparison, faqs }) {
                           <li key={item}>{item}</li>
                         ))}
                       </ul>
+                    )}
+
+                    {/* Numbered variant — each item leads with its own
+                        heading, so it needs more room than `list` gives. */}
+                    {steps && (
+                      <ol className="flex list-decimal flex-col gap-16 ps-21">
+                        {steps.map((step) => (
+                          <li key={step.title}>
+                            <p className="text-navy-800 font-semibold">
+                              {step.title}
+                            </p>
+                            <p>{step.body}</p>
+                          </li>
+                        ))}
+                      </ol>
+                    )}
+
+                    {/* The term runs inline ahead of its definition, so this
+                        stays one paragraph rather than a heading plus body. */}
+                    {definitions?.map(({ term, body: definition }) => (
+                      <p key={term}>
+                        <strong className="text-navy-800 font-semibold">
+                          {term}
+                        </strong>{" "}
+                        {definition}
+                      </p>
+                    ))}
+
+                    {/* Like `steps` but unnumbered — categories of fix, not an
+                        ordered procedure. */}
+                    {blocks?.map((block) => (
+                      <div key={block.title}>
+                        <p className="text-navy-800 font-semibold">
+                          {block.title}
+                        </p>
+                        <p>{block.body}</p>
+                      </div>
+                    ))}
+
+                    {/* Trails whatever structured block sits above it. */}
+                    {footer?.map((paragraph) => (
+                      <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                    ))}
+
+                    {imagePosition === "bottom" && (
+                      <Image
+                        src={post.image}
+                        alt={imageAlt ?? post.title}
+                        width="100%"
+                        height="100%"
+                        className="w-full rounded-xl object-cover"
+                      />
                     )}
 
                     {type === "table" && <ComparisonTable {...comparison} />}

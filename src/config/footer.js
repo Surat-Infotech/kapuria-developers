@@ -2,8 +2,6 @@ import { EXTERNAL_ROUTES, ROUTES } from "@/lib/route";
 
 import FacebookIcon from "@/assets/svgs/social/facebook";
 import InstagramIcon from "@/assets/svgs/social/instagram";
-import XIcon from "@/assets/svgs/social/x";
-import YoutubeIcon from "@/assets/svgs/social/youtube";
 
 export const FOOTER_TAGLINE =
   "The best minds in villa, farmhouse Architecture & design, in your inbox.";
@@ -12,26 +10,21 @@ export const FOOTER_COLUMNS = [
   {
     title: "Links",
     links: [
-      { label: "Our Projects", href: ROUTES.PROJECTS },
+      { label: "Projects", href: ROUTES.PROJECTS },
       { label: "Construction", href: ROUTES.CONSTRUCTION },
       { label: "Blog", href: ROUTES.BLOG },
-      { label: "Contact", href: ROUTES.CONTACT },
+      { label: "Architects", href: ROUTES.ARCHITECTS },
     ],
   },
   {
     title: "Help Center",
-    links: [
-      { label: "FAQs", href: ROUTES.FAQS },
-      { label: "Contact us", href: ROUTES.CONTACT },
-    ],
+    links: [{ label: "Contact us", href: ROUTES.CONTACT }],
   },
 ];
 
 export const SOCIAL_LINKS = [
   { label: "Facebook", href: EXTERNAL_ROUTES.FACEBOOK, Icon: FacebookIcon },
   { label: "Instagram", href: EXTERNAL_ROUTES.INSTAGRAM, Icon: InstagramIcon },
-  { label: "X", href: EXTERNAL_ROUTES.X, Icon: XIcon },
-  { label: "YouTube", href: EXTERNAL_ROUTES.YOUTUBE, Icon: YoutubeIcon },
 ];
 
 export const LEGAL_LINKS = [
