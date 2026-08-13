@@ -11,7 +11,7 @@ import QuadrantIcon from "@/assets/svgs/common/quadrant";
 
 // Shared by both text inputs and the textarea.
 const FIELD =
-  "border-gold-400 bg-gold-400/10 text-navy-800 placeholder:text-navy-800/60 focus-visible:ring-gold-400 w-full rounded-[7px] sm:rounded-[12px] border px-16 sm:px-24 py-8 sm:py-16 text-[16px]/[30px] font-medium outline-none focus-visible:ring-2 lg:text-body-lg";
+  "border-gold-400 bg-[#F8F1E6] text-navy-800 placeholder:text-navy-800/60 focus-visible:ring-gold-400 w-full rounded-[7px] sm:rounded-[12px] border px-16 sm:px-24 py-8 sm:py-16 text-[16px]/[30px] font-medium outline-none sm:bg-[rgba(223,179,103,0.10)] focus-visible:ring-2 lg:text-body-lg";
 
 export default function Contact() {
   const handleSubmit = (event) => {
