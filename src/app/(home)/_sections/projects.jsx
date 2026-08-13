@@ -136,15 +136,12 @@ export default function ProjectsSection() {
                 key={prefix + suffix}
                 className="relative w-full shrink-0 basis-full lg:min-h-768"
               >
-                {/* Desktop: the villa fills the panel and a white scrim from the
-                    left keeps the copy readable. Mobile stacks image over card,
-                    and uses a separately cropped portrait-friendly asset. */}
                 <Image
                   src={image}
                   alt={`The ${prefix}A${suffix}`}
-                  width={1440}
-                  height={768}
-                  className="xs:block xs:h-241 xs:w-full hidden object-cover lg:absolute lg:inset-0 lg:h-full"
+                  width="100%"
+                  height="100%"
+                  className="xs:block xs:h-241 xs:w-full hidden lg:inset-0 lg:h-full"
                 />
 
                 <Image
