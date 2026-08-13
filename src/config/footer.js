@@ -10,12 +10,12 @@ export const FOOTER_TAGLINE =
 
 export const FOOTER_COLUMNS = [
   {
-    title: "About Us",
+    title: "Links",
     links: [
-      { label: "Our Story", href: ROUTES.OUR_STORY },
       { label: "Our Projects", href: ROUTES.PROJECTS },
-      { label: "Why Us?", href: ROUTES.WHY_US },
-      { label: "News & Media", href: ROUTES.BLOG },
+      { label: "Construction", href: ROUTES.CONSTRUCTION },
+      { label: "Blog", href: ROUTES.BLOG },
+      { label: "Contact", href: ROUTES.CONTACT },
     ],
   },
   {

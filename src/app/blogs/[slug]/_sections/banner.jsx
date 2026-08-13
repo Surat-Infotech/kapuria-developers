@@ -28,7 +28,7 @@ export default function BannerSection({ post }) {
         width={1440}
         height={910}
         priority
-        className="h-440 w-full object-cover lg:h-910"
+        className="h-440 w-full object-cover sm:h-600 md:h-screen"
       />
 
       <div

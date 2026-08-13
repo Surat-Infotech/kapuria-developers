@@ -21,12 +21,9 @@ import EyeIcon from "@/assets/svgs/common/eye";
 
 const INSTAGRAM_URL = "https://www.instagram.com/kapuria_developers/reels/";
 
-// Videos are self-hosted copies so playback stays on our page — Instagram's
-// own embed drags its chrome (header, like bar, "View more on Instagram") in
-// with it, and being cross-origin it cannot be styled away.
 const REELS = [
   {
-    id: "DbD1VysBOc7",
+    id: "DZpkDCNsXuO",
     cover: reel1,
     video: "/videos/reels/reel-1.webm",
     views: "374",

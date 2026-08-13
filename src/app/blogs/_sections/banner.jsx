@@ -33,7 +33,7 @@ export default function BannerSection() {
         width="100%"
         height="100%"
         priority
-        className="hidden w-full min-[700px]:block"
+        className="hidden h-screen w-full object-cover min-[700px]:block"
       />
       <Image
         src={bannerMobile}
