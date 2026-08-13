@@ -1,4 +1,4 @@
-import heroImage from "@/assets/images/blogs/blog-list-3.webp";
+import heroImage from "@/assets/images/blogs/blog-detail-3.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 export const POST = {
@@ -52,7 +52,7 @@ export const SECTIONS = [
         body: "is different altogether: moist indoor air hitting a cold surface, common in bathrooms and north-facing walls in winter. No external water involved at all. Treating condensation with waterproofing chemicals wastes money; the fix there is ventilation.",
       },
     ],
-    footer: [
+    outro: [
       "A quick test the old plumbers use: tape a small square of aluminium foil tightly over the damp patch and leave it for two days. Moisture on the outer face of the foil means condensation. Moisture trapped behind it means real seepage. Costs nothing, tells plenty.",
     ],
   },

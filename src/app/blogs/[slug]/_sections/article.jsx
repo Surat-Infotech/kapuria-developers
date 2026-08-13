@@ -81,6 +81,32 @@ const RelatedPanel = ({ className = "" }) => (
   </div>
 );
 
+// A rich paragraph is an array of runs: plain strings, plus `{ text, href }`
+// objects wherever the copy cites a source.
+const RichText = ({ runs }) =>
+  runs.map((run, index) =>
+    typeof run === "string" ? (
+      run
+    ) : (
+      <a
+        key={`${run.href}-${index}`}
+        href={run.href}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="hover:text-gold-400 focus-visible:ring-gold-400 rounded-sm underline transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none"
+      >
+        {run.text}
+      </a>
+    )
+  );
+
+// Runs carry no stable id of their own, so the first chunk of text stands in.
+const richKey = (runs) =>
+  runs
+    .map((run) => (typeof run === "string" ? run : run.text))
+    .join("")
+    .slice(0, 40);
+
 const ComparisonTable = ({ columns, rows }) => (
   <div className="overflow-x-auto rounded-lg shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)]">
     <table className="w-full min-w-480 border-collapse text-left">
@@ -213,11 +239,15 @@ export default function Article({ post, sections, comparison, faqs }) {
                   id,
                   title,
                   body,
+                  richBody,
+                  listIntro,
                   list,
                   steps,
                   blocks,
+                  richBlocks,
                   definitions,
                   footer,
+                  outro,
                   type,
                   imagePosition,
                   imageAlt,
@@ -255,12 +285,46 @@ export default function Article({ post, sections, comparison, faqs }) {
                       <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                     ))}
 
+                    {richBody?.map((runs) => (
+                      <p key={richKey(runs)}>
+                        <RichText runs={runs} />
+                      </p>
+                    ))}
+
+                    {/* Like `steps` but unnumbered — a labelled block of copy
+                        rather than an ordered procedure. */}
+                    {blocks?.map((block) => (
+                      <div key={block.title}>
+                        <p className="text-navy-800 font-semibold">
+                          {block.title}
+                        </p>
+                        <p>{block.body}</p>
+                      </div>
+                    ))}
+
+                    {/* Same shape as `blocks`, but the copy cites sources. */}
+                    {richBlocks?.map((block) => (
+                      <div key={block.title}>
+                        <p className="text-navy-800 font-semibold">
+                          {block.title}
+                        </p>
+                        <p>
+                          <RichText runs={block.body} />
+                        </p>
+                      </div>
+                    ))}
+
+                    {/* The lead-in sits tight against its list, so the two
+                        share a wrapper instead of taking the parent gap. */}
                     {list && (
-                      <ul className="flex list-disc flex-col gap-4 ps-21">
-                        {list.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
+                      <div>
+                        {listIntro && <p>{listIntro}</p>}
+                        <ul className="flex list-disc flex-col gap-4 ps-21">
+                          {list.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
 
                     {/* Numbered variant — each item leads with its own
@@ -278,6 +342,11 @@ export default function Article({ post, sections, comparison, faqs }) {
                       </ol>
                     )}
 
+                    {/* Trails whatever structured block sits above it. */}
+                    {footer?.map((paragraph) => (
+                      <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                    ))}
+
                     {/* The term runs inline ahead of its definition, so this
                         stays one paragraph rather than a heading plus body. */}
                     {definitions?.map(({ term, body: definition }) => (
@@ -289,19 +358,8 @@ export default function Article({ post, sections, comparison, faqs }) {
                       </p>
                     ))}
 
-                    {/* Like `steps` but unnumbered — categories of fix, not an
-                        ordered procedure. */}
-                    {blocks?.map((block) => (
-                      <div key={block.title}>
-                        <p className="text-navy-800 font-semibold">
-                          {block.title}
-                        </p>
-                        <p>{block.body}</p>
-                      </div>
-                    ))}
-
-                    {/* Trails whatever structured block sits above it. */}
-                    {footer?.map((paragraph) => (
+                    {/* Closes the section, after the definitions. */}
+                    {outro?.map((paragraph) => (
                       <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                     ))}
 

@@ -49,16 +49,17 @@ const POSTS = [
     excerpt:
       "When buying or building a home, you've probably heard advice like 'Never buy a south-facing house,' 'Keep the kitchen in the southeast,'' or 'Sleep with your head towards the south.'' These recommendations come from Vastu Shastra, India's ancient architectural system that has guided home design for centuries.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
-    href: "/blogs/fly-ash-bricks-vs-red-bricks",
+    href: "/blogs/vastu-beliefs-explained-by-science",
   },
   {
     id: "building-better-futures-5",
     image: blogList5,
-    title: "10 Common Vastu Beliefs Explained by Science",
+    title:
+      "Punjab Tricity Real Estate: Why This Market Deserves a Place in Your Portfolio",
     excerpt:
       "A decade ago, telling someone in Chandigarh that Airport Road in Mohali would one day carry apartment prices touching ₹15,000 per square foot would have earned a polite laugh. Airport Road was fields. Zirakpur was where the highway traffic slowed down. New Chandigarh didn't exist as an address anyone used.",
     meta: ["10 mins", "Sustainability", "10th June, 2026"],
-    href: "/blogs/fly-ash-bricks-vs-red-bricks",
+    href: "/blogs/punjab-tricity-real-estate",
   },
 ];
 
