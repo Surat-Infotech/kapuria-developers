@@ -152,34 +152,3 @@ export const SECTIONS = [
     ],
   },
 ];
-
-export const FAQS = [
-  {
-    question: "Why is red oxide applied on TMT bars?",
-    answer:
-      "It works as a barrier primer that keeps moisture, rain, and salty air from reaching the steel. That prevents rust during storage, transport, and on starter bars left exposed between construction stages.",
-  },
-  {
-    question:
-      "Does red oxide coating affect the bond between TMT bars and concrete?",
-    answer:
-      "A thin, well-adhered coat does not meaningfully reduce bond. IS 456 objects to loose rust, grease, and coatings thick enough to reduce bond, so heavy layers on bars about to be embedded are the thing to avoid. Your structural engineer gets the final word.",
-  },
-  {
-    question:
-      "Do TMT bars rust even though they're called corrosion-resistant?",
-    answer:
-      "Yes. Quenching leaves a thin protective oxide film that resists corrosion better than older cold-twisted bars, but it is thin. Standing water, coastal salt air, or months of open storage will rust TMT bars like any other steel.",
-  },
-  {
-    question: "Is light rust on TMT bars acceptable?",
-    answer:
-      "A thin, tight film of surface rust is harmless and may even improve bond slightly by roughening the surface. Flaky, layered, pitting rust is not — it eats into the bar's cross-section and destroys bond.",
-  },
-  {
-    question:
-      "What's better for protecting rebar: red oxide, cement slurry, or epoxy coating?",
-    answer:
-      "It depends on the exposure. Red oxide suits site storage, transport, and starter bars. Cement slurry is near-free but washes off in heavy rain. Fusion-bonded epoxy is for bridges and marine or chloride-heavy structures, and it must be factory-applied.",
-  },
-];

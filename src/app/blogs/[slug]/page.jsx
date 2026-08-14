@@ -31,17 +31,12 @@ export default async function BlogDetail({ params }) {
 
   if (!entry) notFound();
 
-  const { post, sections, comparison, faqs } = entry;
+  const { post, sections, comparison } = entry;
 
   return (
     <>
       <BannerSection post={post} />
-      <Article
-        post={post}
-        sections={sections}
-        comparison={comparison}
-        faqs={faqs}
-      />
+      <Article post={post} sections={sections} comparison={comparison} />
       <MoreArticles />
     </>
   );
