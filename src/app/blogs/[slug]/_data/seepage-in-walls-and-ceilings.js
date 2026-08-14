@@ -149,31 +149,3 @@ export const SECTIONS = [
     ],
   },
 ];
-
-export const FAQS = [
-  {
-    question: "What causes seepage in walls?",
-    answer:
-      "The usual suspects are leaking concealed pipes, failed tile grouting in bathrooms, aged terrace waterproofing, unpainted external walls absorbing rain, and rising damp from the foundation. The visible patch often sits a metre or more away from the real entry point.",
-  },
-  {
-    question: "Can waterproof paint stop seepage permanently?",
-    answer:
-      "No. Paint is a finish, not a cure. Applied over a wall that is still receiving water, it blisters and peels within a season. It only works as the last step after the source has been cut off and the wall has dried fully.",
-  },
-  {
-    question: "How do you find where seepage is coming from?",
-    answer:
-      "Start with timing. A patch that worsens during rain points to an external source; one that stays damp in dry months points to plumbing. A pressure test on the bathroom lines and a basic moisture meter will usually locate it without breaking any tiles.",
-  },
-  {
-    question: "Is seepage dangerous for a building?",
-    answer:
-      "Left long enough, yes. Persistent moisture crumbles plaster, corrodes embedded reinforcement, and encourages mould that affects air quality. Seepage near electrical points is an immediate safety concern and should not wait.",
-  },
-  {
-    question: "How much does seepage treatment cost?",
-    answer:
-      "It depends entirely on the source. Repainting an external wall or regrouting a bathroom is modest. Re-waterproofing a terrace costs more, and chemical DPC injection for rising damp is the most expensive because it needs skilled application. In every case, tracing the source first is what keeps the bill from repeating.",
-  },
-];

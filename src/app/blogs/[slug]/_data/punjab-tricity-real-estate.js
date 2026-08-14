@@ -43,7 +43,7 @@ export const SECTIONS = [
         "Le Corbusier's grid was designed for around five lakh people. A Rajya Sabha discussion in early 2026, ",
         {
           text: "reported by Swarajya",
-          href: "https://swarajyamag.com/",
+          href: "https://swarajyamag.com/news-brief/centre-clarifies-no-single-master-plan-exists-for-coordinated-tricity-development-of-chandigarh-mohali-and-panchkula",
         },
         ", noted the wider urban area now serves a population exceeding 1.6 million — and the city cannot sprawl. Heritage rules, planned-city regulations, and two state borders lock its footprint permanently.",
       ],
@@ -51,7 +51,7 @@ export const SECTIONS = [
         "What happens when a prosperous city runs out of land? Prices inside go vertical — reported deals include a Sector 9 kothi selling for ₹98 crore in 2024, ",
         {
           text: "per JLPL's market coverage",
-          href: "https://www.jlpl.in/",
+          href: "https://jantahousing.com/tricity-real-estate-market-should-you-hold-or-sell-in-2025/",
         },
         " — and every buyer who can't pay that becomes a Mohali, Zirakpur, New Chandigarh, or Panchkula buyer instead. That overflow isn't a trend that can reverse. It's geography. For an investor, demand that's structurally guaranteed is the rarest asset in real estate, and the Tricity has it built in.",
       ],
@@ -68,7 +68,10 @@ export const SECTIONS = [
         title: "Price growth is real and broad-based",
         body: [
           "An April 2026 market report on ",
-          { text: "RealtyNMore", href: "https://realtynmore.com/" },
+          {
+            text: "RealtyNMore",
+            href: "https://realtynmore.com/tricity-real-estate-market-sees-growth-driven/",
+          },
           " pegs appreciation in key Tricity areas at roughly 15–20% over three years — and, more tellingly, notes that over 60% of recent sales involved homes above ₹1 crore. Homeland Group's managing director, quoted in the same report, described transactions as decisively concentrating in the crore-plus bracket. Read that shift correctly: this market has graduated from budget overflow to premium destination, and premium markets hold value through cycles far better than budget ones.",
         ],
       },
@@ -76,7 +79,10 @@ export const SECTIONS = [
         title: "Entry points still exist at every level",
         body: [
           "Local trackers such as ",
-          { text: "Property1313", href: "https://property1313.com/" },
+          {
+            text: "Property1313",
+            href: "https://property1313.com/blog/property-price-trends-in-mohali",
+          },
           " place IT City (Sector 83) at roughly ₹7,000–10,000 per sq ft, Aerocity around ₹9,000–15,000, Airport Road at ₹8,000–12,000, and emerging Sector 88 near ₹5,000–6,500 — with annual capital appreciation in Mohali estimated at 10–15%, among Punjab's best. Compare that ladder with Gurugram or Noida, where equivalent corridors crossed these levels years ago, and the headroom argument makes itself.",
         ],
       },
@@ -86,7 +92,7 @@ export const SECTIONS = [
           "Investment guides covering the region, ",
           {
             text: "including Ghar.tv's Tricity analysis",
-            href: "https://ghar.tv/",
+            href: "https://www.ghar.tv/blog/mohali-and-panchkula-real-estate-investment-guide-best-opportunities-in-chandigarh-tricity/artid3873",
           },
           ", cite rental yields of 6–8% in Mohali's IT-driven pockets. The Indian metro norm is 2–3%. That difference means a Tricity investment can pay its own EMI down in a way a Mumbai flat simply cannot, with tenancy demand kept steady by IT City professionals and the institutional cluster of ISB, IISER, and Plaksha.",
         ],
@@ -97,7 +103,7 @@ export const SECTIONS = [
           "After a sharp surge in 2024, growth moderated into the 8–9% range, per research aggregated by ",
           {
             text: "Accio's Chandigarh trends report",
-            href: "https://www.accio.com/",
+            href: "https://www.accio.com/business/chandigarh_real_estate_market_trends",
           },
           " — with the luxury segment staying resilient throughout. For a long-term investor, this is the healthiest possible signal. Markets that consolidate after a surge build durable value; markets that only go vertical are the ones to fear. The Tricity is showing the temperament of a market with years left in it, not months.",
         ],
@@ -117,12 +123,12 @@ export const SECTIONS = [
           "Approved by the Ministry of Housing and Urban Affairs at ₹10,570 crore, with RITES handling the detailed project work, ",
           {
             text: "as reported by Metro Rail Today",
-            href: "https://www.metrorailtoday.com/",
+            href: "https://metrorailtoday.com/news/govt-of-india-approves-10570-crore-metro-projects-for-chandigarh-mohali-panchkula",
           },
           " citing Hindustan Times. Phase 1 — reported at over 85 km after successive extensions, ",
           {
             text: "per Indian Infrastructure",
-            href: "https://indianinfrastructure.com/",
+            href: "https://indianinfrastructure.com/2024/07/26/capacity-revised-under-chandigarh-panchkula-and-mohali-tricity-metro-project/",
           },
           " — will link New Chandigarh, Chandigarh, Mohali's industrial belt, the airport, Zirakpur, and Panchkula between 2027 and 2034. Investment analyses project a 20–30% value uplift in well-connected corridors as the network progresses. Investors who position along announced corridors before construction visibly begins have historically captured the largest share of that uplift — that was the Delhi Metro playbook, the Bengaluru playbook, and there's little reason to expect the Tricity to break the pattern.",
         ],
@@ -139,7 +145,7 @@ export const SECTIONS = [
           "A ₹1,350-crore, six-lane Zirakpur–Panchkula bypass (",
           {
             text: "per Ghar.tv's infrastructure roundup",
-            href: "https://ghar.tv/",
+            href: "https://www.ghar.tv/blog/mohali-and-panchkula-real-estate-investment-guide-best-opportunities-in-chandigarh-tricity/artid3873",
           },
           ") and ring-road links toward Derabassi are steadily removing the traffic discount that has kept Zirakpur cheaper than it deserves to be. When a location's biggest flaw is being actively fixed with funded projects, the flaw is an entry opportunity.",
         ],
@@ -159,12 +165,12 @@ export const SECTIONS = [
           "Employment-led, premium, and liquid. Sectors 82–90 are the visible next wave; ",
           {
             text: "MohaliProperties.co's market report",
-            href: "https://mohaliproperties.co/",
+            href: "https://mohaliproperties.co/blog/mohali-real-estate-market-report-2025/",
           },
           " notes early investors in this corridor already sitting on 15–20% pre-launch appreciation. The play: new-corridor projects over saturated older phases — ",
           {
             text: "even local developer commentary",
-            href: "https://www.jlpl.in/",
+            href: "https://jantahousing.com/tricity-real-estate-market-should-you-hold-or-sell-in-2025/",
           },
           " concedes aging sectors without modern amenities have less left to give, which is precisely why the growth corridors deserve the allocation.",
         ],
@@ -191,7 +197,10 @@ export const SECTIONS = [
         title: "Panchkula / Extension — the steady compounder",
         body: [
           "Haryana-side planning discipline, Shivalik-foothill living, and ",
-          { text: "investment guides", href: "https://ghar.tv/" },
+          {
+            text: "investment guides",
+            href: "https://www.ghar.tv/blog/mohali-and-panchkula-real-estate-investment-guide-best-opportunities-in-chandigarh-tricity/artid3873",
+          },
           " repeatedly flagging Panchkula Extension for 11–12% expected annual returns as its infrastructure catches up.",
         ],
       },
@@ -209,7 +218,7 @@ export const SECTIONS = [
         "Verify RERA yourself. Punjab and Haryana both run online RERA portals; two minutes of checking puts you in the protected class of buyers. In a region governed by ",
         {
           text: "multiple planning authorities rather than one master plan",
-          href: "https://rera.punjab.gov.in/",
+          href: "https://swarajyamag.com/news-brief/centre-clarifies-no-single-master-plan-exists-for-coordinated-tricity-development-of-chandigarh-mohali-and-panchkula",
         },
         ", the developer's paperwork and track record are your master plan — so favour established names with delivered projects, and the region has no shortage of them.",
       ],
@@ -225,33 +234,5 @@ export const SECTIONS = [
     body: [
       "Strip away the noise and the Tricity investment case stands on facts that can each be checked: a landlocked city guaranteeing overflow demand forever, 15–20% appreciation already delivered in three years, rental yields two to three times the metro norm, a funded ₹10,570-crore metro still ahead of the market, and an airport corridor already proving what premium demand here looks like. Markets offering growth usually can't offer yield; markets offering yield rarely have catalysts left. The Tricity, unusually, offers all three at once - with entry points from ₹40 lakh in Zirakpur to flagship addresses on Airport Road. Pick the pocket that fits your horizon, do the RERA homework, buy from builders who have delivered before, and let a structurally supplied-constrained market do what it has quietly been doing for a decade. The early investors weren't lucky. They were early. That window, on the evidence, is still open.",
     ],
-  },
-];
-
-export const FAQS = [
-  {
-    question: "Is Tricity real estate a good investment in 2026?",
-    answer:
-      "On published data, yes - 15–20% three-year appreciation, 6–8% rental yields in Mohali's IT pockets, an approved ₹10,570-crore metro still ahead of prices, and permanent demand overflow from landlocked Chandigarh. It particularly rewards a 5–10 year horizon.",
-  },
-  {
-    question: "Which area in the Tricity has the best investment potential?",
-    answer:
-      "It depends on the horizon. Mohali's Sectors 82–90 are the core employment-led holding, Airport Road and Aerocity lead on prestige and price, Zirakpur offers the best yield and entry point, and New Chandigarh is the decade-long play.",
-  },
-  {
-    question: "How will the Tricity Metro affect property prices?",
-    answer:
-      "Investment analyses project a 20–30% uplift in well-connected corridors as the network progresses. Phase 1 is targeted for 2027–2034 and construction has not begun, so today's corridor prices have not fully absorbed it.",
-  },
-  {
-    question: "Why is Mohali growing faster than Chandigarh?",
-    answer:
-      "Chandigarh cannot expand. Heritage rules, planned-city regulations, and two state borders fix its footprint, so demand it cannot house flows outward. Mohali adds employment of its own through IT City and the education cluster, which is why it captures the largest share.",
-  },
-  {
-    question: "What should an investor check before buying in the Tricity?",
-    answer:
-      "Verify the project on the Punjab or Haryana RERA portal, check the developer's delivery record, confirm which planning authority governs the location, and budget Punjab's 6% stamp duty plus 1% registration into the return calculation from day one.",
   },
 ];

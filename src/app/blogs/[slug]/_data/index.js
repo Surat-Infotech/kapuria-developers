@@ -4,9 +4,9 @@ import * as redOxideOnTmtBars from "./red-oxide-on-tmt-bars";
 import * as seepageInWallsAndCeilings from "./seepage-in-walls-and-ceilings";
 import * as vastuBeliefsExplainedByScience from "./vastu-beliefs-explained-by-science";
 
-// Every post module exports the same four names, so the page can render any of
-// them without knowing which one it got. Adding a post means writing the module
-// and listing it here — nothing in the page changes.
+// Every post module exports the same names, so the page can render any of them
+// without knowing which one it got. Adding a post means writing the module and
+// listing it here — nothing in the page changes.
 const MODULES = [
   flyAshBricksVsRedBricks,
   redOxideOnTmtBars,
@@ -15,11 +15,10 @@ const MODULES = [
   punjabTricityRealEstate,
 ];
 
-const toEntry = ({ POST, SECTIONS, COMPARISON, FAQS }) => ({
+const toEntry = ({ POST, SECTIONS, COMPARISON }) => ({
   post: POST,
   sections: SECTIONS,
   comparison: COMPARISON,
-  faqs: FAQS,
 });
 
 const POSTS_BY_SLUG = new Map(
