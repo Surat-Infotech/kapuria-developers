@@ -1,15 +1,9 @@
-"use client";
-
 import Image from "next/image";
-
-import { useState } from "react";
 
 import Section from "@/components/ui/section";
 
 import blogPost1 from "@/assets/images/blogs/blog-post-1.webp";
 import blogPost2 from "@/assets/images/blogs/blog-post-2.webp";
-import blogPost3 from "@/assets/images/blogs/blog-post-3.webp";
-import ChevronDownIcon from "@/assets/svgs/common/chevron-down";
 import FacebookIcon from "@/assets/svgs/social/facebook";
 import InstagramIcon from "@/assets/svgs/social/instagram";
 import XIcon from "@/assets/svgs/social/x";
@@ -147,52 +141,7 @@ const ComparisonTable = ({ columns, rows }) => (
   </div>
 );
 
-const FaqItem = ({ index, question, answer, isOpen, onToggle }) => (
-  <div className="border-navy-800/10 rounded-lg border px-16 sm:px-20">
-    <h3>
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        className="focus-visible:ring-gold-400 flex w-full cursor-pointer items-center gap-16 rounded-sm py-15 text-left focus-visible:ring-2 focus-visible:outline-none"
-      >
-        <span className="text-navy-800 shrink-0 text-[14px]/[22px] font-bold tabular-nums">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-
-        <span className="text-navy-800 text-body-sm flex-1 font-semibold">
-          {question}
-        </span>
-
-        {/* Tailwind v4 writes the standalone `rotate` property, not
-            `transform`, so that is what has to be transitioned. */}
-        <ChevronDownIcon
-          className={`size-20 shrink-0 transition-[rotate,color] duration-200 ${
-            isOpen ? "text-navy-800 -rotate-180" : "text-[#6A7680]"
-          }`}
-        />
-      </button>
-    </h3>
-
-    {/* Grid-rows trick keeps the reveal animatable without a fixed height. */}
-    <div
-      className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-        isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-      }`}
-    >
-      <div className="overflow-hidden">
-        <p className="text-body-xs pr-0 pb-16 pl-36 font-normal text-black">
-          {answer}
-        </p>
-      </div>
-    </div>
-  </div>
-);
-
-export default function Article({ post, sections, comparison, faqs }) {
-  // `null` = every question collapsed on first paint.
-  const [openFaq, setOpenFaq] = useState(null);
-
+export default function Article({ post, sections, comparison }) {
   return (
     <Section
       bg="surface"
@@ -396,22 +345,6 @@ export default function Article({ post, sections, comparison, faqs }) {
               <p className="text-navy-800/60 text-[12px]/[18px] font-normal">
                 {post.author.role}
               </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-8">
-            <h2 className="text-navy-800 text-[18px]/[26px] font-bold">FAQ</h2>
-
-            <div className="flex flex-col gap-10">
-              {faqs.map((faq, index) => (
-                <FaqItem
-                  key={faq.question}
-                  index={index}
-                  {...faq}
-                  isOpen={openFaq === index}
-                  onToggle={() => setOpenFaq(openFaq === index ? null : index)}
-                />
-              ))}
             </div>
           </div>
 

@@ -236,31 +236,3 @@ export const SECTIONS = [
     ],
   },
 ];
-
-export const FAQS = [
-  {
-    question: "Is Tricity real estate a good investment in 2026?",
-    answer:
-      "On published data, yes - 15–20% three-year appreciation, 6–8% rental yields in Mohali's IT pockets, an approved ₹10,570-crore metro still ahead of prices, and permanent demand overflow from landlocked Chandigarh. It particularly rewards a 5–10 year horizon.",
-  },
-  {
-    question: "Which area in the Tricity has the best investment potential?",
-    answer:
-      "It depends on the horizon. Mohali's Sectors 82–90 are the core employment-led holding, Airport Road and Aerocity lead on prestige and price, Zirakpur offers the best yield and entry point, and New Chandigarh is the decade-long play.",
-  },
-  {
-    question: "How will the Tricity Metro affect property prices?",
-    answer:
-      "Investment analyses project a 20–30% uplift in well-connected corridors as the network progresses. Phase 1 is targeted for 2027–2034 and construction has not begun, so today's corridor prices have not fully absorbed it.",
-  },
-  {
-    question: "Why is Mohali growing faster than Chandigarh?",
-    answer:
-      "Chandigarh cannot expand. Heritage rules, planned-city regulations, and two state borders fix its footprint, so demand it cannot house flows outward. Mohali adds employment of its own through IT City and the education cluster, which is why it captures the largest share.",
-  },
-  {
-    question: "What should an investor check before buying in the Tricity?",
-    answer:
-      "Verify the project on the Punjab or Haryana RERA portal, check the developer's delivery record, confirm which planning authority governs the location, and budget Punjab's 6% stamp duty plus 1% registration into the return calculation from day one.",
-  },
-];

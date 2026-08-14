@@ -331,27 +331,3 @@ export const SECTIONS = [
     ],
   },
 ];
-
-export const FAQS = [
-  {
-    question: "Is Vastu scientifically proven?",
-    answer:
-      "Not entirely. Many Vastu principles related to sunlight, airflow, hygiene, and thermal comfort have scientific explanations, while spiritual claims remain unproven.",
-  },
-  {
-    question: "Are south-facing homes really bad?",
-    answer:
-      "No. South-facing walls take more direct sun and therefore more heat, which mattered before insulation and cooling existed. With modern construction the issue is solar heat gain, and it is entirely manageable.",
-  },
-  {
-    question: "Which Vastu rules are backed by science?",
-    answer:
-      "The ones about daylight and air: east-facing entrances, naturally lit kitchens, open central spaces, cross ventilation, decluttering, and keeping toilets away from cooking areas all have measurable reasoning behind them.",
-  },
-  {
-    question:
-      "Can I follow Scientific Vastu without believing in traditional Vastu?",
-    answer:
-      "Yes. Treat it as climate-responsive design. Prioritise natural light, ventilation, insulation, hygiene, and sensible space planning, and you get the practical benefits without adopting the spiritual claims.",
-  },
-];

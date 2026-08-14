@@ -202,32 +202,3 @@ export const SECTIONS = [
     ],
   },
 ];
-
-export const FAQS = [
-  {
-    question:
-      "Which brick is better for house construction, fly ash or red brick?",
-    answer:
-      "For framed RCC homes, which is how most houses get built now, fly ash bricks win on strength, water resistance, and total cost. Red bricks make sense for traditional load-bearing houses in hot dry regions where their insulation pays off.",
-  },
-  {
-    question: "Are fly ash bricks cheaper than red bricks?",
-    answer:
-      "Per brick, usually yes. The bigger saving is in finishing — uniform bricks need thinner joints and less plaster, so the walling package typically lands 20 to 30% cheaper overall.",
-  },
-  {
-    question: "Do fly ash bricks last as long as red bricks?",
-    answer:
-      "Yes, and often longer in damp conditions. They absorb roughly half the water red bricks do, so efflorescence and damp patches are far less common.",
-  },
-  {
-    question: "What is the main disadvantage of fly ash bricks?",
-    answer:
-      "Quality varies a lot between manufacturers. A brick from a proper hydraulic plant and one from a small manual-press unit are different products wearing the same name — always ask for a strength certificate.",
-  },
-  {
-    question: "Are fly ash bricks really eco-friendly?",
-    answer:
-      "They use waste that would otherwise sit in an ash pond and skip kiln firing entirely. Red bricks consume fertile topsoil and burn fuel to fire. On this one there is not much of a contest.",
-  },
-];
