@@ -399,7 +399,7 @@ export default function Article({ post, sections, comparison, faqs }) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-8">
+          {/* <div className="flex flex-col gap-8">
             <h2 className="text-navy-800 text-[18px]/[26px] font-bold">FAQ</h2>
 
             <div className="flex flex-col gap-10">
@@ -413,7 +413,7 @@ export default function Article({ post, sections, comparison, faqs }) {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Below `lg` the panel follows the article instead of sitting beside it. */}
           <RelatedPanel className="rounded-2xl px-16 py-20 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24 lg:hidden" />
