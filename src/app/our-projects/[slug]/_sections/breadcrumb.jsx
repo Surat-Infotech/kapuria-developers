@@ -11,16 +11,12 @@ import ChevronsRightIcon from "@/assets/svgs/common/chevrons-right";
 export default function BreadcrumbSection({ project }) {
   const trail = [
     { label: "Home", href: ROUTES.HOME },
-    { label: "Our Projects", href: ROUTES.OUR_PROJECTS },
+    { label: "Our Projects", href: ROUTES.PROJECTS },
     // No route filters by type yet, so this segment is a label only. It also
     // drops out below `sm` — the mobile header pill already carries the type,
     // and four crumbs wrap onto a second line at that width.
     { label: project.typePlural, desktopOnly: true },
-    // Last segment follows the breadcrumb design rather than the catalogue —
-    // render-only, so `projects.js` keeps the real names for cards, titles and
-    // metadata. Swap back to the line below once the copy is final.
-    // { label: project.name },
-    { label: "Serenity Palms Mansions" },
+    { label: project.name },
   ];
 
   return (
