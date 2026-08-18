@@ -15,10 +15,27 @@ import palatialArc2 from "@/assets/images/our-projects/palatial-arc-2.webp";
 import palatialArc3 from "@/assets/images/our-projects/palatial-arc-3.webp";
 import palatialArc4 from "@/assets/images/our-projects/palatial-arc-4.webp";
 import palatialArc5 from "@/assets/images/our-projects/palatial-arc-5.webp";
-import canopyVeilHero from "@/assets/images/our-projects/project-details/canopy-veil.webp";
-import magesticVillaHero from "@/assets/images/our-projects/project-details/mangestic-vista.webp";
-import palatialArcHero from "@/assets/images/our-projects/project-details/polentail-arc.webp";
-import vantageHero from "@/assets/images/our-projects/project-details/vantage.webp";
+import canopyVeilHero2 from "@/assets/images/our-projects/project-details/canopy-veil-2.webp";
+import canopyVeilHero3 from "@/assets/images/our-projects/project-details/canopy-veil-3.webp";
+import canopyVeilHero4 from "@/assets/images/our-projects/project-details/canopy-veil-4.webp";
+import canopyVeilHero5 from "@/assets/images/our-projects/project-details/canopy-veil-5.webp";
+import canopyVeilHero1 from "@/assets/images/our-projects/project-details/canopy-veil.webp";
+import magesticVillaHero2 from "@/assets/images/our-projects/project-details/magestic-villa-2.webp";
+import magesticVillaHero3 from "@/assets/images/our-projects/project-details/magestic-villa-3.webp";
+import magesticVillaHero4 from "@/assets/images/our-projects/project-details/magestic-villa-4.webp";
+import magesticVillaHero5 from "@/assets/images/our-projects/project-details/magestic-villa-5.webp";
+import magesticVillaHero1 from "@/assets/images/our-projects/project-details/mangestic-vista.webp";
+import palatialArcHero2 from "@/assets/images/our-projects/project-details/palential-arc-2.webp";
+import palatialArcHero3 from "@/assets/images/our-projects/project-details/palential-arc-3.webp";
+import palatialArcHero4 from "@/assets/images/our-projects/project-details/palential-arc-4.webp";
+import palatialArcHero5 from "@/assets/images/our-projects/project-details/palential-arc-5.webp";
+import palatialArcHero1 from "@/assets/images/our-projects/project-details/polentail-arc.webp";
+import vantageHero2 from "@/assets/images/our-projects/project-details/vantage-2.webp";
+import vantageHero3 from "@/assets/images/our-projects/project-details/vantage-3.webp";
+import vantageHero4 from "@/assets/images/our-projects/project-details/vantage-4.webp";
+import vantageHero5 from "@/assets/images/our-projects/project-details/vantage-5.webp";
+import vantageHero6 from "@/assets/images/our-projects/project-details/vantage-6.webp";
+import vantageHero1 from "@/assets/images/our-projects/project-details/vantage.webp";
 import vantage1 from "@/assets/images/our-projects/vantage-1.webp";
 import vantage2 from "@/assets/images/our-projects/vantage-2.webp";
 import vantage3 from "@/assets/images/our-projects/vantage-3.webp";
@@ -84,10 +101,10 @@ const PALATIAL_ARC = {
   lockup: ["The P", "o", "latial Arc"],
   location: "Sector 88, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
-  // `images` are the listing frames; `hero` is the one art-directed banner
-  // render this project owns. The detail page shows the whole catalogue of
-  // renders but always leads with this one — see `heroImages` at the foot of
-  // the file.
+  // `images` are the listing frames; `hero` is this project's own set of
+  // art-directed banner renders, which the detail page shows instead. The
+  // first entry is the frame the page opens on — see `heroImages` at the foot
+  // of the file.
   images: [
     palatialArc1,
     palatialArc2,
@@ -95,7 +112,13 @@ const PALATIAL_ARC = {
     palatialArc4,
     palatialArc5,
   ],
-  hero: palatialArcHero,
+  hero: [
+    palatialArcHero1,
+    palatialArcHero2,
+    palatialArcHero3,
+    palatialArcHero4,
+    palatialArcHero5,
+  ],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,700 sq.ft.",
@@ -142,7 +165,13 @@ const MAJESTIC_VILLA = {
     magesticVilla4,
     magesticVilla5,
   ],
-  hero: magesticVillaHero,
+  hero: [
+    magesticVillaHero1,
+    magesticVillaHero2,
+    magesticVillaHero3,
+    magesticVillaHero4,
+    magesticVillaHero5,
+  ],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,852 sq.ft.",
@@ -183,7 +212,14 @@ const VANTAGE = {
   location: "Sector 79, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
   images: [vantage1, vantage2, vantage3, vantage4, vantage5, vantage6],
-  hero: vantageHero,
+  hero: [
+    // vantageHero1,
+    vantageHero2,
+    vantageHero3,
+    vantageHero4,
+    vantageHero5,
+    vantageHero6,
+  ],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,756.25 sq.ft.",
@@ -224,7 +260,13 @@ const CANOPY_VEIL = {
   location: "Sector 60, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
   images: [canopyVeil1, canopyVeil2, canopyVeil3, canopyVeil4, canopyVeil5],
-  hero: canopyVeilHero,
+  hero: [
+    canopyVeilHero1,
+    canopyVeilHero2,
+    canopyVeilHero3,
+    canopyVeilHero4,
+    canopyVeilHero5,
+  ],
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,852 sq.ft.",
@@ -267,25 +309,7 @@ export const projectHref = (project) => `${ROUTES.PROJECTS}/${project.slug}`;
 
 export const getProjectBySlug = (slug) =>
   PROJECTS.find((project) => project.slug === slug);
-
-// The hero runs full-bleed at 1440×922, a ratio no gallery frame has. Where a
-// project has no hero art the gallery frames stand in and the banner crops
-// them, so the carousel is never empty.
-//
-// Someone arriving from "Know More" must land on the house they picked, so the
-// project's own render always opens the carousel and the rest of the
-// catalogue's renders follow in listing order. Deriving the order here — rather
-// than hand-listing it on each project — is what keeps that first frame from
-// drifting when a project is added or reordered.
-export const heroImages = (project) => {
-  if (!project.hero) return project.images;
-
-  return [
-    project.hero,
-    ...PROJECTS.filter((other) => other !== project && other.hero).map(
-      (other) => other.hero,
-    ),
-  ];
-};
+export const heroImages = (project) =>
+  project.hero?.length > 0 ? project.hero : project.images;
 
 export const resolveAmenity = (id) => AMENITIES[id];
