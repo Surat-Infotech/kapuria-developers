@@ -84,9 +84,10 @@ const PALATIAL_ARC = {
   lockup: ["The P", "o", "latial Arc"],
   location: "Sector 88, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
-  // `images` are the listing frames; `hero` is the art-directed banner set the
-  // detail page shows instead. Every project carries the same four renders,
-  // each page leading with its own — see `heroImages` at the foot of the file.
+  // `images` are the listing frames; `hero` is the one art-directed banner
+  // render this project owns. The detail page shows the whole catalogue of
+  // renders but always leads with this one — see `heroImages` at the foot of
+  // the file.
   images: [
     palatialArc1,
     palatialArc2,
@@ -94,7 +95,7 @@ const PALATIAL_ARC = {
     palatialArc4,
     palatialArc5,
   ],
-  hero: [palatialArcHero, magesticVillaHero, vantageHero, canopyVeilHero],
+  hero: palatialArcHero,
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,700 sq.ft.",
@@ -141,7 +142,7 @@ const MAJESTIC_VILLA = {
     magesticVilla4,
     magesticVilla5,
   ],
-  hero: [magesticVillaHero, palatialArcHero, vantageHero, canopyVeilHero],
+  hero: magesticVillaHero,
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,852 sq.ft.",
@@ -182,7 +183,7 @@ const VANTAGE = {
   location: "Sector 79, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
   images: [vantage1, vantage2, vantage3, vantage4, vantage5, vantage6],
-  hero: [vantageHero, palatialArcHero, magesticVillaHero, canopyVeilHero],
+  hero: vantageHero,
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,756.25 sq.ft.",
@@ -223,7 +224,7 @@ const CANOPY_VEIL = {
   location: "Sector 60, Mohali, Punjab, India",
   city: "Mohali, Punjab, India",
   images: [canopyVeil1, canopyVeil2, canopyVeil3, canopyVeil4, canopyVeil5],
-  hero: [canopyVeilHero, palatialArcHero, magesticVillaHero, vantageHero],
+  hero: canopyVeilHero,
   type: "Villa",
   typePlural: "Villas",
   plotSize: "2,852 sq.ft.",
@@ -270,7 +271,21 @@ export const getProjectBySlug = (slug) =>
 // The hero runs full-bleed at 1440×922, a ratio no gallery frame has. Where a
 // project has no hero art the gallery frames stand in and the banner crops
 // them, so the carousel is never empty.
-export const heroImages = (project) =>
-  project.hero.length > 0 ? project.hero : project.images;
+//
+// Someone arriving from "Know More" must land on the house they picked, so the
+// project's own render always opens the carousel and the rest of the
+// catalogue's renders follow in listing order. Deriving the order here — rather
+// than hand-listing it on each project — is what keeps that first frame from
+// drifting when a project is added or reordered.
+export const heroImages = (project) => {
+  if (!project.hero) return project.images;
+
+  return [
+    project.hero,
+    ...PROJECTS.filter((other) => other !== project && other.hero).map(
+      (other) => other.hero,
+    ),
+  ];
+};
 
 export const resolveAmenity = (id) => AMENITIES[id];
