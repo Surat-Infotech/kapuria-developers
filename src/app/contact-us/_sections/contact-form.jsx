@@ -160,7 +160,7 @@ export default function ContactFormSection() {
           {/* ── Enquiry form ─────────────────────────────────────── */}
           <div className="bg-surface p-16 pb-32 md:p-24 lg:p-32">
             <form onSubmit={handleSubmit} className="flex flex-col gap-16">
-              <div className="grid gap-x-14 gap-y-16 lg:grid-cols-2">
+              <div className="grid gap-x-14 gap-y-16 sm:grid-cols-2">
                 <div>
                   <label htmlFor="contact-name" className={LABEL}>
                     Full name
@@ -171,7 +171,7 @@ export default function ContactFormSection() {
                     name="name"
                     required
                     autoComplete="name"
-                    placeholder="Anil Ambani"
+                    placeholder="Enter your full name"
                     className={FIELD}
                   />
                 </div>
@@ -186,7 +186,7 @@ export default function ContactFormSection() {
                     name="email"
                     required
                     autoComplete="email"
-                    placeholder="anilambani@gmail.com"
+                    placeholder="you@example.com"
                     className={FIELD}
                   />
                 </div>
@@ -207,7 +207,7 @@ export default function ContactFormSection() {
                       name="phone"
                       required
                       autoComplete="tel-national"
-                      placeholder="98765 43210"
+                      placeholder="Enter your phone number"
                       className={FIELD}
                     />
                   </div>
@@ -236,7 +236,7 @@ export default function ContactFormSection() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-2">
+                <div className="sm:col-span-2">
                   <label htmlFor="contact-message" className={LABEL}>
                     Message
                   </label>
@@ -244,7 +244,7 @@ export default function ContactFormSection() {
                     id="contact-message"
                     name="message"
                     rows={4}
-                    placeholder="Hi team, I'd like to schedule a site visit for Villa 12 next week and confirm the possession timeline."
+                    placeholder="Write your message..."
                     className={`${FIELD} h-109 resize-none overflow-y-auto sm:h-124`}
                   />
                 </div>
