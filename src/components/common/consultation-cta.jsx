@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
+import { ROUTES } from "@/lib/route";
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
@@ -74,11 +76,14 @@ export default function ConsultationCta({
 
           {button === false ? null : (
             <Button
+              asChild
               variant="secondary"
               className="mt-24 w-full gap-8 sm:mt-36 sm:w-auto"
             >
-              Schedule <span className="hidden lg:inline">a</span>
-              Consultation
+              <Link href={ROUTES.CONTACT}>
+                Schedule <span className="hidden lg:inline">a</span>
+                Consultation
+              </Link>
             </Button>
           )}
         </div>

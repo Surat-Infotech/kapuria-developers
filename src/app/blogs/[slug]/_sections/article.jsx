@@ -2,20 +2,12 @@ import Image from "next/image";
 
 import Section from "@/components/ui/section";
 
-import blogPost1 from "@/assets/images/blogs/blog-post-1.webp";
-import blogPost2 from "@/assets/images/blogs/blog-post-2.webp";
 import FacebookIcon from "@/assets/svgs/social/facebook";
 import InstagramIcon from "@/assets/svgs/social/instagram";
 import XIcon from "@/assets/svgs/social/x";
 import YoutubeIcon from "@/assets/svgs/social/youtube";
 
-const RELATED_TITLE =
-  "Building Better Futures: Constructing Community Homes for a Brighter Tomorrow";
-
-const RELATED = [
-  { id: "rel-1", image: blogPost1 },
-  { id: "rel-2", image: blogPost2 },
-];
+import { getRelatedPosts } from "../_data";
 
 const SHARE = [
   { Icon: FacebookIcon, label: "Share on Facebook" },
@@ -25,30 +17,30 @@ const SHARE = [
 ];
 
 // Same block serves the mobile inline placement and the desktop sidebar.
-const RelatedPanel = ({ className = "" }) => (
+const RelatedPanel = ({ related, className = "" }) => (
   <div className={className}>
     <h2 className="text-navy-800 text-body xs:text-body-lg text-center font-semibold">
       Related Articles
     </h2>
 
     <ul className="mt-16 flex flex-col gap-18">
-      {RELATED.map(({ id, image }) => (
+      {related.map(({ slug, title, image, readTime }) => (
         <li
-          key={id}
+          key={slug}
           className="flex items-center gap-12 lg:flex-col lg:items-start lg:gap-8"
         >
           <Image
             src={image}
-            alt={RELATED_TITLE}
+            alt={title}
             width={104}
             height={78}
             className="h-93 w-104 shrink-0 rounded-md object-cover lg:h-97 lg:w-full"
           />
           <div className="flex flex-col gap-6 sm:gap-4">
             <p className="text-navy-800 line-clamp-3 text-xs font-semibold">
-              {RELATED_TITLE}
+              {title}
             </p>
-            <p className="text-navy-800/60 text-xs font-normal">10 mins</p>
+            <p className="text-navy-800/60 text-xs font-normal">{readTime}</p>
           </div>
         </li>
       ))}
@@ -142,6 +134,9 @@ const ComparisonTable = ({ columns, rows }) => (
 );
 
 export default function Article({ post, sections, comparison }) {
+  // The four posts that aren't this one.
+  const related = getRelatedPosts(post.slug);
+
   return (
     <Section
       bg="surface"
@@ -349,11 +344,17 @@ export default function Article({ post, sections, comparison }) {
           </div>
 
           {/* Below `lg` the panel follows the article instead of sitting beside it. */}
-          <RelatedPanel className="rounded-2xl px-16 py-20 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24 lg:hidden" />
+          <RelatedPanel
+            related={related}
+            className="rounded-2xl px-16 py-20 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24 lg:hidden"
+          />
         </div>
 
         <aside className="hidden shrink-0 lg:block lg:w-266">
-          <RelatedPanel className="sticky top-124 max-h-[calc(100dvh-140px)] [scrollbar-width:thin] overflow-y-auto overscroll-contain rounded-2xl p-16 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24" />
+          <RelatedPanel
+            related={related}
+            className="sticky top-124 max-h-[calc(100dvh-140px)] [scrollbar-width:thin] overflow-y-auto overscroll-contain rounded-2xl p-16 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24"
+          />
         </aside>
       </div>
     </Section>

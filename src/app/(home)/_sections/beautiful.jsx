@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ROUTES } from "@/lib/route";
+
 import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/section";
 
@@ -39,7 +41,7 @@ export default function Beautiful() {
           </div>
 
           <Button asChild variant="secondary" className="w-full sm:w-auto">
-            <Link href="">Schedule Consultation</Link>
+            <Link href={ROUTES.CONTACT}>Schedule Consultation</Link>
           </Button>
         </div>
 
