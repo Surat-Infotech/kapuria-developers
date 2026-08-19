@@ -1,10 +1,12 @@
 import { ROUTES } from "@/lib/route";
 
+import canopyMap from "@/assets/images/our-projects/canopy-map.webp";
 import canopyVeil1 from "@/assets/images/our-projects/canopy-veil-1.webp";
 import canopyVeil2 from "@/assets/images/our-projects/canopy-veil-2.webp";
 import canopyVeil3 from "@/assets/images/our-projects/canopy-veil-3.webp";
 import canopyVeil4 from "@/assets/images/our-projects/canopy-veil-4.webp";
 import canopyVeil5 from "@/assets/images/our-projects/canopy-veil-5.webp";
+import magesticMap from "@/assets/images/our-projects/magestic-map.webp";
 import magesticVilla1 from "@/assets/images/our-projects/magestic-project-1.webp";
 import magesticVilla2 from "@/assets/images/our-projects/magestic-project-2.webp";
 import magesticVilla3 from "@/assets/images/our-projects/magestic-project-3.webp";
@@ -15,6 +17,7 @@ import palatialArc2 from "@/assets/images/our-projects/palatial-arc-2.webp";
 import palatialArc3 from "@/assets/images/our-projects/palatial-arc-3.webp";
 import palatialArc4 from "@/assets/images/our-projects/palatial-arc-4.webp";
 import palatialArc5 from "@/assets/images/our-projects/palatial-arc-5.webp";
+import palentialMap from "@/assets/images/our-projects/palential-map.webp";
 import canopyVeilHero2 from "@/assets/images/our-projects/project-details/canopy-veil-2.webp";
 import canopyVeilHero3 from "@/assets/images/our-projects/project-details/canopy-veil-3.webp";
 import canopyVeilHero4 from "@/assets/images/our-projects/project-details/canopy-veil-4.webp";
@@ -42,6 +45,7 @@ import vantage3 from "@/assets/images/our-projects/vantage-3.webp";
 import vantage4 from "@/assets/images/our-projects/vantage-4.webp";
 import vantage5 from "@/assets/images/our-projects/vantage-5.webp";
 import vantage6 from "@/assets/images/our-projects/vantage-6.webp";
+import vantageMap from "@/assets/images/our-projects/vantage-map.webp";
 import { AMENITY_ICONS } from "@/assets/svgs/amenities";
 
 // The label lives here rather than beside the mark so copy changes never mean
@@ -147,8 +151,7 @@ const PALATIAL_ARC = {
     { name: "Sec 17 Plaza", distance: "32 mins Drive" },
   ],
   mapLink: "https://maps.app.goo.gl/D6jiT6hEFZdW15wLA",
-  mapCenter: "30.6903477,76.6872864",
-  mapQuery: "Sector 88, Mohali, Punjab, India",
+  mapImage: palentialMap,
   description: DESCRIPTION,
 };
 
@@ -200,8 +203,7 @@ const MAJESTIC_VILLA = {
     { name: "Sec 17 Plaza", distance: "30 mins Drive" },
   ],
   mapLink: "https://maps.app.goo.gl/7EyvAxUNVcwWzU8v8",
-  mapCenter: "30.6808758,76.6899567",
-  mapQuery: "Sector 89, Mohali, Punjab, India",
+  mapImage: magesticMap,
   description: DESCRIPTION,
 };
 
@@ -248,8 +250,7 @@ const VANTAGE = {
     { name: "Sec 17 Plaza", distance: "35 mins Drive" },
   ],
   mapLink: "https://maps.app.goo.gl/Efs53r8eTu4VJ5Se8",
-  mapCenter: "30.6829033,76.7164917",
-  mapQuery: "Sector 79, Mohali, Punjab, India",
+  mapImage: vantageMap,
   description: DESCRIPTION,
 };
 
@@ -295,11 +296,10 @@ const CANOPY_VEIL = {
     { name: "Nearest Park", distance: "10 mins walk" },
     { name: "Sec 17 Plaza", distance: "30 mins Drive" },
   ],
-  // No shared map link for this one yet, so it still resolves by text and
-  // keeps Google's own pin — see `mapSrc` in the nearby-locations section.
+  // No shared map link for this one yet — the plate still shows its own map
+  // render, it just has nowhere to open out to.
   mapLink: null,
-  mapCenter: null,
-  mapQuery: "Sector 60, Mohali, Punjab, India",
+  mapImage: canopyMap,
   description: DESCRIPTION,
 };
 

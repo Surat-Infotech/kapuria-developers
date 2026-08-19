@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ROUTES } from "@/lib/route";
@@ -7,27 +8,6 @@ import Section from "@/components/ui/section";
 
 import ArrowRightIcon from "@/assets/svgs/common/arrow-right";
 import QuadrantIcon from "@/assets/svgs/common/quadrant";
-
-// Embed rather than a flat image: the location has to move with the project,
-// and this form of the embed needs no API key.
-//
-// `ll` is the viewport-only form — it frames the coordinates without dropping
-// a marker, which is what we want: the brief is to show the area, not the
-// address. Projects still waiting on a map link fall back to `q`, which does
-// resolve to a pin.
-const MAP_ZOOM = 15;
-
-const mapSrc = (project) =>
-  project.mapCenter
-    ? `https://maps.google.com/maps?ll=${project.mapCenter}&z=${MAP_ZOOM}&output=embed`
-    : `https://www.google.com/maps?q=${encodeURIComponent(project.mapQuery)}&z=${MAP_ZOOM}&output=embed`;
-
-// Web Mercator resolution is 156543.03392·cos(lat)/2^zoom metres per pixel.
-// Every project sits at ~30.68°N, so at zoom 15 that is 4.108 m/px and the
-// 300m radius comes to 73px — 146px across. Fixed in pixels rather than
-// relative units because the embed renders at the same scale whatever size the
-// frame is, so one value is correct at both breakpoints.
-const CATCHMENT_DIAMETER_PX = 146;
 
 // Both columns pin under the floating header from `lg` up, so the shorter of
 // the two — whichever it is for a given project's list length — holds its
@@ -72,24 +52,14 @@ export default function NearbyLocationsSection({ project }) {
         <div className={STICKY}>
           {/* The plate is wider and shorter on mobile than on desktop, so the
               ratio is not shared. */}
-          <div className="relative overflow-hidden rounded-lg border-2 border-[#DFB367] lg:rounded-xl">
-            <iframe
-              title={`Map of the area around ${project.name}, ${project.location}`}
-              src={mapSrc(project)}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="block aspect-342/206 w-full border-0 lg:aspect-607/484"
+          <div className="relative aspect-342/206 overflow-hidden rounded-lg border-2 border-[#DFB367] lg:aspect-607/484 lg:rounded-xl">
+            <Image
+              src={project.mapImage}
+              alt={`Map of the area around ${project.name}, ${project.location}`}
+              fill
+              sizes="(min-width: 1024px) 607px, 100vw"
+              className="object-cover"
             />
-            {project.mapCenter ? (
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0"
-                style={{ "--catchment": `${CATCHMENT_DIAMETER_PX}px` }}
-              >
-                <span className="absolute top-1/2 left-1/2 size-(--catchment) -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#1A73E8] bg-[rgba(66,133,244,0.18)]" />
-                <span className="absolute top-1/2 left-1/2 size-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1A73E8]" />
-              </div>
-            ) : null}
           </div>
 
           {/* Mobile runs full width and trails an arrow; desktop shrinks to its
