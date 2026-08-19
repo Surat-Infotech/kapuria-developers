@@ -28,3 +28,13 @@ const POSTS_BY_SLUG = new Map(
 export const getPostBySlug = (slug) => POSTS_BY_SLUG.get(slug) ?? null;
 
 export const getAllPostSlugs = () => [...POSTS_BY_SLUG.keys()];
+
+// Every other post, in listing order — the sidebar shows the lot, so there is
+// nothing to slice here. Only the fields the card renders come back.
+export const getRelatedPosts = (slug) =>
+  MODULES.filter((module) => module.POST.slug !== slug).map(({ POST }) => ({
+    slug: POST.slug,
+    title: POST.title,
+    image: POST.image,
+    readTime: POST.readTime,
+  }));

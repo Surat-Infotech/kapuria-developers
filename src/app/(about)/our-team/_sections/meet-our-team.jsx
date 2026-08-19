@@ -18,8 +18,8 @@ const DESCRIPTION =
 const MEMBERS = [
   { name: "Somesh Kapuria", role: "Managing Director", photo: SomeshKapuria },
   { name: "Nitesh Singh", role: "Director", photo: NiteshSingh },
-  { name: "Er Pradip", role: "Site Engineer", photo: ErPradip },
-  { name: "Amaan", role: "Manager", photo: Amaan },
+  { name: "Er Pradip", role: "Manager", photo: Amaan },
+  { name: "RAJENDER", role: "Site Incharge", photo: ErPradip },
 ];
 
 export default function MeetOurTeamSection() {

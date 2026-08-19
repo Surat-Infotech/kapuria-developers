@@ -29,8 +29,8 @@ export const CONTACT_DETAILS = [
   },
   {
     label: "Email",
-    value: "contactus@kapuria.com",
-    href: "mailto:contactus@kapuria.com",
+    value: "social@kapuria.com",
+    href: "mailto:social@kapuria.com",
     Icon: MailIcon,
   },
   {
