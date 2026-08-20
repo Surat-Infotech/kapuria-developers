@@ -67,7 +67,7 @@ export const SECTIONS = [
       "Walk past any construction site that sat idle through a monsoon. The column starter bars poking out of the plinth tell the whole story. The ones left bare have turned a flaky orange-brown, scale peeling off in layers. The ones painted that dull brick-red colour? Still solid underneath.",
       "That red paint is red oxide primer, and it's one of the cheapest insurance policies in construction. Yet half the sites in the country skip it, usually because nobody explained what it actually does or when it's genuinely needed. This article fixes that.",
     ],
-    imagePosition: "top",
+    imageAfter: 2,
     imageAlt: "TMT bars tied into a column cage on site",
   },
   {

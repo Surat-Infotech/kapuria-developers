@@ -1,133 +1,92 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-// Clearance between the header's bottom edge and the heading it scrolls to.
-const HEADER_GAP = 24;
-
-// The header is a fixed pill whose height shifts with the breakpoint — and
-// with the CTA button's line-height — so a hard-coded offset drifts out of
-// sync the moment either changes. Measure the real box instead. The 128px
-// fallback matches the desktop bar for the frame before hydration.
-const headerOffset = () => {
-  const header = document.querySelector("header");
-  const bottom = header?.getBoundingClientRect().bottom;
-
-  return (bottom || 128) + HEADER_GAP;
-};
+// The fixed header's height shifts with the breakpoint, so measure it rather
+// than hard-code an offset that drifts. +24 is the gap left below the bar.
+const offset = () =>
+  (document.querySelector("header")?.getBoundingClientRect().bottom || 128) +
+  24;
 
 const TableOfContents = ({ sections }) => {
   const [activeId, setActiveId] = useState(sections[0]?.id);
   const listRef = useRef(null);
+  const timerRef = useRef(null);
 
-  // A click sets the highlight up front, so the spy has to stay out of the way
-  // until the smooth scroll settles — otherwise every heading swept past on
-  // the way there steals the highlight and it visibly flickers.
-  const lockedRef = useRef(false);
-  const unlockTimerRef = useRef(null);
+  // A pending timer means a click is still scrolling, so the spy stands down —
+  // otherwise headings swept past on the way steal the highlight and it flickers.
+  const lock = (ms) => {
+    clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => (timerRef.current = null), ms);
+  };
 
-  const scrollToSection = useCallback((event, id) => {
-    const target = document.getElementById(id);
-
-    // No target means the anchor's native jump is still the better fallback.
-    if (!target) return;
-
-    event.preventDefault();
-
-    lockedRef.current = true;
-    setActiveId(id);
-
-    window.scrollTo({
-      top: window.scrollY + target.getBoundingClientRect().top - headerOffset(),
-      behavior: "smooth",
-    });
-
-    // `replaceState` rather than a pushed entry, so Back leaves the article
-    // instead of stepping the reader through every heading they visited.
-    window.history.replaceState(null, "", `#${id}`);
-
-    // Released once scrolling goes quiet. `scrollend` isn't universal yet, so
-    // an idle timer refreshed by the scroll handler does the same job.
-    clearTimeout(unlockTimerRef.current);
-    unlockTimerRef.current = setTimeout(() => {
-      lockedRef.current = false;
-    }, 700);
-  }, []);
-
-  // Scroll spy: whichever heading last crossed the offset line wins.
+  // Spy: the last heading past the offset line wins. Closing sections can be
+  // too short to ever reach it, so at the page bottom the last one is it.
   useEffect(() => {
-    const ids = sections.map(({ id }) => id);
+    const controller = new AbortController();
+    const { signal } = controller;
 
-    const syncActive = () => {
-      if (lockedRef.current) {
-        clearTimeout(unlockTimerRef.current);
-        unlockTimerRef.current = setTimeout(() => {
-          lockedRef.current = false;
-        }, 120);
-        return;
-      }
+    const sync = () => {
+      if (timerRef.current) return lock(120);
 
-      const headings = ids
-        .map((id) => ({ id, element: document.getElementById(id) }))
-        .filter(({ element }) => element);
+      const line = offset() + 4;
+      let current = sections[0]?.id;
 
-      if (!headings.length) return;
+      sections.forEach(({ id }) => {
+        if (document.getElementById(id)?.getBoundingClientRect().top <= line)
+          current = id;
+      });
 
-      // The final sections can be shorter than the remaining scroll distance,
-      // so they'd never reach the offset line on their own — at the very
-      // bottom of the page the last one is what's being read.
       const atBottom =
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight - 2;
 
-      if (atBottom) {
-        setActiveId(headings[headings.length - 1].id);
-        return;
-      }
-
-      // Sits a few pixels below the landing line so a heading parked there by
-      // a click still counts as passed, rounding included.
-      const line = headerOffset() + 4;
-
-      const passed = headings.filter(
-        ({ element }) => element.getBoundingClientRect().top <= line
-      );
-
-      setActiveId((passed[passed.length - 1] ?? headings[0]).id);
+      setActiveId(atBottom ? sections.at(-1)?.id : current);
     };
 
-    syncActive();
-
-    window.addEventListener("scroll", syncActive, { passive: true });
-    window.addEventListener("resize", syncActive);
+    sync();
+    window.addEventListener("scroll", sync, { passive: true, signal });
+    window.addEventListener("resize", sync, { signal });
 
     return () => {
-      window.removeEventListener("scroll", syncActive);
-      window.removeEventListener("resize", syncActive);
+      controller.abort();
+      clearTimeout(timerRef.current);
     };
   }, [sections]);
 
-  useEffect(() => () => clearTimeout(unlockTimerRef.current), []);
-
-  // The list scrolls inside the sticky box, so on long posts the active item
-  // can sit outside it. Nudge the container only — never the page.
+  // The list scrolls inside the sticky box, so the active item can fall out of
+  // view on long posts. Nudge the container only — never the page. At most one
+  // of the two terms is non-zero: the row sits above the box, below it, or in.
   useEffect(() => {
     const list = listRef.current;
-    const item = list?.querySelector(`[data-toc-id="${activeId}"]`);
+    const row = list
+      ?.querySelector(`[data-toc-id="${activeId}"]`)
+      ?.getBoundingClientRect();
 
-    if (!list || !item) return;
+    if (!row) return;
 
-    const listRect = list.getBoundingClientRect();
-    const itemRect = item.getBoundingClientRect();
-
-    if (itemRect.top < listRect.top) {
-      list.scrollTop += itemRect.top - listRect.top;
-    } else if (itemRect.bottom > listRect.bottom) {
-      list.scrollTop += itemRect.bottom - listRect.bottom;
-    }
+    const box = list.getBoundingClientRect();
+    list.scrollTop +=
+      Math.min(0, row.top - box.top) + Math.max(0, row.bottom - box.bottom);
   }, [activeId]);
+
+  const scrollToSection = (event, id) => {
+    const target = document.getElementById(id);
+    if (!target) return; // Let the anchor's native jump stand in.
+
+    event.preventDefault();
+    lock(700);
+    setActiveId(id);
+    window.scrollTo({
+      top: window.scrollY + target.getBoundingClientRect().top - offset(),
+      behavior: "smooth",
+    });
+    // Replaced, not pushed, so Back leaves the article rather than stepping
+    // through every heading the reader clicked.
+    window.history.replaceState(null, "", `#${id}`);
+  };
 
   return (
     <div
