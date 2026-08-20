@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Fragment } from "react";
+
 import Section from "@/components/ui/section";
 
 import { getRelatedPosts } from "../_data";
@@ -146,6 +148,7 @@ export default function Article({ post, sections, comparison }) {
                   outro,
                   type,
                   imagePosition,
+                  imageAfter,
                   imageAlt,
                 },
                 index
@@ -177,8 +180,23 @@ export default function Article({ post, sections, comparison }) {
                   {/* One wrapper for everything below the heading — this is the
                       node the CMS will hand back as a single rich-text blob. */}
                   <div className="text-body-xs sm:text-body-sm flex flex-col gap-8 font-normal text-black lg:gap-16">
-                    {body?.map((paragraph) => (
-                      <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                    {body?.map((paragraph, paragraphIndex) => (
+                      <Fragment key={paragraph.slice(0, 40)}>
+                        <p>{paragraph}</p>
+
+                        {/* `imageAfter` breaks the copy at a set paragraph and
+                            drops the photo in there, rather than bookending
+                            the section the way top/bottom do. */}
+                        {imageAfter === paragraphIndex + 1 && (
+                          <Image
+                            src={post.image}
+                            alt={imageAlt ?? post.title}
+                            width="100%"
+                            height="100%"
+                            className="w-full rounded-xl object-cover"
+                          />
+                        )}
+                      </Fragment>
                     ))}
 
                     {richBody?.map((runs) => (

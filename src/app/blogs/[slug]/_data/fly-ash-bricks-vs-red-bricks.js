@@ -57,8 +57,9 @@ export const SECTIONS = [
       "I get some version of this call every few months. So here's the straight answer, the one I gave her, with the reasoning laid out so you can check my logic instead of taking anyone's word for it.",
       "If your house has an RCC frame (columns and beams carrying the load, which is how almost every urban home gets built now), pick fly ash bricks. They test stronger, drink less water, cost less once you count plaster and wastage, and they don't eat farmland to get made. Red bricks earn their keep in one situation: old-style load-bearing construction in hot dry regions, where their natural insulation genuinely helps. That's it. That's the whole debate, minus the yard gossip. Now the reasoning.",
     ],
-    // Sits above the copy, as the design has it directly under the hero.
-    imagePosition: "top",
+    // Drops into the copy after this many paragraphs, rather than sitting
+    // above the intro the way the hero used to.
+    imageAfter: 3,
     imageAlt: "A mason setting a fly ash brick into a fresh course",
   },
   {
