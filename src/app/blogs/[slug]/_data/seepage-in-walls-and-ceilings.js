@@ -1,4 +1,5 @@
 import heroImage from "@/assets/images/blogs/blog-detail-3.webp";
+import bannerImage from "@/assets/images/blogs/blog-details-3-banner.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 export const POST = {
@@ -6,6 +7,7 @@ export const POST = {
   title:
     "Seepage in Walls and Ceilings: Why It Happens and How to Stop It for Good",
   image: heroImage,
+  banner: bannerImage,
   readTime: "10 mins",
   date: "10th June, 2026",
   author: {

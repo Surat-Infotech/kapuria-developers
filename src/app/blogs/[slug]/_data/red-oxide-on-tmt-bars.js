@@ -1,11 +1,14 @@
 import heroImage from "@/assets/images/blogs/blog-detail-2.webp";
+import bannerImage from "@/assets/images/blogs/blog-details-2-banner.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 export const POST = {
   slug: "red-oxide-on-tmt-bars",
   title: "Why Red Oxide is Important on TMT (Thermo-Mechanically Treated) Bars",
-  // Banner and the in-article photo are the same shot, as the design has it.
+  // `image` is the in-article photo and the listing-card shot; the banner runs
+  // its own artwork.
   image: heroImage,
+  banner: bannerImage,
   readTime: "10 mins",
   date: "10th June, 2026",
   author: {

@@ -203,7 +203,13 @@ html {
 
 /* The header floats over content, so anchor targets need to clear it. */
 [id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 92px;
+}
+
+@media (width >= 992px) {
+  [id] {
+    scroll-margin-top: 156px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

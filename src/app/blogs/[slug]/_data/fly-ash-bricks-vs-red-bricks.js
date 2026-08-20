@@ -1,4 +1,5 @@
 import heroImage from "@/assets/images/blogs/blog-detail.webp";
+import bannerImage from "@/assets/images/blogs/blog-details-1-banner.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 // Article content for the demo post. When a CMS lands, this shape is what the
@@ -7,6 +8,9 @@ export const POST = {
   slug: "fly-ash-bricks-vs-red-bricks",
   title: "Fly Ash Bricks vs Red Bricks: Which One is Better for Your Home?",
   image: heroImage,
+  // The banner runs its own artwork; `image` stays the in-article photo and
+  // the shot the listing cards use.
+  banner: bannerImage,
   readTime: "10 mins",
   date: "10th June, 2026",
   author: {

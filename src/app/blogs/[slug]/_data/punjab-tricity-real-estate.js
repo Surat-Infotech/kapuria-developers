@@ -1,4 +1,5 @@
 import heroImage from "@/assets/images/blogs/blog-detail-5.webp";
+import bannerImage from "@/assets/images/blogs/blog-details-5-banner.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 export const POST = {
@@ -6,6 +7,7 @@ export const POST = {
   title:
     "Punjab Tricity Real Estate: Why This Market Deserves a Place in Your Portfolio",
   image: heroImage,
+  banner: bannerImage,
   readTime: "10 mins",
   date: "10th June, 2026",
   author: {
