@@ -1,25 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Fragment } from "react";
+
 import Section from "@/components/ui/section";
 
-import FacebookIcon from "@/assets/svgs/social/facebook";
-import InstagramIcon from "@/assets/svgs/social/instagram";
-import XIcon from "@/assets/svgs/social/x";
-import YoutubeIcon from "@/assets/svgs/social/youtube";
-
 import { getRelatedPosts } from "../_data";
+import ShareLinks from "./share-links";
 import TableOfContents from "./table-of-contents";
 
-const SHARE = [
-  { Icon: FacebookIcon, label: "Share on Facebook" },
-  { Icon: InstagramIcon, label: "Share on Instagram" },
-  { Icon: XIcon, label: "Share on X" },
-  { Icon: YoutubeIcon, label: "Share on YouTube" },
-];
-
 // Same block serves the mobile inline placement and the desktop sidebar.
-const RelatedPanel = ({ related, className = "" }) => (
+const RelatedPanel = ({ related, title, className = "" }) => (
   <div className={className}>
     <h2 className="text-navy-800 text-body xs:text-body-lg text-center font-semibold">
       Related Articles
@@ -50,24 +41,7 @@ const RelatedPanel = ({ related, className = "" }) => (
       ))}
     </ul>
 
-    <div className="border-navy-800/10 mt-18 flex flex-col items-center gap-16 border-t pt-18">
-      <p className="text-navy-800 text-body md:text-body-lg font-semibold">
-        Share this article
-      </p>
-
-      <div className="flex items-center gap-16">
-        {SHARE.map(({ Icon, label }) => (
-          <button
-            key={label}
-            type="button"
-            aria-label={label}
-            className="text-navy-800/60 hover:text-gold-400 focus-visible:ring-gold-400 cursor-pointer rounded-sm transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none"
-          >
-            <Icon className="size-24" />
-          </button>
-        ))}
-      </div>
-    </div>
+    <ShareLinks title={title} />
   </div>
 );
 
@@ -174,6 +148,7 @@ export default function Article({ post, sections, comparison }) {
                   outro,
                   type,
                   imagePosition,
+                  imageAfter,
                   imageAlt,
                 },
                 index
@@ -205,8 +180,23 @@ export default function Article({ post, sections, comparison }) {
                   {/* One wrapper for everything below the heading — this is the
                       node the CMS will hand back as a single rich-text blob. */}
                   <div className="text-body-xs sm:text-body-sm flex flex-col gap-8 font-normal text-black lg:gap-16">
-                    {body?.map((paragraph) => (
-                      <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                    {body?.map((paragraph, paragraphIndex) => (
+                      <Fragment key={paragraph.slice(0, 40)}>
+                        <p>{paragraph}</p>
+
+                        {/* `imageAfter` breaks the copy at a set paragraph and
+                            drops the photo in there, rather than bookending
+                            the section the way top/bottom do. */}
+                        {imageAfter === paragraphIndex + 1 && (
+                          <Image
+                            src={post.image}
+                            alt={imageAlt ?? post.title}
+                            width="100%"
+                            height="100%"
+                            className="w-full rounded-xl object-cover"
+                          />
+                        )}
+                      </Fragment>
                     ))}
 
                     {richBody?.map((runs) => (
@@ -326,6 +316,7 @@ export default function Article({ post, sections, comparison }) {
           {/* Below `lg` the panel follows the article instead of sitting beside it. */}
           <RelatedPanel
             related={related}
+            title={post.title}
             className="rounded-2xl px-16 py-20 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24 lg:hidden"
           />
         </div>
@@ -333,7 +324,8 @@ export default function Article({ post, sections, comparison }) {
         <aside className="hidden shrink-0 lg:block lg:w-266">
           <RelatedPanel
             related={related}
-            className="sticky top-124 max-h-[calc(100dvh-140px)] [scrollbar-width:thin] overflow-y-auto overscroll-contain rounded-2xl p-16 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24"
+            title={post.title}
+            className="sticky top-150 max-h-[calc(100dvh-140px)] [scrollbar-width:thin] overflow-y-auto overscroll-contain rounded-2xl p-16 shadow-[0_10px_61.56px_0_rgba(21,21,21,0.05)] sm:p-24"
           />
         </aside>
       </div>

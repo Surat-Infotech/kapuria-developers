@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 // Matches the `scroll-mt-124` on the article sections, plus a few pixels of
 // slack — a heading becomes current once it has cleared the fixed header.
-const ACTIVE_OFFSET = 130;
+const ACTIVE_OFFSET = 150;
 
 const TableOfContents = ({ sections }) => {
   const [activeId, setActiveId] = useState(sections[0]?.id);
@@ -74,7 +74,7 @@ const TableOfContents = ({ sections }) => {
   return (
     <div
       ref={listRef}
-      className="sticky top-124 flex max-h-[calc(100dvh-140px)] scrollbar-thin flex-col gap-18 overflow-y-auto overscroll-contain pr-8"
+      className="sticky top-150 flex max-h-[calc(100dvh-140px)] scrollbar-thin flex-col gap-18 overflow-y-auto overscroll-contain pr-8"
     >
       <h2 className="text-navy-800 text-[18px]/[26px] font-bold">
         Table of Contents
