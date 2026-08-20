@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Section from "@/components/ui/section";
 
@@ -8,6 +9,7 @@ import XIcon from "@/assets/svgs/social/x";
 import YoutubeIcon from "@/assets/svgs/social/youtube";
 
 import { getRelatedPosts } from "../_data";
+import TableOfContents from "./table-of-contents";
 
 const SHARE = [
   { Icon: FacebookIcon, label: "Share on Facebook" },
@@ -25,23 +27,25 @@ const RelatedPanel = ({ related, className = "" }) => (
 
     <ul className="mt-16 flex flex-col gap-18">
       {related.map(({ slug, title, image, readTime }) => (
-        <li
-          key={slug}
-          className="flex items-center gap-12 lg:flex-col lg:items-start lg:gap-8"
-        >
-          <Image
-            src={image}
-            alt={title}
-            width={104}
-            height={78}
-            className="h-93 w-104 shrink-0 rounded-md object-cover lg:h-97 lg:w-full"
-          />
-          <div className="flex flex-col gap-6 sm:gap-4">
-            <p className="text-navy-800 line-clamp-3 text-xs font-semibold">
-              {title}
-            </p>
-            <p className="text-navy-800/60 text-xs font-normal">{readTime}</p>
-          </div>
+        <li key={slug}>
+          <Link
+            href={`/blogs/${slug}`}
+            className="focus-visible:ring-gold-400 flex items-center gap-12 rounded-sm focus-visible:ring-2 focus-visible:outline-none lg:flex-col lg:items-start lg:gap-8"
+          >
+            <Image
+              src={image}
+              alt={title}
+              width={104}
+              height={78}
+              className="h-93 w-104 shrink-0 rounded-md object-cover lg:h-97 lg:w-full"
+            />
+            <div className="flex flex-col gap-6 sm:gap-4">
+              <p className="text-navy-800 line-clamp-3 text-xs font-semibold">
+                {title}
+              </p>
+              <p className="text-navy-800/60 text-xs font-normal">{readTime}</p>
+            </div>
+          </Link>
         </li>
       ))}
     </ul>
@@ -144,35 +148,11 @@ export default function Article({ post, sections, comparison }) {
       className="py-32 sm:py-64 lg:pt-64 lg:pb-120"
     >
       <div className="flex flex-col gap-24 lg:flex-row xl:gap-36">
-        {/* Table of contents — desktop only, sticks while the body scrolls. */}
+        {/* Table of contents — desktop only, sticks while the body scrolls.
+            Taller than the viewport, so the list scrolls inside the sticky box
+            rather than running past the fold. */}
         <aside className="hidden shrink-0 lg:block lg:w-218">
-          {/* Taller than the viewport, so the list scrolls inside the sticky
-              box rather than running past the fold. */}
-          <div className="sticky top-124 flex max-h-[calc(100dvh-140px)] scrollbar-thin flex-col gap-18 overflow-y-auto overscroll-contain pr-8">
-            <h2 className="text-navy-800 text-[18px]/[26px] font-bold">
-              Table of Contents
-            </h2>
-
-            <ul className="flex list-disc flex-col gap-16 ps-21">
-              {sections.map(({ id, title }, index) => (
-                <li
-                  key={id}
-                  className={
-                    index === 0
-                      ? "text-navy-800 text-[14px]/[22px] font-bold"
-                      : "text-navy-800/60 text-[14px]/[22px] font-medium"
-                  }
-                >
-                  <a
-                    href={`#${id}`}
-                    className="focus-visible:ring-gold-400 hover:text-navy-800 rounded-sm transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none"
-                  >
-                    {title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <TableOfContents sections={sections} />
         </aside>
 
         <div className="flex min-w-0 flex-1 flex-col gap-32 lg:gap-40">
