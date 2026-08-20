@@ -118,7 +118,7 @@ export default function QualityPromise() {
 
       <div className="mt-36 flex justify-center sm:mt-64">
         <Button asChild className="w-full sm:w-auto">
-          <Link href="/documents/115-checkpoints.pdf" target="_blank">
+          <Link href="/documents/115-checkpoints.pdf" download>
             Download Checklist
           </Link>
         </Button>
