@@ -35,7 +35,7 @@ export const CONTACT_DETAILS = [
   },
   {
     label: "Office",
-    value: "Kapuria House, Sector 120, Mohali, Punjab 140301",
+    value: "Kapuria House, 1726 Sector 33 D, Chandigarh 160020",
     Icon: MapPinIcon,
   },
   {
