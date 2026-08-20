@@ -47,7 +47,7 @@ export default function BannerSection() {
               warranty, and a philosophy that values substance over shine.
             </p>
             <Button asChild variant="secondary" className="w-full sm:w-auto">
-              <Link href="">VIEW OUR WORK</Link>
+              <Link href="/our-projects">VIEW OUR WORK</Link>
             </Button>
           </div>
 
