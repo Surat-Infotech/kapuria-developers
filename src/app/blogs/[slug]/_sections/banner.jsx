@@ -79,21 +79,34 @@ export default function BannerSection({ post }) {
               {title}
             </h1>
 
-            {/* Frosted pill — hairlines sit between the pairs, not after them. */}
-            <dl className="flex flex-wrap items-center gap-x-8 gap-y-4 rounded-md border border-white/20 bg-[#071521]/25 px-8 py-8 backdrop-blur-[13.3px] sm:gap-x-16 sm:px-16">
+            {/* Below `sm` this is bare values on the gradient — no labels, no
+                chrome, dot separators. From `sm` up the labels return and it
+                becomes the frosted pill with hairline dividers. Either way it
+                stays a single row; the scroll is only a safety valve for the
+                narrowest phones. */}
+            <dl className="flex max-w-full [scrollbar-width:none] flex-nowrap items-center gap-x-8 overflow-x-auto sm:gap-x-16 sm:rounded-md sm:border sm:border-white/20 sm:bg-[#071521]/25 sm:px-16 sm:py-8 sm:backdrop-blur-[13.3px] [&::-webkit-scrollbar]:hidden">
               {meta.map(({ label, value }, index) => (
-                <div key={label} className="flex items-center gap-8 sm:gap-16">
+                <div
+                  key={label}
+                  className="flex shrink-0 items-center gap-12 sm:gap-16"
+                >
                   <div className="flex items-center gap-8">
-                    <dt className="xs:text-body-sm text-body-xs font-normal text-white lg:text-[18px]/[26px]">
+                    {/* `sr-only` rather than `hidden` — the label is what
+                        gives the bare value meaning, so it stays in the
+                        accessibility tree even when it isn't drawn. */}
+                    <dt className="sm:text-body-sm sr-only font-normal whitespace-nowrap text-white sm:not-sr-only lg:text-[18px]/[26px]">
                       {label}
                     </dt>
-                    <dd className="xs:text-body-sm text-body-xs font-medium text-white lg:text-[18px]/[26px]">
+                    <dd className="xs:text-[13px]/[20px] sm:text-body-sm text-body-xs font-medium whitespace-nowrap text-white lg:text-[18px]/[26px]">
                       {value}
                     </dd>
                   </div>
 
                   {index < meta.length - 1 && (
-                    <span aria-hidden className="h-18 w-px bg-white/20" />
+                    <span
+                      aria-hidden
+                      className="xs:size-4 size-3 shrink-0 rounded-full bg-white sm:h-18 sm:w-px sm:rounded-none"
+                    />
                   )}
                 </div>
               ))}
