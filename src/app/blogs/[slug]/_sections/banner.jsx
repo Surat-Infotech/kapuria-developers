@@ -11,7 +11,11 @@ const CRUMBS = [
 ];
 
 export default function BannerSection({ post }) {
-  const { title, image, readTime, date, author } = post;
+  const { title, image, banner, readTime, date, author } = post;
+
+  // A post can ship banner artwork of its own; without one the in-article
+  // photo carries the banner, as it did before.
+  const bannerImage = banner ?? image;
 
   const meta = [
     { label: "Read Time", value: readTime },
@@ -22,7 +26,7 @@ export default function BannerSection({ post }) {
   return (
     <div className="relative">
       <Image
-        src={image}
+        src={bannerImage}
         alt={title}
         width={1440}
         height={910}

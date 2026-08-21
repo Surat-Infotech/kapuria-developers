@@ -1,10 +1,12 @@
 import heroImage from "@/assets/images/blogs/blog-detail-4.webp";
+import bannerImage from "@/assets/images/blogs/blog-details-4-banner.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 export const POST = {
   slug: "vastu-beliefs-explained-by-science",
   title: "10 Common Vastu Beliefs Explained by Science",
   image: heroImage,
+  banner: bannerImage,
   readTime: "10 mins",
   date: "10th June, 2026",
   author: {
