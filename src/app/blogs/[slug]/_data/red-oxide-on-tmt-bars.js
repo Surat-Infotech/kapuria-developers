@@ -1,11 +1,14 @@
 import heroImage from "@/assets/images/blogs/blog-detail-2.webp";
+import bannerImage from "@/assets/images/blogs/blog-details-2-banner.webp";
 import sophiaAnderson from "@/assets/images/blogs/sophia-anderson.webp";
 
 export const POST = {
   slug: "red-oxide-on-tmt-bars",
   title: "Why Red Oxide is Important on TMT (Thermo-Mechanically Treated) Bars",
-  // Banner and the in-article photo are the same shot, as the design has it.
+  // `image` is the in-article photo and the listing-card shot; the banner runs
+  // its own artwork.
   image: heroImage,
+  banner: bannerImage,
   readTime: "10 mins",
   date: "10th June, 2026",
   author: {
@@ -64,7 +67,7 @@ export const SECTIONS = [
       "Walk past any construction site that sat idle through a monsoon. The column starter bars poking out of the plinth tell the whole story. The ones left bare have turned a flaky orange-brown, scale peeling off in layers. The ones painted that dull brick-red colour? Still solid underneath.",
       "That red paint is red oxide primer, and it's one of the cheapest insurance policies in construction. Yet half the sites in the country skip it, usually because nobody explained what it actually does or when it's genuinely needed. This article fixes that.",
     ],
-    imagePosition: "top",
+    imageAfter: 2,
     imageAlt: "TMT bars tied into a column cage on site",
   },
   {

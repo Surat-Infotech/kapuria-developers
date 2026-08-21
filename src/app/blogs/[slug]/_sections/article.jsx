@@ -153,11 +153,8 @@ export default function Article({ post, sections, comparison }) {
                 },
                 index
               ) => (
-                <section
-                  key={id}
-                  id={id}
-                  className="flex scroll-mt-124 flex-col gap-8"
-                >
+                // depend on either; they measure the header box at runtime.
+                <section key={id} id={id} className="flex flex-col gap-8">
                   {/* Mobile reads the copy first and meets the photo after;
                       `order` flips it without disturbing the DOM sequence. */}
                   {imagePosition === "top" && (
