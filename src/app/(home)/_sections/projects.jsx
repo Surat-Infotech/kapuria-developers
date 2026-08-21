@@ -35,7 +35,7 @@ const PROJECTS = [
       { label: "Floors", value: "3" },
       { label: "Bedrooms", value: "5" },
     ],
-    pills: ["Private Pool", "1 Indoor Parking"],
+    pills: ["1 Indoor Parking"],
     href: "/our-projects/the-canopy-veil",
   },
   {
