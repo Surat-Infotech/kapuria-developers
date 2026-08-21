@@ -2,6 +2,8 @@ import { EXTERNAL_ROUTES, ROUTES } from "@/lib/route";
 
 import FacebookIcon from "@/assets/svgs/social/facebook";
 import InstagramIcon from "@/assets/svgs/social/instagram";
+import TwitterIcon from "@/assets/svgs/social/x";
+import YoutubeIcon from "@/assets/svgs/social/youtube";
 
 export const FOOTER_TAGLINE =
   "The best minds in villa, farmhouse Architecture & design, in your inbox.";
@@ -24,7 +26,9 @@ export const FOOTER_COLUMNS = [
 
 export const SOCIAL_LINKS = [
   { label: "Facebook", href: EXTERNAL_ROUTES.FACEBOOK, Icon: FacebookIcon },
+  { label: "Youtube", href: EXTERNAL_ROUTES.YOUTUBE, Icon: YoutubeIcon },
   { label: "Instagram", href: EXTERNAL_ROUTES.INSTAGRAM, Icon: InstagramIcon },
+  { label: "X", href: EXTERNAL_ROUTES.X, Icon: TwitterIcon },
 ];
 
 export const LEGAL_LINKS = [

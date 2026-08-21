@@ -45,25 +45,25 @@ export const CONTACT_DETAILS = [
   },
 ];
 
-// Same icons and chip as the footer — only the destinations differ, and the
-// desk lists them in its own order.
+// Same icons and destinations as the footer — the desk just lists them in
+// its own order.
 export const CONTACT_SOCIAL_LINKS = [
   {
     label: "Facebook",
-    href: EXTERNAL_ROUTES.CONTACT_FACEBOOK,
+    href: EXTERNAL_ROUTES.FACEBOOK,
     Icon: FacebookIcon,
   },
   {
     label: "Instagram",
-    href: EXTERNAL_ROUTES.CONTACT_INSTAGRAM,
+    href: EXTERNAL_ROUTES.INSTAGRAM,
     Icon: InstagramIcon,
   },
   {
     label: "YouTube",
-    href: EXTERNAL_ROUTES.CONTACT_YOUTUBE,
+    href: EXTERNAL_ROUTES.YOUTUBE,
     Icon: YoutubeIcon,
   },
-  { label: "X", href: EXTERNAL_ROUTES.CONTACT_X, Icon: XIcon },
+  { label: "X", href: EXTERNAL_ROUTES.X, Icon: XIcon },
 ];
 
 // Dial codes cover the regions on the global-presence map, plus the two

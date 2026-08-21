@@ -28,15 +28,8 @@ export const EXTERNAL_ROUTES = {
   FACEBOOK:
     "https://www.facebook.com/people/Kapuria-Developers/61591135272003/",
   INSTAGRAM: "https://www.instagram.com/kapuria_developers/reels/",
-  X: "https://x.com",
-  YOUTUBE: "https://youtube.com",
-
-  // Social — the contact desk points at its own handles, so these stay
-  // separate from the site-wide ones above.
-  CONTACT_FACEBOOK: "facebook.com/profile.php?id=61591135272003",
-  CONTACT_INSTAGRAM: "https://www.instagram.com/kapuria_developers/reels/",
-  CONTACT_X: "https://x.com/KapuriaDevelops?s=20",
-  CONTACT_YOUTUBE: "https://www.youtube.com/@Kapuria-Developers",
+  X: "https://x.com/KapuriaDevelops",
+  YOUTUBE: "https://www.youtube.com/@Kapuria-Developers",
 
   // Architects — each carries their own handles rather than the site-wide
   // ones. Rachit's point at his studio, Exubia, not a personal account.
